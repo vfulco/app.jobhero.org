@@ -1,0 +1,161 @@
+.rb-dialog{
+  max-width:700px;
+}
+@page{
+    size: auto;   /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 0in 0in 0in 0in;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin:0;
+}
+@media all {
+	.page-break {
+    display: block;
+    height:0.5in;
+  }
+}
+
+@media print {
+	.page-break {
+    display: block;
+    height:0;
+    page-break-before: always;
+  }
+}
+.rb-noprint{
+  display:block;
+}
+@media print {
+  body{
+    background-color: #fff;
+  }
+  .rb-noprint{
+    display:none;
+  }
+}
+.rb-100vh{
+}
+.rb-resume-container{
+  width:100vw;
+  overflow:scroll;
+  background-color: #666;
+  padding-top:1in;
+  padding-bottom:1in;
+}
+@media print {
+  .rb-resume-container{
+    width:inherit;
+    background-color: none;
+    overflow: inherit;
+    padding:0;
+  }
+}
+.rb-resume-page{
+  height:11in;
+  width:8.5in;
+  background:#fff;
+  margin-left: auto;
+  margin-right: auto;
+-webkit-print-color-adjust: exact;
+}
+.rb-resume-page h1,h2,h3,h4,p{
+  margin:0;
+}
+.rb-section-title{
+  font-weight: 300;
+  text-align: center;
+  padding-bottom:0.5in;
+}
+.rb-section-edit-button{
+  display:block;
+  float: right;
+  margin-top: -0.24in;
+  cursor: pointer;
+}
+.rb-section-edit-button:hover{
+  font-weight: 700;
+}
+@media print {
+  .rb-section-edit-button{
+    display:none;
+  }
+}
+.rb-table{
+  display:table;
+}
+.rb-row{
+  display:table-row;
+}
+.rb-cell{
+  display:table-cell;
+}
+.rb-header-p1{
+  width:100%;
+  text-align: center;
+  font-weight: 700;
+  padding-top:0.2in;
+}
+.rb-fullname{
+  font-size:0.5in;
+  font-weight: 700;
+}
+.rb-contact{
+  font-size:0.2in;
+  font-weight: 400;
+}
+.rb-qualifications{
+  padding:0.5in;
+  padding-bottom:0;
+}
+.rb-block{
+  width:3in;
+  margin-right: 0.8in;
+}
+.rb-block-title{
+  background-color:#444;
+  font-weight: 700;
+  padding:0.14in;
+  color:#fff;
+  margin-bottom:0.1in;
+}
+.rb-block-list{
+  font-weight: 300;
+  margin:0;
+  /*margin-top:0.1in;*/
+  padding-left:0.4in;
+  margin-bottom:0.4in;
+  font-size:0.16in;
+}
+.rb-block-list>li{
+}
+.rb-skills-list{
+  white-space: nowrap;
+}
+.rb-header-p2{
+  width:100%;
+  text-align: center;
+  font-weight: 700;
+  padding-top:0.2in;
+}
+.rb-fullname-email{
+  font-size:0.18in;
+}
+.rb-history{
+  padding:0.5in;
+  padding-top:0.2in;
+  padding-bottom:0;
+}
+.rb-history-subtitle{
+  font-size:0.12in;
+  font-weight: 300;
+  padding-left:0.18in;
+  margin-bottom:0.1in;
+}
+.rb-history-highlight-title{
+  font-weight: 700;
+  font-size:0.14in;
+  padding-left:0.18in;
+}

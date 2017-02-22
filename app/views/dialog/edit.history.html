@@ -1,0 +1,112 @@
+<md-dialog aria-label="Edit Your Info" class="rb-dialog">
+
+  <form name="resumeExperienceForm" ng-submit="dc.saveResume(dc.resume)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>RELAVENT HISTORY</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="dc.cancel()">
+          X
+          <!-- <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon> -->
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h4>
+          Add your relevant experience in terms of years. Such as "Project Management" or "Web Development".
+        </h4>
+
+
+
+        <md-card md-theme="docs-dark" ng-repeat="history in dc.resume.history" >
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">
+                {{ history.company }}
+              </span>
+              <span class="md-subhead">
+              </span>
+            </md-card-title-text>
+          </md-card-title>
+          <ng-form name="resumeHistoryFormItem">
+            <md-card-content>
+                <div layout="row">
+                  <md-input-container flex="50">
+                    <label>Company Name</label>
+                    <input required name="company" ng-model="history.company">
+                    <div ng-messages="resumeHistoryFormItem.company.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                    <label>Role/Position</label>
+                    <input required name="position" ng-model="history.position">
+                    <div ng-messages="resumeHistoryFormItem.position.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+
+                <div layout="row">
+                  <md-input-container flex>
+                    <label>Start Date (12/2016)</label>
+                    <input required name="startDate" ng-model="history.startDate">
+                    <div ng-messages="resumeHistoryFormItem.startDate.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+
+                  <md-input-container flex>
+                    <label>End Date (12/2016)</label>
+                    <input required name="endDate" ng-model="history.endDate">
+                    <div ng-messages="resumeHistoryFormItem.endDate.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                </div>
+
+                <span class="md-subhead">
+                  Highlights
+                </span>
+                <div layout="row" ng-repeat="highlight in history.highlights" >
+                  <md-input-container flex="80">
+                    <label>Highlight</label>
+                    <input required name="highlight" ng-model="highlight.name">
+                    <div ng-messages="resumeHistoryFormItem.highlight.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                  <md-button ng-click="dc.removeHistoryHighlight(history,highlight)">
+                    Delete
+                  </md-button>
+                </div>
+
+            </md-card-content>
+          </ng-form>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="dc.newHistoryHighlight(history)">
+              Add highlight
+            </md-button>
+            <md-button ng-click="dc.removeHistory(history)">
+              Delete history
+            </md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="dc.newHistory()" class="md-raised" ng-if="dc.resume.history.length < 11 || !dc.resume.history">
+        Add Relavent History +
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="dc.cancel()" class="md-raised">
+       Cancel
+      </md-button>
+      <md-button  class="md-raised md-primary"  type="submit">
+        Save Changes
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

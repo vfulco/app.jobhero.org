@@ -1,0 +1,59 @@
+<md-dialog aria-label="Edit Your Skills" class="rb-dialog">
+
+  <form name="resumeSkillsForm" ng-submit="dc.saveResume(dc.resume)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>EDUCATION &amp; INTERESTS</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="dc.cancel()">
+          X
+          <!-- <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon> -->
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h4>
+          Add your relevant experience in terms of years. Such as "Project Management" or "Web Development".
+        </h4>
+
+        <md-card md-theme="docs-dark">
+
+          <ng-form name="resumeEducationInterestsFormItem">
+            <md-card-content>
+
+              <div layout="row"  ng-repeat="item in dc.resume.educationinterests">
+                <md-input-container flex="80">
+                  <label>Degree/Certificate/Interest</label>
+                  <input required name="name" ng-model="item.name">
+                  <div ng-messages="resumeEducationInterestsFormItem.name.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+                <md-button ng-click="dc.removeEducationInterest(item)">
+                  Delete
+                </md-button>
+              </div>
+
+
+            </md-card-content>
+          </ng-form>
+        </md-card>
+
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="dc.newEducationInterest()" class="md-raised" ng-if="dc.resume.educationinterests.length < 11 || !dc.resume.educationinterests">
+        Add Education/Interest +
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="dc.cancel()" class="md-raised">
+       Cancel
+      </md-button>
+      <md-button  class="md-raised md-primary"  type="submit">
+        Save Changes
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

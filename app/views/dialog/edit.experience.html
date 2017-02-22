@@ -1,0 +1,69 @@
+<md-dialog aria-label="Edit Your Info" style="max-width:600px;">
+
+  <form name="resumeExperienceForm" ng-submit="dc.saveResume(dc.resume)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>EXPERIENCE</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="dc.cancel()">
+          X
+          <!-- <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon> -->
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h4>
+          Add your relevant experience in terms of years. Such as "Project Management" or "Web Development".
+        </h4>
+
+
+
+        <md-card md-theme="docs-dark">
+
+          <ng-form name="resumeExperienceFormItem">
+            <md-card-content>
+
+              <div layout="row"  ng-repeat="experience in dc.resume.experience">
+                <md-input-container flex="60">
+                  <label>Experience</label>
+                  <input required name="name" ng-model="experience.name">
+                  <div ng-messages="resumeExperienceFormItem.name.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+                <md-input-container flex="20">
+                  <label>Years</label>
+                  <input type="number" required name="years" ng-model="experience.years">
+                  <div ng-messages="resumeExperienceFormItem.years.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+
+                <md-button ng-click="dc.removeExperience(experience)">
+                  Delete
+                </md-button>
+              </div>
+
+
+            </md-card-content>
+          </ng-form>
+        </md-card>
+
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="dc.newExperience()" class="md-raised" ng-if="dc.resume.experience.length < 11 || !dc.resume.experience">
+        Add Experience +
+      </md-button>
+      <span flex></span>
+      <md-button ng-click="dc.cancel()" class="md-raised">
+       Cancel
+      </md-button>
+      <md-button  class="md-raised md-primary"  type="submit">
+        Save Changes
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

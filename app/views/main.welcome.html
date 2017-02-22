@@ -1,0 +1,135 @@
+<md-content layout-padding  class="rb-noprint">
+  <md-button ng-click="rc.editResumeInfo($event)" class="md-raised">Edit Info</md-button>
+  <md-button ng-click="rc.editResumeExperience($event)" class="md-raised">Edit Experience</md-button>
+  <md-button ng-click="rc.editResumeTechnology($event)" class="md-raised">Edit Technology</md-button>
+  <md-button ng-click="rc.editResumeSkills($event)" class="md-raised">Edit Skills</md-button>
+  <md-button ng-click="rc.editResumeEducationInterests($event)" class="md-raised">Edit Education &amp; Interests</md-button>
+  <md-button ng-click="rc.editResumeHistory($event)" class="md-raised">Edit History</md-button>
+  <md-button ng-click="rc.print()" class="md-raised">Print</md-button>
+
+<p>
+  {{rc.resume | json}}
+</p>
+</md-content>
+<div class="rb-noprint">
+  <br /><br /><br />
+</div>
+<div class="rb-resume-container">
+  <div class="rb-resume-page">
+    <section class="rb-header-p1">
+      <h1 class="rb-fullname">
+        {{ rc.resume.info.fullname }}
+      </h1>
+      <h3 class="rb-contact">
+        <p>{{ rc.resume.info.email }}</p>
+        <p>{{ rc.resume.info.phone }}</p>
+      </h3>
+    </section>
+    <section class="rb-qualifications">
+      <h1 class="rb-section-title">
+        QUALIFICATIONS
+      </h1>
+      <div class="rb-table">
+        <div class="rb-row">
+          <div class="rb-cell">
+            <div class="rb-block">
+              <div class="rb-block-title">
+                <h3>Technology</h3>
+                <div class="rb-section-edit-button"  ng-click="rc.editResumeTechnology($event)">
+                  (EDIT)
+                </div>
+              </div>
+              <ul class="rb-block-list rb-technology-list">
+                <li ng-repeat="item in rc.resume.technology">
+                  {{ item.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rb-cell">
+            <div class="rb-block">
+              <div class="rb-block-title">
+                <h3>Experience</h3>
+                <div class="rb-section-edit-button"  ng-click="rc.editResumeExperience($event)">
+                  (EDIT)
+                </div>
+              </div>
+              <ul class="rb-block-list rb-experience-list">
+                <li ng-repeat="item in rc.resume.experience">
+                  {{ item.years }}+ years {{ item.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-cell">
+            <div class="rb-block">
+              <div class="rb-block-title">
+                <h3>Skills</h3>
+                <div class="rb-section-edit-button"  ng-click="rc.editResumeSkills($event)">
+                  (EDIT)
+                </div>
+              </div>
+              <ul class="rb-block-list rb-skills-list">
+                <li ng-repeat="item in rc.resume.skills">
+                  {{ item.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-cell">
+            <div class="rb-block">
+              <div class="rb-block-title">
+                <h3>Education &amp; Interests</h3>
+                <div class="rb-section-edit-button"  ng-click="rc.editResumeEducationInterests($event)">
+                  (EDIT)
+                </div>
+              </div>
+              <ul class="rb-block-list rb-skills-list">
+                <li ng-repeat="item in rc.resume.educationinterests">
+                  {{ item.name }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="page-break">
+  </div>
+  <div class="rb-resume-page">
+    <section class="rb-header-p2">
+      <h3 class="rb-fullname-email">
+        {{ rc.resume.info.fullname }} | {{ rc.resume.info.email }}
+      </h3>
+    </section>
+    <section class="rb-history">
+      <h1 class="rb-section-title">
+        RELATED HISTORY
+      </h1>
+      <div class="rb-block" ng-repeat="item in rc.resume.history">
+        <div class="rb-block-title">
+          <h3>{{ item.company }}</h3>
+          <div class="rb-section-edit-button"  ng-click="rc.editResumeHistory($event)">
+            (EDIT)
+          </div>
+        </div>
+        <p class="rb-history-subtitle">
+          {{ item.position }} | Austin, TX ( {{ item.startDate | date: 'MM/yyyy'}} - {{ item.present || item.startDate }} )
+        </p>
+        <h4 class="rb-history-highlight-title">
+          Select highlights:
+        </h4>
+        <ul class="rb-block-list rb-skills-list">
+          <li ng-repeat="item in item.highlights">
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
