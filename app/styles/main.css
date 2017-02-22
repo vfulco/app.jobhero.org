@@ -1,6 +1,9 @@
 .rb-dialog{
   max-width:700px;
 }
+.rb-fixed-toolback{
+  position: fixed;
+}
 @page{
     size: auto;   /* auto is the initial value */
 
@@ -42,7 +45,7 @@ body{
   width:100vw;
   overflow:scroll;
   background-color: #666;
-  padding-top:1in;
+  padding-top:1.5in;
   padding-bottom:1in;
 }
 @media print {

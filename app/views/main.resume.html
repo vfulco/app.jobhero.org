@@ -1,19 +1,14 @@
-<md-content layout-padding  class="rb-noprint">
-  <md-button ng-click="rc.editResumeInfo($event)" class="md-raised">Edit Info</md-button>
-  <md-button ng-click="rc.editResumeExperience($event)" class="md-raised">Edit Experience</md-button>
-  <md-button ng-click="rc.editResumeTechnology($event)" class="md-raised">Edit Technology</md-button>
-  <md-button ng-click="rc.editResumeSkills($event)" class="md-raised">Edit Skills</md-button>
-  <md-button ng-click="rc.editResumeEducationInterests($event)" class="md-raised">Edit Education &amp; Interests</md-button>
-  <md-button ng-click="rc.editResumeHistory($event)" class="md-raised">Edit History</md-button>
-  <md-button ng-click="rc.print()" class="md-raised">Print</md-button>
-
-<p>
-  {{rc.resume | json}}
-</p>
-</md-content>
-<div class="rb-noprint">
-  <br /><br /><br />
-</div>
+<md-toolbar class="rb-fixed-toolback rb-noprint">
+  <div class="md-toolbar-tools">
+    <h3>
+      <span>Resume Builder</span>
+    </h3>
+    <span flex></span>
+    <md-button class="md-raised" ng-click="rc.print()" aria-label="Print">
+      PRINT
+    </md-button>
+  </div>
+</md-toolbar>
 <div class="rb-resume-container">
   <div class="rb-resume-page">
     <section class="rb-header-p1">
