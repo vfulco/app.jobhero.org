@@ -23,7 +23,7 @@ body{
 
 @media print {
 	.page-break {
-    display: block;
+    display: inherit;
     height:0;
     page-break-before: always;
   }
@@ -64,6 +64,13 @@ body{
   margin-right: auto;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
+  overflow:hidden;
+}
+@media print {
+  .rb-resume-page{
+    height:auto;
+    /*border: 1px solid black;*/
+  }
 }
 .rb-resume-page h1,h2,h3,h4,p{
   margin:0;
