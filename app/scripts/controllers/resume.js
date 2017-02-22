@@ -33,10 +33,12 @@ angular.module('appredomaycomApp')
 			} else {
 				vm.resume = localStorageService.get('resume');
 			}
-			var name = vm.resume.info.fullname || 'your_resume';
-			var lowerName = name.toLowerCase();
-			var underName = lowerName.replace(' ', '_');
-			$document[0].title = underName + '_resume_' + new Date().getFullYear();
+			if (vm.resume && vm.resume.info) {
+				var name = vm.resume.info.fullname || 'your_resume';
+				var lowerName = name.toLowerCase();
+				var underName = lowerName.replace(' ', '_');
+				$document[0].title = underName + '_resume_' + new Date().getFullYear();
+			}
 		};
 		vm.getLocalResume();
 
