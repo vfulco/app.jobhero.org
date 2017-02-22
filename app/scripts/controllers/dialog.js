@@ -10,6 +10,7 @@
 angular.module('appredomaycomApp')
 	.controller('DialogCtrl', function ($mdDialog, localStorageService, $location) {
 		this.resume = localStorageService.get('resume');
+
 		this.newExperience = function () {
 			if (localStorageService.get('resume').experience) {
 				this.resume.experience.push({
@@ -67,12 +68,14 @@ angular.module('appredomaycomApp')
 		this.newHistory = function () {
 			if (localStorageService.get('resume').history) {
 				this.resume.history.push({
-					name: ''
+					company: '',
+					highlights: []
 				});
 			} else {
 				this.resume.history = [];
 				this.resume.history.push({
-					name: ''
+					company: '',
+					highlights: []
 				});
 			}
 		};

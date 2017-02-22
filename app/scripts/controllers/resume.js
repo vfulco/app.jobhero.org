@@ -28,7 +28,8 @@ angular.module('appredomaycomApp')
 			if ($location.search().resume) {
 				var urlResume = $location.search().resume;
 				var urlResumeParsed = JSON.parse(decodeURIComponent(urlResume));
-				vm.resume = urlResumeParsed;
+				localStorageService.set('resume', urlResumeParsed);
+				vm.resume = localStorageService.get('resume');
 			} else {
 				vm.resume = localStorageService.get('resume');
 			}
