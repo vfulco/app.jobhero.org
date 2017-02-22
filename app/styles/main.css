@@ -73,10 +73,14 @@ body{
   padding-bottom:0.5in;
 }
 .rb-section-edit-button{
-  display:block;
+  display: block;
   float: right;
-  margin-top: -0.24in;
+  margin-top: -0.38in;
+  margin-right: -0.1in;
   cursor: pointer;
+}
+.rb-section-edit-button>.md-button{
+  min-width: 0;
 }
 .rb-section-edit-button:hover{
   font-weight: 700;

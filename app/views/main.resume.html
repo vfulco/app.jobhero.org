@@ -30,8 +30,10 @@
             <div class="rb-block">
               <div class="rb-block-title">
                 <h3>Technology</h3>
-                <div class="rb-section-edit-button"  ng-click="rc.editResumeTechnology($event)">
-                  (EDIT)
+                <div class="rb-section-edit-button">
+                  <md-button ng-click="rc.editResumeTechnology($event)">
+                    (EDIT)
+                  </md-button>
                 </div>
               </div>
               <ul class="rb-block-list rb-technology-list">
@@ -45,8 +47,10 @@
             <div class="rb-block">
               <div class="rb-block-title">
                 <h3>Experience</h3>
-                <div class="rb-section-edit-button"  ng-click="rc.editResumeExperience($event)">
-                  (EDIT)
+                <div class="rb-section-edit-button">
+                  <md-button ng-click="rc.editResumeExperience($event)">
+                    (EDIT)
+                  </md-button>
                 </div>
               </div>
               <ul class="rb-block-list rb-experience-list">
@@ -62,8 +66,10 @@
             <div class="rb-block">
               <div class="rb-block-title">
                 <h3>Skills</h3>
-                <div class="rb-section-edit-button"  ng-click="rc.editResumeSkills($event)">
-                  (EDIT)
+                <div class="rb-section-edit-button">
+                  <md-button ng-click="rc.editResumeSkills($event)">
+                    (EDIT)
+                  </md-button>
                 </div>
               </div>
               <ul class="rb-block-list rb-skills-list">
@@ -79,8 +85,10 @@
             <div class="rb-block">
               <div class="rb-block-title">
                 <h3>Education &amp; Interests</h3>
-                <div class="rb-section-edit-button"  ng-click="rc.editResumeEducationInterests($event)">
-                  (EDIT)
+                <div class="rb-section-edit-button">
+                  <md-button ng-click="rc.editResumeEducationInterests($event)">
+                    (EDIT)
+                  </md-button>
                 </div>
               </div>
               <ul class="rb-block-list rb-skills-list">
@@ -109,8 +117,10 @@
       <div class="rb-block" ng-repeat="item in rc.resume.history">
         <div class="rb-block-title">
           <h3>{{ item.company }}</h3>
-          <div class="rb-section-edit-button"  ng-click="rc.editResumeHistory($event)">
-            (EDIT)
+          <div class="rb-section-edit-button"  >
+            <md-button ng-click="rc.editResumeHistory($event)">
+              (EDIT)
+            </md-button>
           </div>
         </div>
         <p class="rb-history-subtitle">

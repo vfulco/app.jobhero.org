@@ -16,7 +16,9 @@ module.exports = function (grunt) {
 	require('jit-grunt')(grunt, {
 		useminPrepare: 'grunt-usemin',
 		ngtemplates: 'grunt-angular-templates',
-		cdnify: 'grunt-google-cdn'
+		cdnify: 'grunt-google-cdn',
+		s3: 'grunt-aws',
+		removelogging: 'grunt-remove-logging'
 	});
 
 	// Configurable paths for the application
@@ -115,6 +117,50 @@ module.exports = function (grunt) {
 					open: true,
 					base: '<%= yeoman.dist %>'
 				}
+			}
+		},
+
+
+
+		aws: grunt.file.readJSON("secrets.json"),
+		s3: {
+			// options: {
+			// 	accessKeyId: "<%= aws.accessKeyId %>",
+			// 	secretAccessKey: "<%= aws.secretAccessKey %>",
+			// 	bucket: "<%= aws.bucket %>",
+			// },
+			// build: {
+			// 	cwd: "dist/",
+			// 	src: "**"
+			// }
+			//upload the public/ folder with a custom Cache-control header
+			build: {
+				options: {
+					accessKeyId: "<%= aws.accessKeyId %>",
+					secretAccessKey: "<%= aws.secretAccessKey %>",
+					bucket: "<%= aws.bucket %>",
+					headers: {
+						CacheControl: 'max-age=86400, public'
+					}
+				},
+				cwd: "dist/",
+				src: "**"
+			}
+		},
+		appcache: {
+			options: {
+				basePath: 'dist'
+			},
+			all: {
+				dest: 'dist/manifest.appcache',
+				//cache: 'dist/**/*',
+				network: '*',
+				fallback: 'dist/404.html'
+			}
+		},
+		removelogging: {
+			dist: {
+				src: ".tmp/concat/scripts/*.js" // Each file will be overwritten with the output!
 			}
 		},
 
@@ -463,6 +509,7 @@ module.exports = function (grunt) {
 		'postcss',
 		'ngtemplates',
 		'concat',
+		'removelogging',
 		'ngAnnotate',
 		'copy:dist',
 		'cdnify',
@@ -472,7 +519,12 @@ module.exports = function (grunt) {
 		'usemin',
 		'htmlmin'
 	]);
-
+	grunt.registerTask('deploy', [
+		'newer:jshint',
+		'build',
+		'appcache',
+		's3'
+	]);
 	grunt.registerTask('default', [
 		'newer:jshint',
 		'newer:jscs',

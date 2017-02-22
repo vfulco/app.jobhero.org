@@ -39,5 +39,9 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js"
+  },
+  "dependencies": {
+    "grunt-aws": "^0.6.2",
+    "grunt-remove-logging": "^0.2.0"
   }
 }
