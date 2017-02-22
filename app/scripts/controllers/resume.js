@@ -52,7 +52,6 @@ angular.module('appredomaycomApp')
 					console.log('you canceled the dialog!');
 				});
 		};
-
 		vm.editResumeExperience = function (ev) {
 			$mdDialog.show({
 					controller: 'DialogCtrl as dc',
@@ -137,5 +136,9 @@ angular.module('appredomaycomApp')
 					console.log('you canceled the dialog!');
 				});
 		};
+
+		if (!vm.resume) {
+			vm.editResumeInfo();
+		}
 
 	});

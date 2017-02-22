@@ -9,7 +9,19 @@
  */
 angular.module('appredomaycomApp')
 	.controller('DialogCtrl', function ($mdDialog, localStorageService, $location) {
+
 		this.resume = localStorageService.get('resume');
+
+		this.saveResume = function (resume, hide) {
+			console.log(resume);
+			localStorageService.set('resume', resume);
+			$location.search({
+				resume: encodeURIComponent(JSON.stringify(resume))
+			});
+			if (hide === true) {
+				$mdDialog.hide(resume);
+			}
+		};
 
 		this.newExperience = function () {
 			if (localStorageService.get('resume').experience) {
@@ -24,6 +36,7 @@ angular.module('appredomaycomApp')
 					years: ''
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.newTechnology = function () {
@@ -37,6 +50,7 @@ angular.module('appredomaycomApp')
 					name: ''
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.newSkill = function () {
@@ -50,6 +64,7 @@ angular.module('appredomaycomApp')
 					name: ''
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.newEducationInterest = function () {
@@ -63,6 +78,7 @@ angular.module('appredomaycomApp')
 					name: ''
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.newHistory = function () {
@@ -78,6 +94,7 @@ angular.module('appredomaycomApp')
 					highlights: []
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.newHistoryHighlight = function (item) {
@@ -93,6 +110,7 @@ angular.module('appredomaycomApp')
 					name: ''
 				});
 			}
+			this.saveResume(this.resume, false);
 		};
 
 		this.removeExperience = function (item) {
@@ -133,15 +151,6 @@ angular.module('appredomaycomApp')
 
 		this.cancel = function () {
 			$mdDialog.cancel();
-		};
-
-		this.saveResume = function (resume) {
-			console.log(resume);
-			localStorageService.set('resume', resume);
-			$location.search({
-				resume: encodeURIComponent(JSON.stringify(resume))
-			});
-			$mdDialog.hide(resume);
 		};
 
 	});
