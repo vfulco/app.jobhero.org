@@ -8,7 +8,7 @@
  * Controller of the appredomaycomApp
  */
 angular.module('appredomaycomApp')
-	.controller('ResumeCtrl', function (localStorageService, $state, $mdDialog, $location, $stateParams) {
+	.controller('ResumeCtrl', function (localStorageService, $state, $mdDialog, $location, $stateParams, $document) {
 		console.log('resume controller!');
 		var vm = this;
 
@@ -33,6 +33,10 @@ angular.module('appredomaycomApp')
 			} else {
 				vm.resume = localStorageService.get('resume');
 			}
+			var name = vm.resume.info.fullname || 'your_resume';
+			var lowerName = name.toLowerCase();
+			var underName = lowerName.replace(' ', '_');
+			$document[0].title = underName + '_resume_' + new Date().getFullYear();
 		};
 		vm.getLocalResume();
 
