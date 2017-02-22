@@ -42,7 +42,7 @@
                 </div>
               </div>
               <ul class="rb-block-list rb-technology-list">
-                <li ng-repeat="item in rc.resume.technology">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.technology">
                   {{ item.name }}
                 </li>
               </ul>
@@ -59,7 +59,7 @@
                 </div>
               </div>
               <ul class="rb-block-list rb-experience-list">
-                <li ng-repeat="item in rc.resume.experience">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.experience">
                   {{ item.years }}+ years {{ item.name }}
                 </li>
               </ul>
@@ -78,7 +78,7 @@
                 </div>
               </div>
               <ul class="rb-block-list rb-skills-list">
-                <li ng-repeat="item in rc.resume.skills">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.skills">
                   {{ item.name }}
                 </li>
               </ul>
@@ -97,7 +97,7 @@
                 </div>
               </div>
               <ul class="rb-block-list rb-skills-list">
-                <li ng-repeat="item in rc.resume.educationinterests">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.educationinterests">
                   {{ item.name }}
                 </li>
               </ul>
@@ -117,7 +117,7 @@
     </section>
     <section class="rb-history">
       <h1 class="rb-section-title">
-        RELATED HISTORY
+        SELECT HISTORY
         <div class="rb-noprint">
           <md-button ng-click="rc.editResumeHistory($event)">
             (EDIT)
@@ -125,7 +125,7 @@
         </div>
       </h1>
 
-      <div class="rb-block" ng-repeat="item in rc.resume.history">
+      <div class="rb-block" ng-repeat="item in rc.resume.history"  ng-if="item.company">
         <div class="rb-block-title">
           <h3>{{ item.company }}</h3>
           <div class="rb-section-edit-button"  >
@@ -135,7 +135,7 @@
           </div>
         </div>
         <p class="rb-history-subtitle">
-          {{ item.position }} | Austin, TX ( {{ item.startDate | date: 'MM/yyyy'}} - {{ item.present || item.startDate }} )
+          {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate | date: 'MM/yyyy'}} &mdash; <span ng-if="!item.current">{{  item.startDate }}</span><span ng-if="item.current">Present</span> )
         </p>
         <h4 class="rb-history-highlight-title">
           Select highlights:

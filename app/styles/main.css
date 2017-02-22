@@ -160,6 +160,7 @@ body{
   font-weight: 300;
   padding-left:0.18in;
   margin-bottom:0.1in;
+  white-space: nowrap;
 }
 .rb-history-highlight-title{
   font-weight: 700;

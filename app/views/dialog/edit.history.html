@@ -49,15 +49,34 @@
                 </div>
 
                 <div layout="row">
-                  <md-input-container flex>
+                  <md-input-container flex="50">
+                    <label>Location (City, State)</label>
+                    <input required name="location" ng-model="history.location">
+                    <div ng-messages="resumeHistoryFormItem.location.$error">
+                      <div ng-message="required">This is required.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                    <md-checkbox name="current" ng-model="history.current">
+                      Do you currently work here?
+                    </md-checkbox>
+                  </md-input-container>
+                </div>
+
+                <div layout="row">
+                  <md-input-container flex="50">
                     <label>Start Date (12/2016)</label>
                     <input required name="startDate" ng-model="history.startDate">
                     <div ng-messages="resumeHistoryFormItem.startDate.$error">
                       <div ng-message="required">This is required.</div>
                     </div>
                   </md-input-container>
-
-                  <md-input-container flex>
+                  <div ng-if="history.current" flex="50">
+                    <h3>
+                      To present
+                    </h3>
+                  </div>
+                  <md-input-container flex ng-if="!history.current">
                     <label>End Date (12/2016)</label>
                     <input required name="endDate" ng-model="history.endDate">
                     <div ng-messages="resumeHistoryFormItem.endDate.$error">
