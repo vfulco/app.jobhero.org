@@ -49,11 +49,18 @@ body{
   padding-bottom:1in;
 }
 @media print {
+  body,html{
+    background:#fff;
+    background-color:#fff;
+  }
   .rb-resume-container{
     width:inherit;
-    background-color: none;
+    background-color: #fff;
     overflow: inherit;
     padding:0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
   }
 }
 .rb-resume-page{
@@ -64,6 +71,7 @@ body{
   margin-right: auto;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
+  color-adjust: exact;
   overflow:hidden;
 }
 @media print {
@@ -133,8 +141,22 @@ body{
   background-color:#444;
   font-weight: 700;
   padding:0.14in;
-  color:#fff;
+  color:#ffffff;
   margin-bottom:0.1in;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+.rb-block-title>h3{
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+@media print{
+  .rb-block-title>h3{
+    color:#ffffff;
+    color: rgb(255, 255, 255);
+  }
 }
 .rb-block-list{
   font-weight: 300;
