@@ -8,10 +8,8 @@
  * Controller of the appredomaycomApp
  */
 angular.module('appredomaycomApp')
-	.controller('DialogCtrl', function ($mdDialog, localStorageService) {
+	.controller('DialogCtrl', function ($mdDialog, localStorageService, $location) {
 		this.resume = localStorageService.get('resume');
-
-
 		this.newExperience = function () {
 			if (localStorageService.get('resume').experience) {
 				this.resume.experience.push({
@@ -137,6 +135,9 @@ angular.module('appredomaycomApp')
 		this.saveResume = function (resume) {
 			console.log(resume);
 			localStorageService.set('resume', resume);
+			$location.search({
+				resume: encodeURIComponent(JSON.stringify(resume))
+			});
 			$mdDialog.hide(resume);
 		};
 

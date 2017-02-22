@@ -8,7 +8,7 @@
  * Controller of the appredomaycomApp
  */
 angular.module('appredomaycomApp')
-	.controller('ResumeCtrl', function (localStorageService, $state, $mdDialog) {
+	.controller('ResumeCtrl', function (localStorageService, $state, $mdDialog, $location, $stateParams) {
 		console.log('resume controller!');
 		var vm = this;
 
@@ -19,20 +19,21 @@ angular.module('appredomaycomApp')
 		vm.resume.technology = [];
 		vm.resume = localStorageService.get('resume');
 
+
 		vm.print = function () {
 			window.print();
 		};
 
 		vm.getLocalResume = function () {
-			vm.resume = localStorageService.get('resume');
+			if ($location.search().resume) {
+				var urlResume = $location.search().resume;
+				var urlResumeParsed = JSON.parse(decodeURIComponent(urlResume));
+				vm.resume = urlResumeParsed;
+			} else {
+				vm.resume = localStorageService.get('resume');
+			}
 		};
 		vm.getLocalResume();
-
-		vm.saveResume = function (resume) {
-			console.log(resume);
-			localStorageService.set('resume', resume);
-			$state.go('main');
-		};
 
 		vm.editResumeInfo = function (ev) {
 			$mdDialog.show({

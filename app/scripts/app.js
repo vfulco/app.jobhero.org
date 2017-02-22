@@ -46,13 +46,14 @@ angular
 	.config(function ($stateProvider, $urlRouterProvider) {
 		$stateProvider
 			.state('main', {
-				url: '/',
+				url: '/?',
+				reloadOnSearch: false,
 				views: {
 					'main': {
 						templateUrl: 'views/main.html'
 					},
 					'content@main': {
-						templateUrl: 'views/main.welcome.html',
+						templateUrl: 'views/main.resume.html',
 						controller: 'ResumeCtrl as rc'
 					}
 				}
