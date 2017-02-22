@@ -135,7 +135,7 @@
           </div>
         </div>
         <p class="rb-history-subtitle">
-          {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate | date: 'MM/yyyy'}} &mdash; <span ng-if="!item.current">{{  item.startDate }}</span><span ng-if="item.current">Present</span> )
+          {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate | date: 'MM/yyyy'}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
         </p>
         <h4 class="rb-history-highlight-title">
           Select highlights:
