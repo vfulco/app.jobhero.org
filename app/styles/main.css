@@ -62,7 +62,8 @@ body{
   background:#fff;
   margin-left: auto;
   margin-right: auto;
--webkit-print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 .rb-resume-page h1,h2,h3,h4,p{
   margin:0;
