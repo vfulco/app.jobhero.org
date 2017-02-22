@@ -141,8 +141,8 @@ angular.module('appredomaycomApp')
 		this.removeHistoryHighlight = function (history, item) {
 			console.log('history', history);
 			var historyIndex = this.resume.history.indexOf(history);
-			var highlightIndex = this.resume.history[history].highlights.indexOf(item);
-			this.resume.history[history].highlights.splice(highlightIndex, 1);
+			var highlightIndex = this.resume.history[historyIndex].highlights.indexOf(item);
+			this.resume.history[historyIndex].highlights.splice(highlightIndex, 1);
 		};
 
 		this.hide = function () {

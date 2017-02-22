@@ -3,7 +3,7 @@
   <form name="resumeSkillsForm" ng-submit="dc.saveResume(dc.resume,true)">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>EDUCATION &amp; INTERESTS</h2>
+        <h2>ITEMS OF INTERESTS</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="dc.cancel()">
           X
@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add your relevant experience in terms of years. Such as "Project Management" or "Web Development".
+          Add education and items of interest here. Such as apps your built, news articles, relavent interests, etc.
         </h4>
 
         <md-card md-theme="docs-dark">
@@ -24,7 +24,7 @@
 
               <div layout="row"  ng-repeat="item in dc.resume.educationinterests">
                 <md-input-container flex="80">
-                  <label>Degree/Certificate/Interest</label>
+                  <label>Item of Interest</label>
                   <input required name="name" ng-model="item.name">
                   <div ng-messages="resumeEducationInterestsFormItem.name.$error">
                     <div ng-message="required">This is required.</div>
@@ -45,7 +45,7 @@
 
     <md-dialog-actions layout="row">
       <md-button ng-click="dc.newEducationInterest()" class="md-raised" ng-if="dc.resume.educationinterests.length < 11 || !dc.resume.educationinterests">
-        Add Education/Interest +
+        Add Item of Interest +
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">
