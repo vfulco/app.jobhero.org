@@ -14,30 +14,25 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add education and items of interest here. Such as apps your built, news articles, relavent interests, etc.
+          Add education and items of interest here. Such as apps your built, news articles, relavent interests, etc. Please be detailed.
         </h4>
 
         <md-card md-theme="docs-dark">
-
-          <ng-form name="resumeEducationInterestsFormItem">
-            <md-card-content>
-
-              <div layout="row"  ng-repeat="item in dc.resume.educationinterests">
-                <md-input-container flex="80">
-                  <label>Item of Interest</label>
-                  <input required name="name" ng-model="item.name">
-                  <div ng-messages="resumeEducationInterestsFormItem.name.$error">
-                    <div ng-message="required">This is required.</div>
-                  </div>
-                </md-input-container>
-                <md-button ng-click="dc.removeEducationInterest(item)">
-                  Delete
-                </md-button>
-              </div>
-
-
-            </md-card-content>
-          </ng-form>
+          <md-card-content>
+            <ng-form layout="row"  name="resumeEducationInterestsFormItem" ng-repeat="item in dc.resume.educationinterests">
+              <md-input-container flex="80">
+                <label>Item of Interest</label>
+                <input required minlength="30" name="name" ng-model="item.name">
+                <div ng-messages="resumeEducationInterestsFormItem.name.$error">
+                  <div ng-message="required">This is required.</div>
+                  <div ng-message="minlength">This item of interest should be more detailed and longer (at least 30 characters).</div>
+                </div>
+              </md-input-container>
+              <md-button ng-click="dc.removeEducationInterest(item)">
+                Delete
+              </md-button>
+            </ng-form>
+          </md-card-content>
         </md-card>
 
       </div>

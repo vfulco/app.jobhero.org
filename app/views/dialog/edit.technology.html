@@ -25,9 +25,10 @@
               <div layout="row" ng-repeat="technology in dc.resume.technology" >
                 <md-input-container flex="80">
                   <label>Knowledge</label>
-                  <input required name="name" ng-model="technology.name">
+                  <input required md-maxlength="30" name="name" ng-model="technology.name">
                   <div ng-messages="resumeTechnologyFormItem.name.$error">
                     <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">This should be shorter.</div>
                   </div>
                 </md-input-container>
                 <md-button ng-click="dc.removeTechnology(technology)">
