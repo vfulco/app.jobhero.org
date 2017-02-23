@@ -86,23 +86,24 @@
                 </div>
 
                 <span class="md-subhead">
-                  Highlights
-                  <p>
-                    Use measurable highlights if possible. Such as "Managed team of 14 developers".
+                  <h3>{{history.company}} Highlights</h3>
+                  <p class="md-caption">
+                    Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
                   </p>
                 </span>
-                <div layout="row" ng-repeat="highlight in history.highlights" >
+                <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
                   <md-input-container flex="80">
                     <label>Highlight</label>
-                    <input required name="highlight" ng-model="highlight.name">
-                    <div ng-messages="resumeHistoryFormItem.highlight.$error">
+                    <input required minlength="30" name="highlight" ng-model="highlight.name">
+                    <div ng-messages="resumeHistoryHighlightFormItem.highlight.$error">
                       <div ng-message="required">This is required.</div>
+                      <div ng-message="minlength">This highlight should be more detailed and longer (at least 30 characters).</div>
                     </div>
                   </md-input-container>
                   <md-button ng-click="dc.removeHistoryHighlight(history,highlight)">
                     Delete
                   </md-button>
-                </div>
+                </ng-form>
 
             </md-card-content>
           </ng-form>
