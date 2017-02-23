@@ -27,7 +27,7 @@
               <div layout="row"  ng-repeat="experience in dc.resume.experience">
                 <md-input-container flex="60">
                   <label>Experience</label>
-                  <input required md-maxlength="30" name="name" ng-model="experience.name">
+                  <input required md-maxlength="20" name="name" ng-model="experience.name">
                   <div ng-messages="resumeExperienceFormItem.name.$error">
                     <div ng-message="required">This is required.</div>
                     <div ng-message="md-maxlength">This should be shorter.</div>
