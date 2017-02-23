@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add specific techologies and specialties you are experienced with. Such as "Javascript" or "Microsoft Office".
+          Add 4-6 specific techologies and specialties you are experienced with. Such as "Javascript" or "Microsoft Office".
         </h4>
 
         <md-card md-theme="docs-dark">
@@ -45,8 +45,8 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="dc.newTechnology()" class="md-raised" ng-if="dc.resume.technology.length < 11 || !dc.resume.technolgoy">
-        Add Knowledge +
+      <md-button ng-click="dc.newTechnology()" class="md-raised" ng-disabled="dc.resume.technology.length >= 6">
+        Add Knowledge ({{dc.resume.technology.length}}/6)
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">

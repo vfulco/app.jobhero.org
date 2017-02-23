@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add your relevant experience in terms of years. Such as "project management" or "web development".
+          List 4-6 relevant experience items in terms of years. Such as "project management" or "web development".
         </h4>
 
 
@@ -45,8 +45,6 @@
                   Delete
                 </md-button>
               </div>
-
-
             </md-card-content>
           </ng-form>
         </md-card>
@@ -55,8 +53,8 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="dc.newExperience()" class="md-raised" ng-if="dc.resume.experience.length < 11 || !dc.resume.experience">
-        Add Experience +
+      <md-button ng-click="dc.newExperience()" class="md-raised" ng-disabled="dc.resume.experience.length >= 6">
+        Add Experience ({{dc.resume.experience.length}}/6)
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">

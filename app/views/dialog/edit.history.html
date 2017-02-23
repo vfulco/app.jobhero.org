@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add your top 3--4 relavent jobs and projects here. Make sure they are relavent to the job you are applying for.
+          Add your top 3-4 relavent jobs and projects here. Make sure they are relavent to the job you are applying for.
         </h4>
 
 
@@ -34,9 +34,10 @@
                 <div layout="row">
                   <md-input-container flex="50">
                     <label>Company Name</label>
-                    <input required name="company" ng-model="history.company">
+                    <input required md-maxlength="30" name="company" ng-model="history.company">
                     <div ng-messages="resumeHistoryFormItem.company.$error">
                       <div ng-message="required">This is required.</div>
+                      <div ng-message="md-maxlength">The company name must be shorter.</div>
                     </div>
                   </md-input-container>
                   <md-input-container flex="50">
@@ -88,7 +89,7 @@
                 <span class="md-subhead">
                   <h3>{{history.company}} Highlights</h3>
                   <p class="md-caption">
-                    Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
+                    Add 3-4 highlights. Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
                   </p>
                 </span>
                 <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
@@ -108,8 +109,8 @@
             </md-card-content>
           </ng-form>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="dc.newHistoryHighlight(history)">
-              Add highlight
+            <md-button ng-click="dc.newHistoryHighlight(history)" ng-disabled="history.highlights.length >= 4">
+              Add highlight ({{history.highlights.length}}/4)
             </md-button>
             <md-button ng-click="dc.removeHistory(history)">
               Delete history
@@ -120,8 +121,8 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="dc.newHistory()" class="md-raised" ng-if="dc.resume.history.length < 11 || !dc.resume.history">
-        Add Relavent History +
+      <md-button ng-click="dc.newHistory()" class="md-raised" ng-disabled="dc.resume.history.length >= 4">
+        Add Relavent History ({{dc.resume.history.length}}/4)
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">

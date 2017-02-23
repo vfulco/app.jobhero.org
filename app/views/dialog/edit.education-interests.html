@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add education and items of interest here. Such as apps your built, news articles, relavent interests, etc. Please be detailed.
+          Add 4-6 education and items of interest here. Such as apps your built, news articles, relavent interests, etc. Please be detailed.
         </h4>
 
         <md-card md-theme="docs-dark">
@@ -39,8 +39,8 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="dc.newEducationInterest()" class="md-raised" ng-if="dc.resume.educationinterests.length < 11 || !dc.resume.educationinterests">
-        Add Item of Interest +
+      <md-button ng-click="dc.newEducationInterest()" class="md-raised" ng-disabled="dc.resume.educationinterests.length >= 6">
+        Add Item of Interest ({{dc.resume.educationinterests.length}}/6)
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">

@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add detailed and relevant skills such as "Managing global development teams" or "Writing detailed technical documation".
+          Add 8-10 detailed and relevant skills such as "Managing global development teams" or "Writing detailed technical documation".
         </h4>
 
         <md-card md-theme="docs-dark">
@@ -42,8 +42,8 @@
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button ng-click="dc.newSkill()" class="md-raised" ng-if="dc.resume.skills.length < 11 || !dc.resume.skills">
-        Add Skill +
+      <md-button ng-click="dc.newSkill()" class="md-raised" ng-disabled="dc.resume.skills.length >= 10">
+        Add Skill ({{dc.resume.skills.length}}/10)
       </md-button>
       <span flex></span>
       <md-button ng-click="dc.cancel()" class="md-raised">
