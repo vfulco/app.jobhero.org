@@ -89,7 +89,7 @@
                 <span class="md-subhead">
                   <h3>{{history.company}} Highlights</h3>
                   <p class="md-caption">
-                    Add 3-4 highlights. Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
+                    Add 4-5 highlights. Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
                   </p>
                 </span>
                 <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
@@ -110,8 +110,8 @@
             </md-card-content>
           </ng-form>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="dc.newHistoryHighlight(history)" ng-disabled="history.highlights.length >= 4">
-              Add highlight ({{history.highlights.length}}/4)
+            <md-button ng-click="dc.newHistoryHighlight(history)" ng-disabled="history.highlights.length >= 5">
+              Add highlight ({{history.highlights.length}}/5)
             </md-button>
             <md-button ng-click="dc.removeHistory(history)">
               Delete history
