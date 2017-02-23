@@ -23,9 +23,10 @@
               <ng-form  name="resumeSkillsFormItem" layout="row" ng-repeat="skill in dc.resume.skills">
                 <md-input-container flex="80">
                   <label>Skill</label>
-                  <input required minlength="30" name="name" ng-model="skill.name">
+                  <input required md-maxlength="100" minlength="30" name="name" ng-model="skill.name">
                   <div ng-messages="resumeSkillsFormItem.name.$error">
                     <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">Make this a little shorter. Should be under 101 characters.</div>
                     <div ng-message="minlength">This skill should be more detailed and longer (at least 30 characters).</div>
                   </div>
                 </md-input-container>

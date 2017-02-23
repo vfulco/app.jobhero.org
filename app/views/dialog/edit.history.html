@@ -95,9 +95,10 @@
                 <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
                   <md-input-container flex="80">
                     <label>Highlight</label>
-                    <input required minlength="30" name="highlight" ng-model="highlight.name">
+                    <input required minlength="30" md-maxlength="100" name="highlight" ng-model="highlight.name">
                     <div ng-messages="resumeHistoryHighlightFormItem.highlight.$error">
                       <div ng-message="required">This is required.</div>
+                      <div ng-message="md-maxlength">Make this a little shorter. Should be under 101 characters.</div>
                       <div ng-message="minlength">This highlight should be more detailed and longer (at least 30 characters).</div>
                     </div>
                   </md-input-container>
