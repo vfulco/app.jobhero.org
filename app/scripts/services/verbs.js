@@ -12,7 +12,7 @@ angular.module('appredomaycomApp')
 		var pastTense = {
 			"data": [{
 					"id": 0,
-					"name": "Led a Project",
+					"name": "You Led a Project",
 					"verbs": [
 						"Chaired",
 						"Controlled",
@@ -31,7 +31,7 @@ angular.module('appredomaycomApp')
 				},
 				{
 					"id": 1,
-					"name": "Brought Life to a Project",
+					"name": "You Brought Life to a Project",
 					"verbs": [
 						"Administered",
 						"Built",
