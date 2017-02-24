@@ -5,7 +5,7 @@
         <h1>YOUR INFO</h1>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="dc.cancel()">
-          X
+          <span style="font-size:40px">&times;</span>
           <!-- <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon> -->
         </md-button>
       </div>
@@ -25,8 +25,9 @@
               <div layout="row">
                 <md-input-container flex="100">
                   <label>Full Name</label>
-                  <input required name="fullname" ng-model="dc.resume.info.fullname">
-                  <div ng-messages="resumeInfoForm.fullname.$error">
+                  <input required md-maxlength="26" name="fullname" ng-model="dc.resume.info.fullname">
+                  <div ng-messages="resumeExperienceFormItem.fullname.$error">
+                    <div ng-message="md-maxlength">Name needs to be shorter. Try removing middle name or using initials.</div>
                     <div ng-message="required">Your name is required.</div>
                   </div>
                 </md-input-container>
