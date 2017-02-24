@@ -20,6 +20,7 @@ angular.module('appredomaycomApp')
 		vm.resume = localStorageService.get('resume');
 
 
+
 		vm.print = function () {
 			window.print();
 		};

@@ -8,9 +8,26 @@
  * Controller of the appredomaycomApp
  */
 angular.module('appredomaycomApp')
-	.controller('DialogCtrl', function ($mdDialog, localStorageService, $location) {
+	.controller('DialogCtrl', function ($mdDialog, localStorageService, $location, verbs, $element) {
 
+		this.pastVerbs = verbs.pastTense.data.sort();
+		this.presentVerbs = verbs.presentTense.data.sort();
 		this.resume = localStorageService.get('resume');
+
+		this.searchTerm = '';
+		this.bannedCodes = [8, 9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 91, 92, , 106, 107, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 121, 123, 144, 145];
+		this.clearSearchTerm = function () {
+			this.searchTerm = '';
+		};
+
+		this.updateSearch = function (e) {
+			e.stopPropagation();
+			if (this.bannedCodes.indexOf(e.keyCode) < 0) {
+				if (e.keyCode == 8) {
+					this.formData.searchTerm = this.formData.searchTerm.substring(1, this.formData.searchTerm.length - 1);
+				}
+			}
+		};
 
 		this.saveResume = function (resume, hide) {
 			console.log(resume);

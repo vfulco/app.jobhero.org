@@ -93,13 +93,41 @@
                   </p>
                 </span>
                 <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
-                  <md-input-container flex="80">
+                  <!-- <md-input-container flex="20">
+                    <label>Verb</label>
+                    <md-select required ng-model="highlight.verb" name="verb">
+                      <md-optgroup label="Past tense verbs">
+                        <md-option ng-value="verb" ng-repeat="verb in dc.pastVerbs">{{verb}}</md-option>
+                      </md-optgroup>
+                    </md-select>
+                    <div class="errors" ng-messages="resumeHistoryHighlightFormItem.verb.$error">
+                      <div ng-message="required">Required</div>
+                    </div>
+                  </md-input-container> -->
+
+                  <md-input-container flex="25">
+                    <label>Verb</label>
+                    <md-select ng-model="highlight.verb" md-on-close="dc.clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" name="verb" required>
+                      <md-select-header class="demo-select-header">
+                        <input ng-model="dc.searchTerm" type="search" ng-keydown="dc.updateSearch($event)" placeholder="Search for a verb..." class="demo-header-searchbox md-text">
+                      </md-select-header>
+                      <md-optgroup label="Verb">
+                        <md-option ng-value="verb" ng-repeat="verb in dc.pastVerbs |
+                                           filter:dc.searchTerm">{{verb}}</md-option>
+                      </md-optgroup>
+                    </md-select>
+                    <div class="errors" ng-messages="resumeHistoryHighlightFormItem.verb.$error">
+                      <div ng-message="required">Required</div>
+                    </div>
+                  </md-input-container>
+
+                  <md-input-container flex="75">
                     <label>Highlight</label>
-                    <input required minlength="30" md-maxlength="100" name="highlight" ng-model="highlight.name">
+                    <input required minlength="20" md-maxlength="80" name="highlight" ng-model="highlight.name">
                     <div ng-messages="resumeHistoryHighlightFormItem.highlight.$error">
                       <div ng-message="required">This is required.</div>
-                      <div ng-message="md-maxlength">Make this a little shorter. Should be under 101 characters.</div>
-                      <div ng-message="minlength">This highlight should be more detailed and longer (at least 30 characters).</div>
+                      <div ng-message="md-maxlength">Make this a little shorter. Should be under 81 characters.</div>
+                      <div ng-message="minlength">This highlight should be more detailed and longer (at least 20 characters).</div>
                     </div>
                   </md-input-container>
                   <md-button ng-click="dc.removeHistoryHighlight(history,highlight)">

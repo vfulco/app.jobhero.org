@@ -21,13 +21,30 @@
 
             <md-card-content>
               <ng-form  name="resumeSkillsFormItem" layout="row" ng-repeat="skill in dc.resume.skills">
-                <md-input-container flex="80">
+
+                <md-input-container flex="25">
+                  <label>Verb</label>
+                  <md-select ng-model="skill.verb" name="verb" md-on-close="dc.clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" required>
+                    <md-select-header class="demo-select-header">
+                      <input ng-model="dc.searchTerm" type="search" ng-keydown="dc.updateSearch($event)" placeholder="Search for a verb..." class="demo-header-searchbox md-text">
+                    </md-select-header>
+                    <md-optgroup label="Verb">
+                      <md-option ng-value="verb" ng-repeat="verb in dc.presentVerbs |
+                                     filter:dc.searchTerm">{{verb}}</md-option>
+                    </md-optgroup>
+                  </md-select>
+                  <div class="errors" ng-messages="resumeSkillsFormItem.verb.$error">
+                    <div ng-message="required">Required</div>
+                  </div>
+                </md-input-container>
+
+                <md-input-container flex="75">
                   <label>Skill</label>
-                  <input required md-maxlength="100" minlength="30" name="name" ng-model="skill.name">
+                  <input required md-maxlength="80" minlength="20" name="name" ng-model="skill.name">
                   <div ng-messages="resumeSkillsFormItem.name.$error">
                     <div ng-message="required">This is required.</div>
-                    <div ng-message="md-maxlength">Make this a little shorter. Should be under 101 characters.</div>
-                    <div ng-message="minlength">This skill should be more detailed and longer (at least 30 characters).</div>
+                    <div ng-message="md-maxlength">Make this a little shorter. Should be under 81 characters.</div>
+                    <div ng-message="minlength">This skill should be more detailed and longer (at least 20 characters).</div>
                   </div>
                 </md-input-container>
                 <md-button ng-click="dc.removeSkill(skill)">
