@@ -111,10 +111,16 @@
                       <md-select-header class="demo-select-header">
                         <input ng-model="dc.searchTerm" type="search" ng-keydown="dc.updateSearch($event)" placeholder="Search for a verb..." class="demo-header-searchbox md-text">
                       </md-select-header>
-                      <md-optgroup label="Verb">
+
+                          <md-optgroup label="{{verbGroup.name}}" ng-repeat="verbGroup in dc.pastVerbs">
+                              <md-option ng-value="verb" ng-repeat="verb in verbGroup.verbs | filter:dc.searchTerm">{{verb}}</md-option>
+                          </md-optgroup>
+
+
+                      <!-- <md-optgroup label="Verb">
                         <md-option ng-value="verb" ng-repeat="verb in dc.pastVerbs |
                                            filter:dc.searchTerm">{{verb}}</md-option>
-                      </md-optgroup>
+                      </md-optgroup> -->
                     </md-select>
                     <div class="errors" ng-messages="resumeHistoryHighlightFormItem.verb.$error">
                       <div ng-message="required">Required</div>

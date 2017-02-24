@@ -58,11 +58,11 @@ angular
 					}
 				}
 			})
-			.state('main.info', {
-				url: 'info',
+			.state('main.json', {
+				url: 'json',
 				views: {
 					'content@main': {
-						templateUrl: 'views/main.info.html',
+						templateUrl: 'views/main.json.html',
 						controller: 'ResumeCtrl as rc'
 					}
 				}
