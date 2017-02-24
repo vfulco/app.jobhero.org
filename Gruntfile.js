@@ -147,17 +147,6 @@ module.exports = function (grunt) {
 				src: "**"
 			}
 		},
-		appcache: {
-			options: {
-				basePath: 'dist'
-			},
-			all: {
-				dest: 'dist/manifest.appcache',
-				//cache: 'dist/**/*',
-				network: '*',
-				fallback: 'dist/404.html'
-			}
-		},
 		removelogging: {
 			dist: {
 				src: ".tmp/concat/scripts/*.js" // Each file will be overwritten with the output!

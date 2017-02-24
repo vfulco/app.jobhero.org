@@ -19,7 +19,7 @@ angular.module('appredomaycomApp')
 						"Executed",
 						"Headed",
 						"Operated",
-						"Orchestated",
+						"Orchestrated",
 						"Organized",
 						"Oversaw",
 						"Planned",
