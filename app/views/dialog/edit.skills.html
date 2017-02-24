@@ -14,7 +14,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <h4>
-          Add 8-10 detailed and relevant skills such as "Managing global development teams" or "Writing detailed technical documation".
+          Add 8-10 detailed and relevant skills such as "Managing global development teams" or "Writing detailed technical documation". Pick a verb and then add the skill description.
         </h4>
 
         <md-card md-theme="docs-dark">
@@ -33,7 +33,6 @@
                           <md-option ng-value="verb" ng-repeat="verb in verbGroup.verbs | filter:dc.searchTerm">{{verb}}</md-option>
                       </md-optgroup>
 
-
                   </md-select>
                   <div class="errors" ng-messages="resumeSkillsFormItem.verb.$error">
                     <div ng-message="required">Required</div>
@@ -41,7 +40,7 @@
                 </md-input-container>
 
                 <md-input-container flex="75">
-                  <label>Skill</label>
+                  <label>Skill description</label>
                   <input required md-maxlength="80" minlength="20" name="name" ng-model="skill.name">
                   <div ng-messages="resumeSkillsFormItem.name.$error">
                     <div ng-message="required">This is required.</div>

@@ -25,7 +25,8 @@ angular.module('appredomaycomApp')
 						"Planned",
 						"Programmed",
 						"Commissioned",
-						"Collaborated"
+						"Collaborated",
+						"Managed"
 					]
 				},
 				{
@@ -281,7 +282,8 @@ angular.module('appredomaycomApp')
 					"Developing",
 					"Advising",
 					"Creating",
-					"Building"
+					"Building",
+					"Implementing"
 				]
 			}]
 		};
