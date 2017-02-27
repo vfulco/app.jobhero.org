@@ -114,7 +114,7 @@
                   </md-button>
                 </div>
               </div>
-              <div class="rb-zerostate" ng-if="rc.resume.educationinterests.length < 1 || !rc.educationinterests.skills">
+              <div class="rb-zerostate" ng-if="rc.resume.educationinterests.length < 1 || !rc.resume.educationinterests">
                 <h3>You need to add items of interest to your resume</h3>
                 <md-button  class="md-raised md-primary" ng-click="rc.editResumeEducationInterests($event)">
                   Add Items of Interests
@@ -148,7 +148,7 @@
           </md-button>
         </div>
       </h1>
-      <div class="rb-zerostate" ng-if="rc.resume.history.length < 1 || !rc.history.skills">
+      <div class="rb-zerostate" ng-if="rc.resume.history.length < 1 || !rc.resume.history">
         <h3>You need to add history to your resume</h3>
         <md-button  class="md-raised md-primary" ng-click="rc.editResumeHistory($event)">
           Add History
