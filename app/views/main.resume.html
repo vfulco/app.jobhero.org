@@ -41,6 +41,12 @@
                   </md-button>
                 </div>
               </div>
+              <div class="rb-zerostate" ng-if="rc.resume.technology.length < 1 || !rc.resume.technology">
+                <h3>you need to add knowledge to your resume</h3>
+                <md-button  class="md-raised md-primary" ng-click="rc.editResumeTechnology($event)">
+                  Add Knowledge
+                </md-button>
+              </div>
               <ul class="rb-block-list rb-technology-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.technology">
                   {{ item.name }}
@@ -57,6 +63,12 @@
                     (EDIT)
                   </md-button>
                 </div>
+              </div>
+              <div class="rb-zerostate" ng-if="rc.resume.experience.length < 1 || !rc.resume.experience">
+                <h3>You need to add experience to your resume</h3>
+                <md-button  class="md-raised md-primary" ng-click="rc.editResumeExperience($event)">
+                  Add Experience
+                </md-button>
               </div>
               <ul class="rb-block-list rb-experience-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.experience">
@@ -77,6 +89,12 @@
                   </md-button>
                 </div>
               </div>
+              <div class="rb-zerostate" ng-if="rc.resume.skills.length < 1 || !rc.resume.skills">
+                <h3>You need to add skills to your resume</h3>
+                <md-button  class="md-raised md-primary" ng-click="rc.editResumeSkills($event)">
+                  Add Skills
+                </md-button>
+              </div>
               <ul class="rb-block-list rb-skills-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.skills">
                   {{ item.verb }} {{ item.name }}
@@ -95,6 +113,12 @@
                     (EDIT)
                   </md-button>
                 </div>
+              </div>
+              <div class="rb-zerostate" ng-if="rc.resume.educationinterests.length < 1 || !rc.educationinterests.skills">
+                <h3>You need to add items of interest to your resume</h3>
+                <md-button  class="md-raised md-primary" ng-click="rc.editResumeEducationInterests($event)">
+                  Add Items of Interests
+                </md-button>
               </div>
               <ul class="rb-block-list rb-skills-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.educationinterests">
@@ -124,6 +148,12 @@
           </md-button>
         </div>
       </h1>
+      <div class="rb-zerostate" ng-if="rc.resume.history.length < 1 || !rc.history.skills">
+        <h3>You need to add history to your resume</h3>
+        <md-button  class="md-raised md-primary" ng-click="rc.editResumeHistory($event)">
+          Add History
+        </md-button>
+      </div>
 
       <div class="rb-block" ng-repeat="item in rc.resume.history"  ng-if="item.company">
         <div class="rb-block-title">
