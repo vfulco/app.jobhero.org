@@ -19,7 +19,7 @@ angular.module('appredomaycomApp')
 		ad.resume.technology = [];
 		ad.resumeId = $stateParams.id;
 		// this.resume = localStorageService.get('resume');
-
+    ad.loading = true;
 
 		ad.updateApiResume = function (resume) {
 			delete resume._id;
@@ -35,6 +35,7 @@ angular.module('appredomaycomApp')
 			api.getResume(id)
 				.then(function (response) {
 					ad.resume = response.data.data[0];
+          ad.loading = false;
 					if (!ad.resume.info) {
 						ad.editResumeInfo();
 					}
