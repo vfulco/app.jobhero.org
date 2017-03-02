@@ -54,7 +54,7 @@ angular
 					},
 					'content@main': {
 						templateUrl: 'views/main.resume.html',
-						controller: 'ResumeCtrl as rc'
+						controller: 'LocalCtrl as rc'
 					}
 				}
 			})
@@ -63,6 +63,15 @@ angular
 				views: {
 					'content@main': {
 						templateUrl: 'views/main.json.html',
+						controller: 'ResumeCtrl as rc'
+					}
+				}
+			})
+			.state('main.resume', {
+				url: 'resume/:id',
+				views: {
+					'content@main': {
+						templateUrl: 'views/main.resume.html',
 						controller: 'ResumeCtrl as rc'
 					}
 				}

@@ -284,7 +284,7 @@ angular.module('appredomaycomApp')
 					"Creating",
 					"Building",
 					"Implementing",
-          "Discovering"
+					"Discovering"
 				]
 			}]
 		};
