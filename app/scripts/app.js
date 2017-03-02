@@ -63,7 +63,7 @@ angular
 				views: {
 					'content@main': {
 						templateUrl: 'views/main.json.html',
-						controller: 'ResumeCtrl as rc'
+						controller: 'LocalCtrl as rc'
 					}
 				}
 			})

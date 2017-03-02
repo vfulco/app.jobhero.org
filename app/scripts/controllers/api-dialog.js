@@ -22,7 +22,6 @@ angular.module('appredomaycomApp')
 
 
 		ad.updateApiResume = function (resume) {
-			console.log(ad.resumeId, resume);
 			delete resume._id;
 			api.updateResume(ad.resumeId, resume)
 				.then(function (response) {

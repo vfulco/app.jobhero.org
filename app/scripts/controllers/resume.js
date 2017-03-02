@@ -101,7 +101,7 @@ angular.module('appredomaycomApp')
 				})
 				.then(function (resume) {
 					console.log('resume experience updated', resume);
-					vm.updateApiResume(vm.resumeId, resume);
+					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
 				});
@@ -116,9 +116,8 @@ angular.module('appredomaycomApp')
 					clickOutsideToClose: true,
 					fullscreen: vm.customFullscreen // Only for -xs, -sm breakpoints.
 				})
-				.then(function (resumeId, resume) {
-					console.log('resume experience updated', resumeId, resume);
-					vm.updateApiResume(resumeId, resume);
+				.then(function (resume) {
+					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
 				});
@@ -135,7 +134,7 @@ angular.module('appredomaycomApp')
 				})
 				.then(function (resume) {
 					console.log('resume skills updated');
-					vm.updateApiResume(vm.resumeId, resume);
+					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
 				});
@@ -152,7 +151,7 @@ angular.module('appredomaycomApp')
 				})
 				.then(function (resume) {
 					console.log('resume education and interests updated');
-					vm.updateApiResume(vm.resumeId, resume);
+					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
 				});
@@ -169,7 +168,7 @@ angular.module('appredomaycomApp')
 				})
 				.then(function (resume) {
 					console.log('resume history updated');
-					vm.updateApiResume(vm.resumeId, resume);
+					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
 				});
