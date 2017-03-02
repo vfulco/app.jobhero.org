@@ -19,8 +19,9 @@ angular.module('appredomaycomApp')
 			return $http.post(urlBase + '/resume', resume);
 		};
 
-		this.updateResume = function (resume) {
-			return $http.put(urlBase + '/' + resume.id, resume);
+		this.updateResume = function (resumeId, resume) {
+			console.log('api.updateResume', resumeId, resume);
+			return $http.put(urlBase + '/resume/' + resumeId, resume);
 		};
 
 	});
