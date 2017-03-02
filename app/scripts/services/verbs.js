@@ -283,7 +283,8 @@ angular.module('appredomaycomApp')
 					"Advising",
 					"Creating",
 					"Building",
-					"Implementing"
+					"Implementing",
+          "Discovering"
 				]
 			}]
 		};
