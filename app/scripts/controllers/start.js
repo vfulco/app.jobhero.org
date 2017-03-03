@@ -8,11 +8,16 @@
  * Controller of the appredomaycomApp
  */
 angular.module('appredomaycomApp')
-  .controller('StartCtrl', function ($state,api) {
+  .controller('StartCtrl', function ($state,$document,api) {
     console.log('start controller!');
     var vm = this;
+    $document[0].title = 'Create better resumes';
+    vm.buttonContent = 'Build a better resume';
+    vm.loading = false;
 
     vm.createApiResume = function (resume) {
+      vm.loading = true;
+      vm.buttonContent = 'Starting resume builder...';
 			api.postResume(resume)
 				.then(function (response) {
 					// $stateParams.id = response.message._id;
