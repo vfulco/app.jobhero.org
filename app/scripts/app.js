@@ -53,8 +53,8 @@ angular
 						templateUrl: 'views/main.html'
 					},
 					'content@main': {
-						templateUrl: 'views/main.resume.html',
-						controller: 'LocalCtrl as rc'
+						templateUrl: 'views/main.start.html',
+						controller: 'StartCtrl as sc'
 					}
 				}
 			})

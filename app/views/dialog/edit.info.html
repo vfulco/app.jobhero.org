@@ -32,14 +32,14 @@
 
         <md-card md-theme="docs-dark" ng-if="dc.loading === false">
 
-          <ng-form name="resumeExperienceFormItem">
+          <ng-form name="resumeInfoFormInputs">
             <md-card-content>
 
               <div layout="row">
                 <md-input-container flex="100">
                   <label>Full Name</label>
                   <input required md-maxlength="26" name="fullname" ng-model="dc.resume.info.fullname">
-                  <div ng-messages="resumeExperienceFormItem.fullname.$error">
+                  <div ng-messages="resumeInfoFormInputs.fullname.$error">
                     <div ng-message="md-maxlength">Name needs to be shorter. Try removing middle name or using initials.</div>
                     <div ng-message="required">Your name is required.</div>
                   </div>
@@ -49,7 +49,7 @@
                 <md-input-container flex="100">
                   <label>Email Address</label>
                   <input required type="email" name="email" ng-model="dc.resume.info.email" minlength="10" maxlength="100" />
-                  <div ng-messages="resumeInfoForm.email.$error" role="alert">
+                  <div ng-messages="resumeInfoFormInputs.email.$error" role="alert">
                     <div ng-message-exp="['required', 'minlength', 'maxlength']">
                       Your email must be between 10 and 100 characters long and look like an e-mail address.
                     </div>

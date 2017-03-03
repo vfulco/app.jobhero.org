@@ -43,7 +43,7 @@ angular.module('appredomaycomApp')
 				}, function (error) {
 					console.log('createResume error: ', error);
 				})
-		}
+		};
 
 		vm.updateApiResume = function (resume) {
 			if (resume._id) {
@@ -58,7 +58,6 @@ angular.module('appredomaycomApp')
 			} else {
 				vm.createResume(resume);
 			}
-
 		};
 
 		vm.getApiResume = function (id) {
@@ -71,6 +70,9 @@ angular.module('appredomaycomApp')
 					}
 				}, function (error) {
 					console.log('error: ', error);
+					if (error.status === 404) {
+						$state.go('main');
+					}
 				});
 		};
 
@@ -91,12 +93,6 @@ angular.module('appredomaycomApp')
 					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
-					if (vm.resumeId) {
-						// vm.getApiResume(vm.resumeId);
-					} else {
-						vm.editResumeInfo();
-						console.log('no resume id');
-					}
 				});
 		};
 
@@ -183,11 +179,10 @@ angular.module('appredomaycomApp')
 					console.log('you canceled the dialog!');
 				});
 		};
-
 		if (vm.resumeId) {
 			vm.getApiResume(vm.resumeId);
 		} else {
-			vm.editResumeInfo();
+			$state.go('main');
 			console.log('no resume id');
 		}
 	});
