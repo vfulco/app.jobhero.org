@@ -2,6 +2,7 @@
   <div flex>
   </div>
   <div flex>
+
     <form name="resumeInfoForm" ng-submit="sc.createResume(sc.resume)" class="rb-start-form-container">
       <h4>This info will be visible at the top of your resume so use a professional email address.</h4>
       <div layout="row">
@@ -28,7 +29,7 @@
       <div layout="row">
         <div flex>
         </div>
-        <md-button flex="60" class="md-raised md-primary" type="submit" ng-disabled="!sc.resume.info.fullname || !sc.resume.info.email || sc.loading === true">{{sc.buttonContent}}</md-button>
+        <md-button class="md-raised md-primary" type="submit" ng-disabled="!sc.resume.info.fullname || !sc.resume.info.email || sc.loading === true">{{sc.buttonContent}}</md-button>
         <div flex>
         </div>
       </div>
