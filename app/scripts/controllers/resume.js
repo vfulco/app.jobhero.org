@@ -19,32 +19,18 @@ angular.module('appredomaycomApp')
 		vm.resume.experience = [];
 		vm.resume.technology = [];
 
-		vm.print = function () {
+		vm.title = function () {
 			var name = vm.resume.info.fullname || 'your_resume';
 			var lowerName = name.toLowerCase();
 			var underName = lowerName.replace(' ', '_');
-			$document[0].title = underName + '_resume_' + new Date().getFullYear();
-			window.print();
+			var fileName = underName + '_resume_' + new Date().getFullYear();
+			return fileName;
 		};
 
-		// vm.getLocalResume = function () {
-		// 	if ($location.search().resume) {
-		// 		var urlResume = $location.search().resume;
-		// 		var urlResumeParsed = JSON.parse(decodeURIComponent(urlResume));
-		// 		localStorageService.set('resume', urlResumeParsed);
-		// 		vm.resume = localStorageService.get('resume');
-		// 	} else {
-		// 		vm.resume = localStorageService.get('resume');
-		// 	}
-		// 	if (vm.resume && vm.resume.info) {
-		// 		var name = vm.resume.info.fullname || 'your_resume';
-		// 		var lowerName = name.toLowerCase();
-		// 		var underName = lowerName.replace(' ', '_');
-		// 		$document[0].title = underName + '_resume_' + new Date().getFullYear();
-		// 	}
-		// };
-		// vm.getLocalResume();
-
+		vm.print = function () {
+			$document[0].title = vm.title();
+			window.print();
+		};
 
 		vm.createResume = function (resume) {
 			api.postResume(resume)
@@ -79,6 +65,7 @@ angular.module('appredomaycomApp')
 			api.getResume(id)
 				.then(function (response) {
 					vm.resume = response.data.data[0];
+					$document[0].title = vm.title();
 					if (!vm.resume.info) {
 						vm.editResumeInfo();
 					}
@@ -104,6 +91,12 @@ angular.module('appredomaycomApp')
 					vm.updateApiResume(resume);
 				}, function () {
 					console.log('you canceled the dialog!');
+					if (vm.resumeId) {
+						// vm.getApiResume(vm.resumeId);
+					} else {
+						vm.editResumeInfo();
+						console.log('no resume id');
+					}
 				});
 		};
 
