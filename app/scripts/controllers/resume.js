@@ -20,7 +20,7 @@ angular.module('appredomaycomApp')
 		vm.resume.technology = [];
 
 		vm.print = function () {
-      var name = vm.resume.info.fullname || 'your_resume';
+			var name = vm.resume.info.fullname || 'your_resume';
 			var lowerName = name.toLowerCase();
 			var underName = lowerName.replace(' ', '_');
 			$document[0].title = underName + '_resume_' + new Date().getFullYear();
@@ -46,17 +46,33 @@ angular.module('appredomaycomApp')
 		// vm.getLocalResume();
 
 
-
+		vm.createResume = function (resume) {
+			api.postResume(resume)
+				.then(function (response) {
+					// $stateParams.id = response.message._id;
+					console.log('createResume response: ', response.data.message._id);
+					$state.go('main.resume', {
+						id: response.data.message._id
+					})
+				}, function (error) {
+					console.log('createResume error: ', error);
+				})
+		}
 
 		vm.updateApiResume = function (resume) {
-			console.log(vm.resumeId, resume);
-			delete resume._id;
-			api.updateResume(vm.resumeId, resume)
-				.then(function (response) {
-					vm.getApiResume(vm.resumeId);
-				}, function (error) {
-					console.log('error: ', error);
-				});
+			if (resume._id) {
+				console.log(vm.resumeId, resume);
+				delete resume._id;
+				api.updateResume(vm.resumeId, resume)
+					.then(function (response) {
+						vm.getApiResume(vm.resumeId);
+					}, function (error) {
+						console.log('error: ', error);
+					});
+			} else {
+				vm.createResume(resume);
+			}
+
 		};
 
 		vm.getApiResume = function (id) {
@@ -70,7 +86,7 @@ angular.module('appredomaycomApp')
 					console.log('error: ', error);
 				});
 		};
-		vm.getApiResume(vm.resumeId);
+
 
 
 
@@ -175,4 +191,10 @@ angular.module('appredomaycomApp')
 				});
 		};
 
+		if (vm.resumeId) {
+			vm.getApiResume(vm.resumeId);
+		} else {
+			vm.editResumeInfo();
+			console.log('no resume id');
+		}
 	});

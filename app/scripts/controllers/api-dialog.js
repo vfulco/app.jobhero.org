@@ -18,8 +18,7 @@ angular.module('appredomaycomApp')
 		ad.resume.experience = [];
 		ad.resume.technology = [];
 		ad.resumeId = $stateParams.id;
-		// this.resume = localStorageService.get('resume');
-    ad.loading = true;
+		ad.loading = true;
 
 		ad.updateApiResume = function (resume) {
 			delete resume._id;
@@ -35,7 +34,7 @@ angular.module('appredomaycomApp')
 			api.getResume(id)
 				.then(function (response) {
 					ad.resume = response.data.data[0];
-          ad.loading = false;
+					ad.loading = false;
 					if (!ad.resume.info) {
 						ad.editResumeInfo();
 					}
@@ -43,8 +42,22 @@ angular.module('appredomaycomApp')
 					console.log('error: ', error);
 				});
 		};
-		ad.getApiResume(ad.resumeId);
 
+		if (ad.resumeId) {
+			ad.getApiResume(ad.resumeId);
+		} else {
+			console.log('no resume id');
+			ad.loading = false;
+		}
+
+		ad.saveResume = function (resume, hide) {
+			console.log(ad.resumeId, resume);
+			if (hide === true) {
+				$mdDialog.hide(resume);
+			} else {
+				ad.updateApiResume(resume);
+			}
+		};
 
 		ad.searchTerm = '';
 		ad.bannedCodes = [8, 9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 91, 92, , 106, 107, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 121, 123, 144, 145];
@@ -61,14 +74,6 @@ angular.module('appredomaycomApp')
 			}
 		};
 
-		ad.saveResume = function (resume, hide) {
-			console.log(ad.resumeId, resume);
-			if (hide === true) {
-				$mdDialog.hide(resume);
-			} else {
-				ad.updateApiResume(resume);
-			}
-		};
 
 		ad.newExperience = function () {
 			if (ad.resume.experience) {
