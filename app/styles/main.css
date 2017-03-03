@@ -297,13 +297,15 @@ body{
 /*start view*/
 .rb-start-container{
   height:100vh;
-  background-image:url('../images/write-resume-md.png');
-  background-size:cover;
+  /*background-image:url('../images/write-resume-md.png');*/
+  /*background-size:cover;
   background-repeat:no-repeat;
-  background-position:center center;
+  background-position:center center;*/
+  background-color:#666;
 }
 .rb-start-form-container{
   background-color:rgba(255,255,255,0.8);
+  background-color:#fff;
   padding:40px;
   border-radius:10px;
 }
