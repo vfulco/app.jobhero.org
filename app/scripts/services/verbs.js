@@ -46,7 +46,7 @@ angular.module('appredomaycomApp')
 						"Formalized",
 						"Formed",
 						"Formulated",
-						"Implimented",
+						"Implemented",
 						"Incorporated",
 						"Initiated",
 						"Instituted",
