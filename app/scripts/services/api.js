@@ -9,7 +9,7 @@
  */
 angular.module('appredomaycomApp')
 	.service('api', function ($http) {
-		var urlBase = 'https://peaceful-reaches-46993.herokuapp.com/api';
+		var urlBase = 'https://api.kristoffersen.io/api';
 
 		this.getResume = function (id) {
 			return $http.get(urlBase + '/resume/' + id);
