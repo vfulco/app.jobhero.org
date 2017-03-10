@@ -1,0 +1,111 @@
+
+.jh-t1-section-title{
+  font-weight: 300;
+  text-align: center;
+  padding-bottom:0.5in;
+}
+.jh-t1-section-edit-button{
+  display: block;
+  float: right;
+  margin-top: -0.36in;
+  margin-right: -0.1in;
+}
+.jh-t1-section-edit-button>.md-button{
+  min-width: 0;
+}
+.jh-t1-section-edit-button:hover{
+  font-weight: 700;
+}
+@media print {
+  .jh-t1-section-edit-button{
+    display:none;
+  }
+}
+
+.jh-t1-header-p1{
+  width:100%;
+  text-align: center;
+  font-weight: 700;
+  padding-top:0.2in;
+}
+.jh-t1-fullname{
+  font-size:0.5in;
+  font-weight: 700;
+}
+.jh-t1-job-title{
+  font-size:0.2in;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.jh-t1-contact{
+  font-size:0.15in;
+  font-weight: 400;
+}
+.jh-t1-qualifications{
+  padding:0.5in;
+  padding-bottom:0;
+}
+.jh-t1-block{
+  width:3.3in;
+  margin-right: 0.8in;
+}
+.jh-t1-block-title{
+  background-color:#444;
+  font-weight: 700;
+  padding:0.14in;
+  color:#ffffff;
+  margin-bottom:0.1in;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+.jh-t1-block-title>h3{
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+@media print{
+  .jh-t1-block-title>h3{
+    color:#ffffff;
+    color: rgb(255, 255, 255);
+  }
+}
+.jh-t1-block-list{
+  font-weight: 300;
+  margin:0;
+  /*margin-top:0.1in;*/
+  padding-left:0.4in;
+  margin-bottom:0.4in;
+  font-size:0.16in;
+}
+.jh-t1-block-list>li{
+}
+.jh-t1-skills-list{
+  white-space: nowrap;
+}
+.jh-t1-header-p2{
+  width:100%;
+  text-align: center;
+  font-weight: 700;
+  padding-top:0.2in;
+}
+.jh-t1-fullname-email{
+  font-size:0.18in;
+}
+.jh-t1-history{
+  padding:0.5in;
+  padding-top:0.5in;
+  padding-bottom:0;
+}
+.jh-t1-history-subtitle{
+  font-size:0.12in;
+  font-weight: 300;
+  padding-left:0.18in;
+  margin-bottom:0.1in;
+  white-space: nowrap;
+}
+.jh-t1-history-highlight-title{
+  font-weight: 700;
+  font-size:0.14in;
+  padding-left:0.18in;
+}
