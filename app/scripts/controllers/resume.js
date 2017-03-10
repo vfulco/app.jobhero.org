@@ -19,6 +19,27 @@ angular.module('appredomaycomApp')
 		vm.resume.experience = [];
 		vm.resume.technology = [];
 
+		vm.currentTemplate = {
+			name: 'Clean',
+			url: 'views/template/t1.html'
+		};
+		vm.templates = [{
+				name: 'Clean',
+				url: 'views/template/t1.html',
+				id: 1
+			},
+			{
+				name: 'Modern',
+				url: 'views/template/t2.html',
+				id: 2
+			}
+		];
+		vm.announceClick = function (templateObject) {
+			console.log(templateObject);
+			vm.currentTemplate = templateObject;
+		};
+
+
 		vm.title = function () {
 			var name = vm.resume.info.fullname || 'your_resume';
 			var lowerName = name.toLowerCase();

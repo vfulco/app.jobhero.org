@@ -169,8 +169,13 @@ body{
   font-size:0.5in;
   font-weight: 700;
 }
-.jh-contact{
+.jh-job-title{
   font-size:0.2in;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.jh-contact{
+  font-size:0.15in;
   font-weight: 400;
 }
 .jh-qualifications{

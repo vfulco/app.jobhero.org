@@ -65,6 +65,14 @@
                   </div>
                 </md-input-container>
               </div>
+              <div layout="row">
+                <md-input-container flex="100">
+                  <label>Job Title</label>
+                  <input name="title" ng-model="dc.resume.info.title"/>
+                  <div ng-messages="resumeInfoForm.title.$error" role="alert">
+                  </div>
+                </md-input-container>
+              </div>
 
             </md-card-content>
           </ng-form>
