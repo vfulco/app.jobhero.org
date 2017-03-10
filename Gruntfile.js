@@ -511,7 +511,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('deploy', [
 		'newer:jshint',
 		'build',
-		'appcache',
 		's3'
 	]);
 	grunt.registerTask('default', [

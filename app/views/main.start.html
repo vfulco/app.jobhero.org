@@ -1,9 +1,31 @@
-<md-content layout="row" layout-xs="column"  layout-align="center center" class="rb-start-container">
+<md-toolbar class="jh-fixed-toolback jh-noprint jh-toolbar">
+  <div class="md-toolbar-tools">
+    <div class="jh-table">
+      <div class="jh-row">
+        <div class="jh-cell jh-cell-middle">
+          <div class="jh-toolbar-logo">
+          </div>
+        </div>
+        <div class="jh-cell jh-cell-middle">
+          <h3 class="jh-name">JobHero</h3>
+        </div>
+      </div>
+    </div>
+    <!-- <h3>
+      <span>Resume Builder [beta]</span>
+    </h3> -->
+    <span flex></span>
+    <md-button class="md-raised" ng-click="rc.print()" aria-label="Print">
+      PRINT
+    </md-button>
+  </div>
+</md-toolbar>
+<md-content layout="row" layout-xs="column"  layout-align="center center" class="jh-start-container">
   <div flex>
   </div>
   <div flex>
 
-    <form name="resumeInfoForm" ng-submit="sc.createResume(sc.resume)" class="rb-start-form-container">
+    <form name="resumeInfoForm" ng-submit="sc.createResume(sc.resume)" class="jh-start-form-container">
       <h4>This info will be visible at the top of your resume so use a professional email address.</h4>
       <div layout="row">
         <md-input-container flex="100">
