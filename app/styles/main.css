@@ -1,4 +1,6 @@
 /*https://coolors.co/ff5e5b-423e37-ffffea-2e5266-ffed66*/
+
+/*branding*/
 .jh-toolbar-logo{
   background-image:url('../images/job-hero-logov1.svg');
   background-size:contain;
@@ -7,14 +9,36 @@
   width:60px;
   background-position: center center;
 }
-.jh-toolbar{
+.jh-toolbar-white{
   background-color:#fff !important;
+}
+.jh-toolbar-blue{
+  background-color:#2E5266 !important;
 }
 .jh-name{
   color:#2E5266;
   font-family: 'Rubik Mono One', sans-serif;
   font-size: 26px!important;
 }
+.md-input-focused label{
+  color:#2E5266 !important;
+}
+.md-input-focused .md-input{
+  border-color:#2E5266 !important;
+}
+.md-input-invalid .md-input{
+  border-color: rgb(221,44,0) !important;
+}
+.md-input-invalid label{
+  color: rgb(221,44,0) !important;
+}
+.md-button.md-primary{
+  background-color:#2E5266 !important;
+}
+md-dialog{
+  width:600px;
+}
+
 .jh-dialog{
   max-width:700px;
 }
