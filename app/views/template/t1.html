@@ -8,10 +8,9 @@
         {{ rc.resume.info.title }}
       </h3>
       <h4 class="jh-t1-contact">
-        <p>{{ rc.resume.info.email }}</p>
-        <p>{{ rc.resume.info.phone }}</p>
+        <p>{{ rc.resume.info.email }} <span ng-if="rc.resume.info.phone">| {{ rc.resume.info.phone }}</span></p>
       </h4>
-      <div class="jh-t1-noprint">
+      <div class="jh-noprint">
         <md-button ng-click="rc.editResumeInfo($event)">
           (EDIT)
         </md-button>
@@ -134,7 +133,7 @@
     <section class="jh-t1-history">
       <h1 class="jh-t1-section-title">
         SELECT HISTORY
-        <div class="jh-t1-noprint">
+        <div class="jh-noprint">
           <md-button ng-click="rc.editResumeHistory($event)">
             (EDIT)
           </md-button>
