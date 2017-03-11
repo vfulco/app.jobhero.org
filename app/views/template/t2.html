@@ -50,9 +50,64 @@
             <div class="jh-t2-block">
               <h1>
                 SELECT HISTORY
+                <div class="jh-t2-section-edit-button">
+                  <md-button ng-click="rc.editResumeHistory($event)">
+                    (EDIT)
+                  </md-button>
+                </div>
               </h1>
+              <div class="jh-t2-history-block" ng-repeat="item in rc.resume.history">
+                <h4>
+                  {{item.position}}
+                  <span style="float:right">
+                    ( {{ item.startDate}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
+                  </span>
+                </h4>
+                <p>
+                   {{ item.company }} | {{ item.location }}
+                </p>
+                <h4 class="jh-t2-history-highlight-title">
+                  Accomplishments:
+                </h4>
+                <ul class="jh-t2-block-list jh-t2-skills-list">
+                  <li ng-repeat="item in item.highlights" ng-if="item.name">
+                    {{ item.verb }} {{ item.name }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+
+
+<!--
+
+          <div class="jh-t1-block" ng-repeat="item in rc.resume.history"  ng-if="item.company">
+            <div class="jh-t1-block-title">
+              <h3>{{ item.company }}</h3>
+              <div class="jh-t1-section-edit-button"  >
+                <md-button ng-click="rc.editResumeHistory($event)">
+                  (EDIT)
+                </md-button>
+              </div>
+            </div>
+            <p class="jh-t1-history-subtitle">
+              {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
+            </p>
+            <h4 class="jh-t1-history-highlight-title">
+              Accomplishments:
+            </h4>
+            <ul class="jh-t1-block-list jh-t1-skills-list">
+              <li ng-repeat="item in item.highlights" ng-if="item.name">
+                {{ item.verb }} {{ item.name }}
+              </li>
+            </ul>
+          </div>
+ -->
+
+
+
+
+
           <div class="jh-cell jh-t2-narrow-cell">
             <div class="jh-t2-block">
               <h1>EXPERIENCE</h1>

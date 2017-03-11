@@ -148,7 +148,7 @@
 
       <div class="jh-t1-block" ng-repeat="item in rc.resume.history"  ng-if="item.company">
         <div class="jh-t1-block-title">
-          <h3>{{ item.company }}</h3>
+          <h3>{{ item.position }}</h3>
           <div class="jh-t1-section-edit-button"  >
             <md-button ng-click="rc.editResumeHistory($event)">
               (EDIT)
@@ -156,7 +156,7 @@
           </div>
         </div>
         <p class="jh-t1-history-subtitle">
-          {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
+          {{ item.company }} | {{ item.location }} <wbr />( {{ item.startDate}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
         </p>
         <h4 class="jh-t1-history-highlight-title">
           Accomplishments:
