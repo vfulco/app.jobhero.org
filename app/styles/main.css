@@ -38,7 +38,18 @@
 md-dialog{
   width:600px;
 }
-
+.jh-align-right{
+  text-align: right;
+}
+.jh-align-left{
+  text-align: left;
+}
+.jh-align-center{
+  text-align: center;
+}
+.jh-width-100{
+  width:100%;
+}
 .jh-dialog{
   max-width:700px;
 }

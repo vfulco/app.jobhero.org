@@ -20,11 +20,12 @@ angular.module('appredomaycomApp')
 		vm.resume.technology = [];
 
 		vm.currentTemplate = {
-			name: 'Clean',
-			url: 'views/template/t1.html'
+			name: 'Modern',
+			url: 'views/template/t2.html',
+			id: 2
 		};
 		vm.templates = [{
-				name: 'Clean',
+				name: 'Classic',
 				url: 'views/template/t1.html',
 				id: 1
 			},

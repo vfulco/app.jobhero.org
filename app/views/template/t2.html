@@ -1,116 +1,84 @@
 <div class="jh-resume-container">
   <div class="jh-resume-page">
-    <section class="jh-header-p1">
-      <h1 class="jh-fullname">
-        TEMPLATE 2
-        {{ rc.resume.info.fullname }}
-      </h1>
-      <h3 class="jh-contact">
-        <p>{{ rc.resume.info.email }}</p>
-        <p>{{ rc.resume.info.phone }}</p>
-      </h3>
-      <div class="jh-noprint">
+    <section class="jh-t2-header-section">
+      <div class="jh-table">
+        <div class="jh-row">
+          <div class="jh-cell jh-cell-middle jh-align-right">
+            <h1 class="jh-t2-name">
+              {{rc.resume.info.fullname}}
+            </h1>
+          </div>
+          <div class="jh-cell jh-cell-middle jh-align-left jh-t2-contact-cell">
+            <h2 class="jh-t2-title">
+              {{rc.resume.info.title}}
+            </h2>
+            <h3 class="jh-t2-contact">
+              {{rc.resume.info.email}}
+            </h3>
+            <h3 class="jh-t2-contact">
+              {{rc.resume.info.phone}}
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="jh-noprint jh-align-center">
         <md-button ng-click="rc.editResumeInfo($event)">
           (EDIT)
         </md-button>
       </div>
     </section>
-    <section class="jh-qualifications">
-      <h1 class="jh-section-title">
-        QUALIFICATIONS
-      </h1>
-      <div class="jh-table">
+    <section class="jh-t2-content-container">
+      <div class="jh-table jh-width-100">
         <div class="jh-row">
-          <div class="jh-cell">
-            <div class="jh-block">
-              <div class="jh-block-title">
-                <h3>Knowledge</h3>
-                <div class="jh-section-edit-button">
-                  <md-button ng-click="rc.editResumeTechnology($event)">
-                    (EDIT)
-                  </md-button>
-                </div>
-              </div>
-              <div class="jh-zerostate" ng-if="rc.resume.technology.length < 1 || !rc.resume.technology">
-                <h3>you need to add knowledge to your resume</h3>
-                <md-button  class="md-raised md-primary" ng-click="rc.editResumeTechnology($event)">
-                  Add Knowledge
-                </md-button>
-              </div>
-              <ul class="jh-block-list jh-technology-list">
-                <li ng-if="item.name" ng-repeat="item in rc.resume.technology">
-                  {{ item.name }}
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="jh-cell">
-            <div class="jh-block">
-              <div class="jh-block-title">
-                <h3>Experience</h3>
-                <div class="jh-section-edit-button">
-                  <md-button ng-click="rc.editResumeExperience($event)">
-                    (EDIT)
-                  </md-button>
-                </div>
-              </div>
-              <div class="jh-zerostate" ng-if="rc.resume.experience.length < 1 || !rc.resume.experience">
-                <h3>You need to add experience to your resume</h3>
-                <md-button  class="md-raised md-primary" ng-click="rc.editResumeExperience($event)">
-                  Add Experience
-                </md-button>
-              </div>
-              <ul class="jh-block-list jh-experience-list">
-                <li ng-if="item.name" ng-repeat="item in rc.resume.experience">
-                  {{ item.years }}+ Years {{ item.name }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="jh-row">
-          <div class="jh-cell">
-            <div class="jh-block">
-              <div class="jh-block-title">
-                <h3>Skills</h3>
-                <div class="jh-section-edit-button">
+          <div class="jh-cell jh-t2-wide-cell">
+            <div class="jh-t2-block">
+              <h1>
+                SKILLS
+                <div class="jh-t2-section-edit-button">
                   <md-button ng-click="rc.editResumeSkills($event)">
                     (EDIT)
                   </md-button>
                 </div>
-              </div>
-              <div class="jh-zerostate" ng-if="rc.resume.skills.length < 1 || !rc.resume.skills">
-                <h3>You need to add skills to your resume</h3>
-                <md-button  class="md-raised md-primary" ng-click="rc.editResumeSkills($event)">
-                  Add Skills
-                </md-button>
-              </div>
-              <ul class="jh-block-list jh-skills-list">
+              </h1>
+              <ul class="jh-t2-block-list jh-t2-skills-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.skills">
                   {{ item.verb }} {{ item.name }}
                 </li>
               </ul>
             </div>
+
+            <div class="jh-t2-block">
+              <h1>
+                SELECT HISTORY
+              </h1>
+            </div>
+
+
+
+
+
+
           </div>
-        </div>
-        <div class="jh-row">
-          <div class="jh-cell">
-            <div class="jh-block">
-              <div class="jh-block-title">
-                <h3>Misc. Items of Interest</h3>
-                <div class="jh-section-edit-button">
-                  <md-button ng-click="rc.editResumeEducationInterests($event)">
-                    (EDIT)
-                  </md-button>
-                </div>
-              </div>
-              <div class="jh-zerostate" ng-if="rc.resume.educationinterests.length < 1 || !rc.resume.educationinterests">
-                <h3>You need to add items of interest to your resume</h3>
-                <md-button  class="md-raised md-primary" ng-click="rc.editResumeEducationInterests($event)">
-                  Add Items of Interests
-                </md-button>
-              </div>
-              <ul class="jh-block-list jh-skills-list">
+          <div class="jh-cell jh-t2-narrow-cell">
+            <div class="jh-t2-block">
+              <h1>EXPERIENCE</h1>
+              <ul class="jh-t2-block-list jh-t2-experience-list">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.experience">
+                  {{ item.years }}+ Years {{ item.name }}
+                </li>
+              </ul>
+            </div>
+            <div class="jh-t2-block">
+              <h1>KNOWLEDGE</h1>
+              <ul class="jh-t2-block-list jh-t2-technology-list">
+                <li ng-if="item.name" ng-repeat="item in rc.resume.technology">
+                  {{ item.name }}
+                </li>
+              </ul>
+            </div>
+            <div class="jh-t2-block">
+              <h1>ITEMS OF INTEREST</h1>
+              <ul class="jh-t2-block-list jh-t2-interests-list">
                 <li ng-if="item.name" ng-repeat="item in rc.resume.educationinterests">
                   {{ item.name }}
                 </li>
@@ -120,52 +88,6 @@
         </div>
       </div>
     </section>
-  </div>
-  <div class="page-break">
-  </div>
-  <!-- <div class="jh-resume-page">
-    <section class="jh-header-p2">
-      <h3 class="jh-fullname-email">
-        {{ rc.resume.info.fullname }} | {{ rc.resume.info.email }}
-      </h3>
-    </section>
-    <section class="jh-history">
-      <h1 class="jh-section-title">
-        SELECT HISTORY
-        <div class="jh-noprint">
-          <md-button ng-click="rc.editResumeHistory($event)">
-            (EDIT)
-          </md-button>
-        </div>
-      </h1>
-      <div class="jh-zerostate" ng-if="rc.resume.history.length < 1 || !rc.resume.history">
-        <h3>You need to add history to your resume</h3>
-        <md-button  class="md-raised md-primary" ng-click="rc.editResumeHistory($event)">
-          Add History
-        </md-button>
-      </div>
 
-      <div class="jh-block" ng-repeat="item in rc.resume.history"  ng-if="item.company">
-        <div class="jh-block-title">
-          <h3>{{ item.company }}</h3>
-          <div class="jh-section-edit-button"  >
-            <md-button ng-click="rc.editResumeHistory($event)">
-              (EDIT)
-            </md-button>
-          </div>
-        </div>
-        <p class="jh-history-subtitle">
-          {{ item.position }} | {{ item.location }} <wbr />( {{ item.startDate}} &mdash; <span ng-if="!item.current">{{  item.endDate }}</span><span ng-if="item.current">Present</span> )
-        </p>
-        <h4 class="jh-history-highlight-title">
-          Select highlights:
-        </h4>
-        <ul class="jh-block-list jh-skills-list">
-          <li ng-repeat="item in item.highlights" ng-if="item.name">
-            {{ item.verb }} {{ item.name }}
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div> -->
+  </div>
 </div>

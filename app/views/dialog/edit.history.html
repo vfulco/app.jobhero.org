@@ -99,9 +99,9 @@
                 </div>
 
                 <span class="md-subhead">
-                  <h3>{{history.company}} Highlights</h3>
+                  <h3>{{history.company}} Accomplishments</h3>
                   <p class="md-caption">
-                    Add 4-5 highlights. Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
+                    Add 4-5 accomplishments. Use specific highlights when possible. Such as "Lead team of 14 developers across 4 timezones" or "Managed $1,000,000 research and developent budget".
                   </p>
                 </span>
                 <ng-form name="resumeHistoryHighlightFormItem" layout="row" ng-repeat="highlight in history.highlights" >
@@ -140,12 +140,12 @@
                   </md-input-container>
 
                   <md-input-container flex="75">
-                    <label>Highlight</label>
+                    <label>Accomplishment</label>
                     <input required minlength="20" md-maxlength="80" name="highlight" ng-model="highlight.name">
                     <div ng-messages="resumeHistoryHighlightFormItem.highlight.$error">
                       <div ng-message="required">This is required.</div>
                       <div ng-message="md-maxlength">Make this a little shorter. Should be under 81 characters.</div>
-                      <div ng-message="minlength">This highlight should be more detailed and longer (at least 20 characters).</div>
+                      <div ng-message="minlength">This accomplishment should be more detailed and longer (at least 20 characters).</div>
                     </div>
                   </md-input-container>
                   <md-button ng-click="dc.removeHistoryHighlight(history,highlight)">

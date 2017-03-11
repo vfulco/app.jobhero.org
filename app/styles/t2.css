@@ -1,0 +1,79 @@
+.jh-t2-section-edit-button{
+  display: inline-block;
+}
+.jh-t2-section-edit-button>.md-button{
+  min-width: 0;
+  margin:0;
+}
+.jh-t2-section-edit-button:hover{
+  font-weight: 700;
+}
+@media print {
+  .jh-t2-section-edit-button{
+    display:none;
+  }
+}
+.jh-t2-header-section{
+  padding-top:0.2in;
+  padding-bottom:0.2in;
+  border-bottom: 0.1in solid #2E5266;
+}
+.jh-t2-header-section .jh-table{
+  width:100%;
+}
+.jh-t2-header-section .jh-cell{
+  /*width:50%;*/
+}
+.jh-t2-contact-cell{
+  width:40%;
+}
+.jh-t2-name{
+  font-size:0.35in;
+  font-weight: 700;
+  padding-right:0.2in;
+  padding-left:0.2in;
+}
+.jh-t2-title{
+  font-size:0.2in;
+  font-weight: 700;
+  padding-right:0.2in;
+}
+.jh-t2-contact{
+  font-size:0.2in;
+  font-weight:400;
+  padding-right:0.2in;
+}
+.jh-t2-content-container{
+
+}
+.jh-t2-narrow-cell{
+  width:40%;
+}
+.jh-t2-wide-cell{
+  border-right:0.1in solid #2E5266;
+}
+.jh-t2-block{
+  padding:0.15in;
+}
+.jh-t2-block h1{
+  font-size:0.2in;
+}
+.jh-t2-block-list{
+  margin:0;
+}
+.jh-t2-experience-list{
+  font-size:0.15in;
+  padding-left: 0.2in;
+}
+.jh-t2-skills-list{
+  font-size:0.15in;
+  padding-left: 0.2in;
+}
+.jh-t2-technology-list{
+  font-size:0.15in;
+  padding-left: 0.2in;
+}
+.jh-t2-interests-list{
+  font-size:0.15in;
+  padding-left: 0.2in;
+}
