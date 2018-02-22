@@ -99,13 +99,15 @@ class Resume extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      resume:resume
+      resume:resume || props.resume,
+      id:props.id
     }
   }
   render() {
     return (
       <div>
-        this is my resume {JSON.stringify(this.state.resume)}
+        <h1>{this.state.resume.basics.name} {this.state.id}</h1>
+        {JSON.stringify(this.state.resume)}
       </div>
     );
   }
