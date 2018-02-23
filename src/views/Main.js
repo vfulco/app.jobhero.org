@@ -3,11 +3,13 @@ import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom'
 import Login from './enter/login'
 import ResumeView from './resume/resume-view'
 import ResumeList from './resume/resume-list'
+import ResumeEdit from './resume/resume-edit'
+import ResumeShared from './resume/resume-shared'
 
 let NoMatch = ({ location }) => (
   <div>
     <h3>
-      No match for <code>{location.pathname}</code>
+      <Redirect to={{pathname: "/resume"}}/>
     </h3>
   </div>
 );
@@ -54,8 +56,10 @@ class Main extends React.Component {
         <BrowserRouter>
           <Switch>
             <RedirectRoute exact path='/login' component={Login}/>
-            <PrivateRoute exact path='/resume/:id' component={ResumeView}/>
             <PrivateRoute exact path='/resume' component={ResumeList}/>
+            <PrivateRoute exact path='/resume/:id' component={ResumeView}/>
+            <Route exact path='/resume-shared/:share_id' component={ResumeShared}/>
+            <PrivateRoute exact path='/resume/:id/edit' component={ResumeEdit}/>
             <Route component={NoMatch} />
           </Switch>
         </BrowserRouter>
