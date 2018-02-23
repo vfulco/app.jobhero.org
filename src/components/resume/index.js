@@ -1,4 +1,5 @@
 import React from 'react'
+import './resume.css'
 
 class Resume extends React.Component {
   constructor(props){
@@ -14,9 +15,10 @@ class Resume extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Rendered Resume</h1>
-        {JSON.stringify(this.state.resume)}
+      <div className="jh-resume-container">
+        <div className="jh-resume-page">
+          {JSON.stringify(this.state.resume)}
+        </div>
       </div>
     );
   }
