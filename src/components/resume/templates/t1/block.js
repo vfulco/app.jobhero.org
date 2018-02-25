@@ -6,14 +6,23 @@ class Block extends React.Component {
     super(props)
     this.state = {
       list:props.list || [],
-      title:props.title || ''
+      title:props.title || '',
+      type:props.type || '',
+      company:props.company || '',
+      startDate:props.startDate || '',
+      endDate:props.endDate || 'Present'
     }
   }
 
   componentWillReceiveProps(props){
+    console.log(props)
     this.setState({
       list:props.list,
-      title:props.title
+      title:props.title,
+      type:props.type,
+      company:props.company,
+      startDate:props.startDate,
+      endDate:props.endDate
     })
   }
 
@@ -21,7 +30,9 @@ class Block extends React.Component {
     let list
     if (this.state.list) {
       list = this.state.list.map((item,index) => {
-        if (item.level === this.state.title){
+        if (this.state.type === 'job') {
+          return <li key={index}>{item}</li>
+        } else if (item.level === this.state.title){
           return <li key={index}>{item.name}</li>
         } else {
           return ''
@@ -31,6 +42,12 @@ class Block extends React.Component {
     return (
       <div className="jh-t1-block">
         <h1>{this.state.title}</h1>
+        {this.state.company &&
+          <div className="jh-t1-job-details">
+            <h3>{this.state.company} &bull; {this.state.startDate} - {this.state.endDate}</h3>
+            <h4>Accomplishments</h4>
+          </div>
+        }
         <ul>
           {list}
         </ul>
