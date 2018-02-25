@@ -34,10 +34,7 @@ class ResumeShared extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Viewing Shared Resume</h1>
         <Resume resume={this.state.resume}/>
-      </div>
     );
   }
 }

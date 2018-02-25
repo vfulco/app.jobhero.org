@@ -1,5 +1,6 @@
 .jh-resume-container{
   width: 100vw;
+  line-height: normal;
   overflow: scroll;
   background-color: #ddd;
   padding-top: 1in;
@@ -15,4 +16,72 @@
   print-color-adjust: exact;
   color-adjust: exact;
   overflow: hidden;
+}
+
+@media print {
+  body,html{
+    background:#fff;
+    background-color:#fff;
+  }
+  .jh-resume-container{
+    width:inherit;
+    background-color: #fff;
+    overflow: inherit;
+    padding:0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+.jh-resume-page{
+  height:11in;
+  width:8.5in;
+  background:#fff;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+  overflow:hidden;
+}
+@media print {
+  .jh-resume-page{
+    height:auto;
+    /*border: 1px solid black;*/
+  }
+}
+@page{
+    size: auto;   /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 0in 0in 0in 0in;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin:0;
+}
+@media all {
+	.page-break {
+    display: block;
+    height:0.5in;
+  }
+}
+
+@media print {
+	.page-break {
+    display: inherit;
+    height:0;
+    page-break-before: always;
+  }
+}
+.jh-noprint{
+  display:block;
+}
+@media print {
+  body{
+    background-color: #fff;
+  }
+  .jh-noprint{
+    display:none;
+  }
 }

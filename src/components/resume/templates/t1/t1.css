@@ -1,0 +1,54 @@
+.jh-t1-container{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.jh-t1-basics-section{
+  padding:0.25in;
+  text-align:center;
+}
+.jh-t1-basics-section>h1{
+  font-size:0.5in;
+  font-weight: 900;
+}
+.jh-t1-basics-section>h2{
+  font-weight: 300;
+  font-size:0.2in;
+  padding:0.1in;
+  text-transform: uppercase;
+}
+.jh-t1-basics-section>h3{
+  font-weight: 300;
+  font-size:0.2in;
+}
+.jh-t1-skills-section{
+
+}
+.jh-t1-skills-flex{
+  display:flex;
+  width:100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* block */
+.jh-t1-block{
+  width:100%;
+  padding:0.25in;
+}
+.jh-t1-block>h1{
+  background-color:#444;
+  font-size:0.2in;
+  width:3in;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding:0.14in;
+  color:#ffffff;
+  margin-bottom:0.1in;
+}
+.jh-t1-block>ul{
+  text-transform: capitalize;
+  list-style-type: disc;
+  padding-left: 0.25in;
+  font-size:0.17in;
+  font-weight: 400;
+}

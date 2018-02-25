@@ -1,5 +1,6 @@
 import React from 'react'
 import './resume.css'
+import ResumeTemplate1 from './templates/t1'
 
 class Resume extends React.Component {
   constructor(props){
@@ -15,11 +16,7 @@ class Resume extends React.Component {
 
   render() {
     return (
-      <div className="jh-resume-container">
-        <div className="jh-resume-page">
-          {JSON.stringify(this.state.resume)}
-        </div>
-      </div>
+        <ResumeTemplate1 resume={this.state.resume}/>
     );
   }
 }

@@ -8,7 +8,6 @@ class ResumeView extends React.Component {
     return (
       <div>
         <Link to={'/resume/' + this.props.match.params.id + '/edit'}>edit</Link>
-        <h1>Viewing Resume</h1>
         <Resume id={this.props.match.params.id}/>
       </div>
     );
