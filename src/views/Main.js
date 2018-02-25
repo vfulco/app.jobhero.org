@@ -18,7 +18,7 @@ let PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      JSON.parse(window.localStorage.isAuthenticated) ? (
+      window.localStorage.user ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -35,7 +35,7 @@ let RedirectRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      JSON.parse(window.localStorage.isAuthenticated) ? (
+      window.localStorage.user ? (
         <Redirect
           to={{
             pathname: "/resume",

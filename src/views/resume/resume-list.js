@@ -3,12 +3,12 @@ import { Link, withRouter } from 'react-router-dom'
 
 const AuthButton = withRouter(
   ({ history }) =>
-    window.localStorage.isAuthenticated ? (
+    window.localStorage.user ? (
       <p>
         Welcome!{" "}
         <button
           onClick={() => {
-            window.localStorage.isAuthenticated = false
+            window.localStorage.clear()
             history.push("/login");
           }}
         >

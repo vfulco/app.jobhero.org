@@ -1,7 +1,7 @@
 import React from 'react'
-import './button.css'
+import './buttons.css'
 
-class Button extends React.Component {
+class ButtonText extends React.Component {
 
   render() {
     return (
@@ -12,4 +12,4 @@ class Button extends React.Component {
   }
 }
 
-export default Button
+export default ButtonText
