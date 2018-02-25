@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import Resume from '../../components/resume'
 import ResumeApi from '../../api/resume'
 import Header from '../../components/header'
@@ -21,10 +22,7 @@ class ResumeShared extends React.Component {
     })
     .catch((error)=>{
       console.log(error)
-      this.setState({
-        loading:false,
-        errorMessage:error.message
-      })
+      this.props.history.push('/login')
     })
   }
 
@@ -36,10 +34,10 @@ class ResumeShared extends React.Component {
     return (
       <div>
         <Header/>
-        <Resume resume={this.state.resume}/>
+        <Resume resume={this.state.resume} shared="true"/>
       </div>
     );
   }
 }
 
-export default ResumeShared
+export default withRouter(ResumeShared)

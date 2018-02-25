@@ -1,61 +1,81 @@
 import React from 'react'
 import './t1.css'
-import Block from './block.js'
+import T1Block from './block.js'
 import T1Heading from './heading.js'
 
 class ResumeTemplate1 extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      resume:props.resume || {}
+      resume:props.resume || {},
+      shared:props.shared
     }
   }
 
   componentWillReceiveProps(props){
-    this.setState({resume:props.resume})
+    this.setState({
+      resume:props.resume,
+      shared:props.shared
+    })
+  }
+
+  handleEditSection(section,event){
+    if(this.state.shared !== true) {
+      console.log(section)
+      window.alert(`editing ${section}`)
+    }
   }
 
   render() {
 
     let jobsList;
     if (this.state.resume && this.state.resume.work) {
-      console.log(this.state.resume.work)
       jobsList = this.state.resume.work.map((job,index) => {
-        return <Block key={index} title={job.position} company={job.company} startDate={job.startDate} endDate={job.endDate} type="job" list={job.highlights}/>
+        return <T1Block key={index} title={job.position} company={job.company} startDate={job.startDate} endDate={job.endDate} type="job" list={job.highlights}/>
       })
     }
 
     return (
       <div className="jh-resume-container jh-t1-container">
         <div className="jh-resume-page">
-          <section className="jh-t1-basics-section">
-            {this.state.resume && this.state.resume.basics &&
-              <h1>
-                {this.state.resume.basics.name}
-              </h1>
-            }
-            {this.state.resume && this.state.resume.basics &&
-              <h2>
-                {this.state.resume.basics.label}
-              </h2>
-            }
-            {this.state.resume && this.state.resume.basics &&
-              <h3>
-                  {this.state.resume.basics.email} {this.state.resume.basics.phone}
-              </h3>
-            }
-          </section>
+          <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'basics')}>
+            <section className="jh-t1-basics-section">
+              {this.state.resume && this.state.resume.basics &&
+                <h1>
+                  {this.state.resume.basics.name}
+                </h1>
+              }
+              {this.state.resume && this.state.resume.basics &&
+                <h2>
+                  {this.state.resume.basics.label}
+                </h2>
+              }
+              {this.state.resume && this.state.resume.basics &&
+                <h3>
+                    {this.state.resume.basics.email} {this.state.resume.basics.phone}
+                </h3>
+              }
+            </section>
+          </div>
           <T1Heading title="QUALIFICATIONS"/>
           <section className="jh-t1-skills-section">
             <div className="jh-t1-skills-flex">
-              <Block title="knowledge" type="skills" list={this.state.resume.skills}/>
-              <Block title="experience"  list={this.state.resume.skills}/>
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'knowledge')}>
+                <T1Block title="knowledge" type="skills" list={this.state.resume.skills}/>
+              </div>
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'experience')}>
+                <T1Block title="experience"  list={this.state.resume.skills}/>
+              </div>
             </div>
             <div className="jh-t1-skills-flex">
-              <Block title="skills" list={this.state.resume.skills}/>
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'skills')}>
+                <T1Block title="skills" list={this.state.resume.skills}/>
+              </div>
             </div>
             <div className="jh-t1-skills-flex">
-              <Block title="Items of Interest" list={this.state.resume.interests}/>
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'interest')}>
+                <T1Block title="Items of Interest" list={this.state.resume.interests}/>
+              </div>
             </div>
           </section>
         </div>
@@ -70,11 +90,12 @@ class ResumeTemplate1 extends React.Component {
           </section>
           <T1Heading title="SELECT HISTORY"/>
           <section className="jh-t1-skills-section">
-            {jobsList}
+            <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'jobs')}>
+              {jobsList}
+            </div>
           </section>
         </div>
       </div>
-
     );
   }
 }

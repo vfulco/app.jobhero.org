@@ -32,7 +32,6 @@
   font-size:0.2in;
 }
 .jh-t1-skills-section{
-
 }
 .jh-t1-skills-flex{
   display:flex;
@@ -41,6 +40,30 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+.jh-t1-edit-section{
+  border:none;
+  box-sizing: border-box;
+  transition: all linear 0.2s;
+  background-color:none;
+}
+.jh-t1-edit-sectiontrue{
+  width:100%;
+}
+.jh-t1-edit-section{
+  width:100%;
+}
+@media screen{
+  .jh-t1-edit-section:hover{
+    /* border:-2px dashed purple; */
+    background-color:rgba(255,94,90,0.7);
+    transition: all linear 0.2s;
+    cursor: pointer;
+  }
+  .jh-t1-edit-section:hover::before {
+    content: "EDIT SECTION";
+  }
+}
+
 /* block */
 .jh-t1-block{
   width:100%;

@@ -1,6 +1,8 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import './header.css'
 import Logo from '../../images/job-hero-logov1.svg'
+import Button from '../button'
 
 class Header extends React.Component {
   constructor(props){
@@ -12,8 +14,12 @@ class Header extends React.Component {
   componentWillReceiveProps(props){
   }
 
-  print() {
+  handlePrint() {
   window.print();
+  };
+
+  handleRegister() {
+  this.props.history.push('/login')
   };
 
   render() {
@@ -26,8 +32,13 @@ class Header extends React.Component {
           </div>
           <div className="jh-header-buttons-container">
             <div>
-              <a onClick={this.print.bind(this)}>
-                PRINT
+              <a onClick={this.handlePrint.bind(this)}>
+                <Button text="PRINT"/>
+              </a>
+            </div>
+            <div>
+              <a onClick={this.handleRegister.bind(this)}>
+                <Button text="CREATE ACCOUNT"/>
               </a>
             </div>
           </div>
@@ -37,4 +48,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default withRouter(Header)

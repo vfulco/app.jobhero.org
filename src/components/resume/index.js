@@ -6,17 +6,23 @@ class Resume extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      resume:props.resume || {}
+      resume:props.resume || {},
+      shared:props.shared
     }
   }
 
   componentWillReceiveProps(props){
-    this.setState({resume:props.resume})
+    this.setState({
+      resume:props.resume,
+      shared:props.shared
+    })
   }
 
   render() {
     return (
-        <ResumeTemplate1 resume={this.state.resume}/>
+      <div>
+        <ResumeTemplate1 resume={this.state.resume} shared={this.state.shared}/>
+      </div>
     );
   }
 }

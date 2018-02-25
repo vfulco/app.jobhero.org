@@ -1,7 +1,7 @@
 import React from 'react'
 import './t1.css'
 
-class Block extends React.Component {
+class T1Block extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -15,7 +15,6 @@ class Block extends React.Component {
   }
 
   componentWillReceiveProps(props){
-    console.log(props)
     this.setState({
       list:props.list,
       title:props.title,
@@ -57,4 +56,4 @@ class Block extends React.Component {
   }
 }
 
-export default Block
+export default T1Block

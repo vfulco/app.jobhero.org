@@ -34,3 +34,6 @@
   flex-direction: row;
   align-items: center;
 }
+.jh-header-buttons-container>div{
+  padding:0 10px 0 10px;
+}
