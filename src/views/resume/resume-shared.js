@@ -1,7 +1,7 @@
 import React from 'react'
 import Resume from '../../components/resume'
 import ResumeApi from '../../api/resume'
-
+import Header from '../../components/header'
 class ResumeShared extends React.Component {
   constructor(props){
     super(props)
@@ -34,7 +34,10 @@ class ResumeShared extends React.Component {
 
   render() {
     return (
+      <div>
+        <Header/>
         <Resume resume={this.state.resume}/>
+      </div>
     );
   }
 }

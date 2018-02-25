@@ -1,0 +1,36 @@
+.jh-header-container{
+  position: fixed;
+  top:0px;
+  width:100%;
+  background-color:#fff;
+
+}
+.jh-header-flex{
+  display:flex;
+  flex-direction: row;
+  padding:10px;
+  justify-content: space-between;
+}
+.jh-header-logo-container{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.jh-header-logo{
+  height:50px;
+  width:60px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.jh-header-title{
+  color: #2E5266;
+  font-family: 'Rubik Mono One',sans-serif;
+  font-size: 26px;
+}
+.jh-header-buttons-container{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
