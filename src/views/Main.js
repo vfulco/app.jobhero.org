@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom'
 import Login from './enter/login'
+import Register from './enter/register'
 import ResumeView from './resume/resume-view'
 import ResumeList from './resume/resume-list'
 import ResumeEdit from './resume/resume-edit'
@@ -56,6 +57,7 @@ class Main extends React.Component {
         <BrowserRouter>
           <Switch>
             <RedirectRoute exact path='/login' component={Login}/>
+            <RedirectRoute exact path='/register' component={Register}/>
             <PrivateRoute exact path='/resume' component={ResumeList}/>
             <PrivateRoute exact path='/resume/:id' component={ResumeView}/>
               <PrivateRoute exact path='/resume/:id/edit/:section' component={ResumeEdit}/>

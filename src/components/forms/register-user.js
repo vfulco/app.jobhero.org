@@ -4,29 +4,23 @@ import Authentication from '../../api/authentication.js'
 import ButtonText from '../buttons/button-text'
 import { NavLink, withRouter,Redirect } from 'react-router-dom'
 
-class LoginUser extends React.Component {
+class RegisterUser extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
-      loading: false,
-      redirectToReferrer: false,
-      from:this.props.from
+      loading: false
     };
   };
 
   componentDidMount(){
   };
 
-  loginUser(email,password){
+  registerUser(email,password){
     this.setState({loading:true});
-    Authentication.loginUser(email,password)
+    Authentication.registerUser(email,password)
     .then((user)=> {
-      console.log('user',user)
-      window.localStorage.user = JSON.stringify(user.data.data);
-      this.setState({ redirectToReferrer: true });
-      // this.props.history.push('/resume')
+      this.props.history.push('/login')
     })
     .catch((error)=>{
       console.log(error)
@@ -41,7 +35,7 @@ class LoginUser extends React.Component {
     e.preventDefault()
     let email = this.refs.email.value
     let password = this.refs.password.value
-    this.loginUser(email, password)
+    this.registerUser(email, password)
   };
 
   render(){
@@ -51,7 +45,7 @@ class LoginUser extends React.Component {
     return (
       <div className="jh-edit-form-container">
         <h1 className="jh-edit-form-heading">
-          LOGIN
+          REGISTER
         </h1>
         <form className="jh-edit-form" onSubmit={this.handleSignIn.bind(this)}>
           <label>
@@ -68,8 +62,8 @@ class LoginUser extends React.Component {
           </label>
           <div className="jh-form-button-container">
             <div>
-              <NavLink to='/register' activeClassName="">
-                <ButtonText type="default" text="REGISTER"/>
+              <NavLink to='/login' activeClassName="">
+                <ButtonText type="default" text="LOGIN"/>
               </NavLink>
             </div>
             <div>
@@ -79,7 +73,7 @@ class LoginUser extends React.Component {
             </div>
             <div>
               <button type="submit">
-                <ButtonText loading={this.state.loading} type="success" text="LOGIN"/>
+                <ButtonText loading={this.state.loading} type="success" text="REGISTER"/>
               </button>
             </div>
           </div>
@@ -90,4 +84,4 @@ class LoginUser extends React.Component {
 
 };
 
-export default withRouter(LoginUser)
+export default withRouter(RegisterUser)

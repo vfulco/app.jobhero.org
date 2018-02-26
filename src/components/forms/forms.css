@@ -23,15 +23,16 @@ label{
   width:100%;
 }
 .jh-edit-form-container{
-  height:100vh;
+  min-height:100vh;
   width:100%;
   font-family: sans-serif;
   padding-top:100px;
   padding-bottom:100px;
+  background-color:#fff;
 }
 .jh-edit-form{
   display:flex;
-  width:50%;
+  width:70%;
   margin:auto;
   flex-direction: column;
   align-items: center;
@@ -39,12 +40,13 @@ label{
 }
 .jh-edit-form-heading{
   font-size: 60px;
-  padding: 30px;
+  padding: 30px 0px 30px 0px;
   width: 100%;
   text-align: center;
   position: sticky;
   top: 0px;
   background-color: #fff;
+  text-transform: uppercase;
 }
 .jh-edit-form-details{
   color:#999;
@@ -59,10 +61,18 @@ label{
   font-size:12px;
   color:#999;
 }
-.jh-form-botton-container{
+.jh-form-button-container{
   padding:10px;
   display:flex;
   flex-direction: row;
+}
+.jh-form-button-container{
+  padding:10px;
+  display:flex;
+  flex-direction: row;
+}
+.jh-form-button-container>div{
+  padding:10px;
 }
 
 @media screen and (max-width:768px){

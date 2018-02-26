@@ -1,0 +1,28 @@
+.jh-resume-list-container{
+  padding-top:100px;
+  /* min-height:100vh; */
+  width:100%;
+}
+.jh-resume-list-heading{
+  font-size:60px;
+  padding:40px;
+}
+.jh-resume-list{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.jh-resume-list-item{
+  background-color:#fff;
+  padding:30px;
+  font-size:20px;
+  font-weight: bold;
+  border:6px solid #fff;
+  transition: all linear 0.2s;
+}
+.jh-resume-list-item:hover{
+  background-color:#ddd;
+  transition: all linear 0.2s;
+
+}

@@ -32,7 +32,7 @@ class Header extends React.Component {
   }
 
   handleRegister() {
-    this.props.history.push('/login')
+    this.props.history.push('/register')
   }
 
   handleLogout(){

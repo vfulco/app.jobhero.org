@@ -38,17 +38,17 @@ class ResumeEditBasics extends React.Component {
   render() {
     return (
       <div className="jh-edit-form-container">
+        <h1 className="jh-edit-form-heading">
+          BASIC INFO
+        </h1>
         <div className="jh-edit-form">
-          <h1 className="jh-edit-form-heading">
-            BASIC INFO
-          </h1>
           <p className="jh-edit-form-details">
             This will be at the top of your resume.
           </p>
           <label>
             <h2>Full Name</h2>
             <div className="jh-input-container">
-              <input type="text" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
+              <input type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter your name.
@@ -57,7 +57,7 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Job Title</h2>
             <div className="jh-input-container">
-              <input type="text" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
+              <input type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter position you are applying for.
@@ -66,7 +66,7 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Email</h2>
             <div className="jh-input-container">
-              <input type="email" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
+              <input type="email" placeholder="jdoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter your email. Use a simple and professional email.
@@ -75,10 +75,13 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Phone</h2>
             <div className="jh-input-container">
-              <input type="text" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
+              <input type="text" placeholder="123-123-1234" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
             </div>
+            <p className="jh-input-helper-text">
+              Enter your phone number only if you want the prospective employer to call you.
+            </p>
           </label>
-          <div className="jh-form-botton-container">
+          <div className="jh-form-button-container">
             <div onClick={this.handleSaveResumeChange.bind(this)}>
               <ButtonText text="SAVE BASIC INFO" />
             </div>

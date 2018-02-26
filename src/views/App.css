@@ -1,5 +1,8 @@
 a,a:hover{
-	text-decoration: none;
-	color:inherit;
+  text-decoration: none;
+  color:inherit;
 }
 textarea, input, button { outline: none; }
+html,body{
+  background-color:#ddd;
+}

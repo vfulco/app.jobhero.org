@@ -8,6 +8,7 @@
   transition: all linear 0.2s;
   font-size:18px;
   user-select: none;
+  text-transform: uppercase;
 }
 .jh-button-container:hover{
   background-color:#999;
