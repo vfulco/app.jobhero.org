@@ -1,34 +1,42 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-
-const AuthButton = withRouter(
-  ({ history }) =>
-    window.localStorage.user ? (
-      <p>
-        Welcome!{" "}
-        <button
-          onClick={() => {
-            window.localStorage.clear()
-            history.push("/login");
-          }}
-        >
-          Sign out
-        </button>
-      </p>
-    ) : (
-      <p>You are not logged in.</p>
-    )
-);
+import ResumeApi from '../../api/resume'
+import Header from '../../components/header'
 
 class ResumeList extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      resumes:[]
+    }
+  }
+  getResumes(){
+    ResumeApi.getAllResumes()
+    .then((allResumes) => {
+      this.setState({resumes:allResumes.data.data})
+    })
+  }
+
+  componentDidMount(){
+    this.getResumes();
+  }
   render() {
+    let allUserResumes;
+    if (this.state.resumes[0]){
+      allUserResumes = this.state.resumes.map((resume,index) => {
+        return <Link key={index} to={"/resume/" + resume.resume_id}>{resume.resume_name}</Link>
+      })
+    }
     return (
       <div>
-        <AuthButton />
+        <Header printButton={false}/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <h1>List all resumes</h1>
-        <Link to="/resume/1">resume 1</Link>
-        <Link to="/resume/2">resume 2</Link>
-        <Link to="/resume/3">resume 3</Link>
+        {allUserResumes}
       </div>
     );
   }

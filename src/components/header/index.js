@@ -4,23 +4,41 @@ import './header.css'
 import Logo from '../../images/job-hero-logov1.svg'
 import ButtonText from '../buttons/button-text'
 
+function getAuth() {
+  let authToken;
+  if (window.localStorage.user && JSON.parse(window.localStorage.user).token) {
+    authToken = JSON.parse(window.localStorage.user).token;
+  }
+  return authToken;
+}
+
 class Header extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+      authenticated:getAuth(),
+      printButton: this.props.printButton,
+      backButton: this.props.backButton
     }
   }
 
   componentWillReceiveProps(props){
   }
-
   handlePrint() {
-  window.print();
-  };
+    window.print()
+  }
+  handleBack() {
+    this.props.history.push('/resume')
+  }
 
   handleRegister() {
-  this.props.history.push('/login')
-  };
+    this.props.history.push('/login')
+  }
+
+  handleLogout(){
+    window.localStorage.clear()
+    this.props.history.push("/login")
+  }
 
   render() {
     return (
@@ -31,16 +49,34 @@ class Header extends React.Component {
             <h1 className="jh-header-title">JOBHERO</h1>
           </div>
           <div className="jh-header-buttons-container">
-            <div>
-              <a onClick={this.handlePrint.bind(this)}>
-                <ButtonText text="PRINT"/>
-              </a>
-            </div>
-            <div>
-              <a onClick={this.handleRegister.bind(this)}>
-                <ButtonText text="CREATE ACCOUNT"/>
-              </a>
-            </div>
+            {this.state.backButton === true &&
+              <div>
+                <a onClick={this.handleBack.bind(this)}>
+                  <ButtonText text="MY RESUMES"/>
+                </a>
+              </div>
+            }
+            {this.state.printButton === true &&
+              <div>
+                <a onClick={this.handlePrint.bind(this)}>
+                  <ButtonText text="PRINT"/>
+                </a>
+              </div>
+            }
+            {this.state.authenticated &&
+              <div>
+                <a onClick={this.handleLogout.bind(this)}>
+                  <ButtonText text="LOGOUT"/>
+                </a>
+              </div>
+            }
+            {!this.state.authenticated &&
+              <div>
+                <a onClick={this.handleRegister.bind(this)}>
+                  <ButtonText text="CREATE ACCOUNT"/>
+                </a>
+              </div>
+            }
           </div>
         </div>
       </div>

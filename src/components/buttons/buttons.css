@@ -6,6 +6,7 @@
   cursor: pointer;
   color:#999;
   transition: all linear 0.2s;
+  font-size:18px;
 }
 .jh-button-container:hover{
   background-color:#999;
@@ -16,7 +17,8 @@
   color:#fff;
   transition: all linear 0.2s;
 }
-.jh-button-container:active{
-  box-shadow: -2px -2px 0px inset;
-  transition: all linear 0.2s;
+@media screen and (max-width:786px){
+  .jh-button-container{
+    font-size: 14px;
+  }
 }

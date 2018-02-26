@@ -30,9 +30,7 @@ class Login extends React.Component {
 
     return (
       <div>
-        <p>You must log in to view the page at {from.pathname}</p>
         <LoginUser from={from} redirectToReferrer={redirectToReferrer}/>
-        <button onClick={this.login}>Log in</button>
       </div>
     );
   }

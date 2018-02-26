@@ -7,21 +7,23 @@ class Resume extends React.Component {
     super(props)
     this.state = {
       resume:props.resume || {},
-      shared:props.shared
+      shared:props.shared,
+      id:props.id
     }
   }
 
   componentWillReceiveProps(props){
     this.setState({
       resume:props.resume,
-      shared:props.shared
+      shared:props.shared,
+      id:props.id
     })
   }
 
   render() {
     return (
       <div>
-        <ResumeTemplate1 resume={this.state.resume} shared={this.state.shared}/>
+        <ResumeTemplate1 id={this.state.id} resume={this.state.resume} shared={this.state.shared}/>
       </div>
     );
   }

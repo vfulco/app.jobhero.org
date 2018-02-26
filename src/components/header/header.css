@@ -37,3 +37,8 @@
 .jh-header-buttons-container>div{
   padding:0 10px 0 10px;
 }
+@media screen and (max-width:786px){
+  .jh-header-logo-container{
+    display:none;
+  }
+}

@@ -17,6 +17,14 @@ function getAuth() {
   return authToken;
 }
 
+function getAllResumes() {
+  return axios({
+      method: 'get',
+      url: apiRoot + '/api/v1/resume/',
+      headers: {'auth_token': getAuth()}
+    })
+}
+
 function getSharedResume(sharedId) {
   return axios({
       method: 'get',
@@ -24,7 +32,17 @@ function getSharedResume(sharedId) {
     })
 }
 
+function getResume(id) {
+  return axios({
+      method: 'get',
+      url: apiRoot + '/api/v1/resume/' + id,
+      headers: {'auth_token': getAuth()}
+    })
+}
+
 const ResumeApi = {
-  getSharedResume
+  getSharedResume,
+  getResume,
+  getAllResumes
 };
 export default ResumeApi

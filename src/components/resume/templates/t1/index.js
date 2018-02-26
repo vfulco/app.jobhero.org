@@ -2,12 +2,14 @@ import React from 'react'
 import './t1.css'
 import T1Block from './block.js'
 import T1Heading from './heading.js'
+import { withRouter } from 'react-router-dom'
 
 class ResumeTemplate1 extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       resume:props.resume || {},
+      id:props.id,
       shared:props.shared
     }
   }
@@ -15,14 +17,16 @@ class ResumeTemplate1 extends React.Component {
   componentWillReceiveProps(props){
     this.setState({
       resume:props.resume,
-      shared:props.shared
+      shared:props.shared,
+      id:props.id
     })
   }
 
   handleEditSection(section,event){
     if(this.state.shared !== true) {
       console.log(section)
-      window.alert(`editing ${section}`)
+      console.log(this.state.resume)
+      this.props.history.push({pathname:`/resume/${this.state.id}/edit/${section}`,state:{resume:this.state.resume}})
     }
   }
 
@@ -38,7 +42,7 @@ class ResumeTemplate1 extends React.Component {
     return (
       <div className="jh-resume-container jh-t1-container">
         <div className="jh-resume-page">
-          <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'basics')}>
+          <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'basics')} title="Click to edit basic info">
             <section className="jh-t1-basics-section">
               {this.state.resume && this.state.resume.basics &&
                 <h1>
@@ -100,4 +104,4 @@ class ResumeTemplate1 extends React.Component {
   }
 }
 
-export default ResumeTemplate1
+export default withRouter(ResumeTemplate1)

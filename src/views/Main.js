@@ -58,8 +58,8 @@ class Main extends React.Component {
             <RedirectRoute exact path='/login' component={Login}/>
             <PrivateRoute exact path='/resume' component={ResumeList}/>
             <PrivateRoute exact path='/resume/:id' component={ResumeView}/>
+              <PrivateRoute exact path='/resume/:id/edit/:section' component={ResumeEdit}/>
             <Route exact path='/resume-shared/:share_id' component={ResumeShared}/>
-            <PrivateRoute exact path='/resume/:id/edit' component={ResumeEdit}/>
             <Route component={NoMatch} />
           </Switch>
         </BrowserRouter>

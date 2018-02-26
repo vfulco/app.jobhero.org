@@ -33,7 +33,7 @@ class ResumeShared extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header printButton={true}/>
         <Resume resume={this.state.resume} shared="true"/>
       </div>
     );
