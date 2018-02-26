@@ -28,6 +28,7 @@ class ResumeShared extends React.Component {
 
   componentDidMount(){
     this.getSharedResumeFromApi()
+    window.scrollTo(0, 0)
   }
 
   render() {

@@ -2,7 +2,7 @@ import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
 
-class ResumeEditBasics extends React.Component {
+class ResumeEditKnowledge extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -81,4 +81,4 @@ class ResumeEditBasics extends React.Component {
   }
 }
 
-export default ResumeEditBasics
+export default ResumeEditKnowledge

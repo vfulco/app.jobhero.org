@@ -6,7 +6,9 @@ class Login extends React.Component {
   state = {
     redirectToReferrer: false
   };
-
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
   render() {
     const { from } = this.props.location.state || { from: { pathname: "/resume" } };
     const { redirectToReferrer } = this.state;

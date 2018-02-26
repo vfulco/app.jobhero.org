@@ -3,19 +3,31 @@ import { withRouter } from 'react-router-dom'
 import ResumeApi from '../../api/resume'
 import ResumeEditBasics from '../../components/forms/resume-edit-basics'
 import ResumeEditKnowledge from '../../components/forms/resume-edit-knowledge'
-import ResumeEditExperiencce from '../../components/forms/resume-edit-experience'
+import ResumeEditExperience from '../../components/forms/resume-edit-experience'
+import ResumeEditSkills from '../../components/forms/resume-edit-skills'
+import ResumeEditInterests from '../../components/forms/resume-edit-interests'
 
 class ResumeEdit extends React.Component {
   constructor(props){
     super(props)
+    let stateResume
+    if (props.location.state && props.location.state.resume){
+      stateResume = props.location.state.resume
+    } else{
+      stateResume = {}
+    }
     if(!props.location.state || !props.location.state.resume){
       this.props.history.push('/resume/' + props.match.params.id)
     }
     this.state = {
       section:props.match.params.section,
       id:props.match.params.id,
-      resume:props.location.state.resume || {}
+      resume:stateResume|| {}
     }
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   updateResume(resume){
@@ -43,10 +55,13 @@ class ResumeEdit extends React.Component {
           <ResumeEditKnowledge resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'experience' &&
-          <ResumeEditExperiencce resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditExperience resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'skills' &&
-          <ResumeEditExperiencce resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditSkills resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+        }
+        {this.state.section === 'interests' &&
+          <ResumeEditInterests resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
       </div>
     );

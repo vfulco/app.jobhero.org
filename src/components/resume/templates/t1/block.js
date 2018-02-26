@@ -31,6 +31,10 @@ class T1Block extends React.Component {
       list = this.state.list.map((item,index) => {
         if (this.state.type === 'job') {
           return <li key={index}>{item}</li>
+        } else if(this.state.type === 'education'){
+          return <li key={index}>{item.studyType} in {item.area} from the {item.institution}</li>
+        } else if(this.state.type === 'interests'){
+          return <li key={index}>{item.name}</li>
         } else if (item.level === this.state.title){
           return <li key={index}>{item.name}</li>
         } else {
@@ -39,7 +43,7 @@ class T1Block extends React.Component {
       })
     }
     return (
-      <div className="jh-t1-block">
+      <div className={"jh-t1-block"}>
         <h1>{this.state.title}</h1>
         {this.state.company &&
           <div className="jh-t1-job-details">

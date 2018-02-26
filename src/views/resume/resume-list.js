@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import ResumeApi from '../../api/resume'
 import Header from '../../components/header'
 import './resume.css'
+import ButtonText from '../../components/buttons/button-text'
 
 class ResumeList extends React.Component {
   constructor(props){
@@ -18,8 +19,20 @@ class ResumeList extends React.Component {
     })
   }
 
+  createNewResume(){
+    let newResumeBody = {
+      name:'my new resume'
+    }
+    ResumeApi.createResume(newResumeBody)
+    .then((createdResume) => {
+      console.log(createdResume.data.data)
+      this.props.history.push('/resume/' + createdResume.data.data.resume[0].id)
+    })
+  }
+
   componentDidMount(){
-    this.getResumes();
+    this.getResumes()
+    window.scrollTo(0, 0)
   }
   render() {
     let allUserResumes;
@@ -42,6 +55,9 @@ class ResumeList extends React.Component {
             MY RESUMES
           </h1>
           {allUserResumes}
+          <div className="jh-create-resume-button-container" onClick={this.createNewResume.bind(this)}>
+            <ButtonText text="new resume"/>
+          </div>
         </div>
       </div>
     );

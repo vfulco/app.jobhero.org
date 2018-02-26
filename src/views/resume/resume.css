@@ -24,5 +24,7 @@
 .jh-resume-list-item:hover{
   background-color:#ddd;
   transition: all linear 0.2s;
-
+}
+.jh-create-resume-button-container{
+  padding:20px;
 }

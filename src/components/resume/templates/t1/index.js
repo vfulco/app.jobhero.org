@@ -14,6 +14,9 @@ class ResumeTemplate1 extends React.Component {
     }
   }
 
+  componentDidMount(){
+  }
+
   componentWillReceiveProps(props){
     this.setState({
       resume:props.resume,
@@ -75,8 +78,13 @@ class ResumeTemplate1 extends React.Component {
               </div>
             </div>
             <div className="jh-t1-skills-flex">
-              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'interest')}>
-                <T1Block title="Items of Interest" list={this.state.resume.interests}/>
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'interests')}>
+                <T1Block title="interests" type="interests" list={this.state.resume.interests}/>
+              </div>
+            </div>
+            <div className="jh-t1-skills-flex">
+              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'education')}>
+                <T1Block title="education" type="education" list={this.state.resume.education}/>
               </div>
             </div>
           </section>

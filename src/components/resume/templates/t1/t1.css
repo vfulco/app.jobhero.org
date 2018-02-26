@@ -3,11 +3,11 @@
 }
 .jh-t1-heading{
   text-align: center;
-  padding:0.5in;
+  padding:0.15in;
 }
 .jh-t1-heading>h1{
   font-weight: 300;
-  font-size:0.2in;
+  font-size:0.3in;
 }
 .jh-t1-basics-section{
   padding:0.25in;
@@ -56,11 +56,17 @@
   width:100%;
 }
 @media screen{
+  .jh-t1-edit-section{
+    background:none;
+    transition: all linear 0.2s;
+  }
   .jh-t1-edit-section:hover{
-    /* border:-2px dashed purple; */
-    background-color:rgba(255,94,90,1);
+    background:rgba(255,94,90,1);
     transition: all linear 0.2s;
     cursor: pointer;
+    background: linear-gradient(-45deg, #EE7752,#EE7752,#EE7752, #E73C7E, #23A6D5, #23D5AB, #23D5AB, #23D5AB);
+  	background-size: 400% 400%;
+  	animation: Gradient 8s ease infinite;
   }
   .jh-t1-edit-section:hover::before {
     content: "CLICK TO EDIT SECTION";
@@ -70,18 +76,32 @@
     color: #fff;
     z-index: 10;
     font-weight: 900;
+    transition: all linear 0.2s;
   }
 }
 
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
 /* block */
 .jh-t1-block{
-  width:100%;
+  /* width:100%; */
   padding:0.25in;
 }
 .jh-t1-block>h1{
   background-color:#333;
   font-size:0.2in;
-  width:3in;
+  width:3.5in;
   text-transform: uppercase;
   font-weight: 700;
   padding:0.14in;

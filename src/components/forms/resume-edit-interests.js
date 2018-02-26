@@ -2,13 +2,13 @@ import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
 
-class ResumeEditExperience extends React.Component {
+class ResumeEditInterests extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       section:props.section,
       resume:props.resume,
-      skills:props.resume.skills || [],
+      skills:props.resume.interests || [],
     }
   }
 
@@ -16,23 +16,22 @@ class ResumeEditExperience extends React.Component {
     let target = event.target;
     let value = target.type === 'checkbox' ? target.checked : target.value;
     let name = target.name;
-    let skills = this.state.skills;
-    skills[index] = {
-      [name]: value,
-      level:this.state.section
+    let interests = this.state.interests;
+    interests[index] = {
+      [name]: value
     };
 
     this.setState(prevState => ({
-        skills
+        interests
     }), () => {
-      console.log(this.state.skills)
+      console.log(this.state.interests)
     })
   }
 
   handleSaveResumeChange(){
-    let skills = this.state.skills
+    let interests = this.state.interests
     let resume = this.state.resume
-    resume.skills = skills
+    resume.interests = interests
     console.log('save resume!')
     this.props.onResumeUpdated(resume)
   }
@@ -40,24 +39,20 @@ class ResumeEditExperience extends React.Component {
 
 
   render() {
-    let listOfKnowledgeItems;
-    listOfKnowledgeItems = this.state.skills.map((skill,index) => {
-      console.log(skill)
-      if (skill.level === this.state.section){
+    let listOfInterestItems;
+    listOfInterestItems = this.state.skills.map((item,index) => {
+      console.log(item)
         return (
           <label key={index}>
             <h2>{this.state.section}</h2>
             <div className="jh-input-container">
-              <input type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter something you have a lot of knowledge with.
             </p>
           </label>
         )
-      }
-
-
     })
 
     return (
@@ -69,7 +64,7 @@ class ResumeEditExperience extends React.Component {
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent knowledge you have for the position you are applying for.
           </p>
-          {listOfKnowledgeItems}
+          {listOfInterestItems}
           <div className="jh-form-button-container">
             <div onClick={this.handleSaveResumeChange.bind(this)}>
               <ButtonText text={"SAVE " + this.state.section} />
@@ -81,4 +76,4 @@ class ResumeEditExperience extends React.Component {
   }
 }
 
-export default ResumeEditExperience
+export default ResumeEditInterests

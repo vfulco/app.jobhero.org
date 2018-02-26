@@ -5,4 +5,5 @@ a,a:hover{
 textarea, input, button { outline: none; }
 html,body{
   background-color:#ddd;
+  user-select: none;
 }

@@ -49,10 +49,20 @@ function getResume(id) {
     })
 }
 
+function createResume(resume) {
+  return axios({
+      method: 'post',
+      url: apiRoot + '/api/v1/resume/create',
+      data:resume,
+      headers: {'auth_token': getAuth()}
+    })
+}
+
 const ResumeApi = {
   getSharedResume,
   getResume,
   updateSingleResume,
-  getAllResumes
+  getAllResumes,
+  createResume
 };
 export default ResumeApi
