@@ -32,6 +32,15 @@ function getSharedResume(sharedId) {
     })
 }
 
+function updateSingleResume(resume) {
+  return axios({
+      method: 'put',
+      url: apiRoot + '/api/v1/resume/' + resume.id,
+      data:resume,
+      headers: {'auth_token': getAuth()}
+    })
+}
+
 function getResume(id) {
   return axios({
       method: 'get',
@@ -43,6 +52,7 @@ function getResume(id) {
 const ResumeApi = {
   getSharedResume,
   getResume,
+  updateSingleResume,
   getAllResumes
 };
 export default ResumeApi

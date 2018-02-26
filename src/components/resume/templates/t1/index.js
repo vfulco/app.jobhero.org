@@ -24,8 +24,6 @@ class ResumeTemplate1 extends React.Component {
 
   handleEditSection(section,event){
     if(this.state.shared !== true) {
-      console.log(section)
-      console.log(this.state.resume)
       this.props.history.push({pathname:`/resume/${this.state.id}/edit/${section}`,state:{resume:this.state.resume}})
     }
   }

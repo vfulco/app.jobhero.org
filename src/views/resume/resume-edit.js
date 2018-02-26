@@ -1,5 +1,7 @@
 import React from 'react'
-import Resume from '../../components/resume'
+import { withRouter } from 'react-router-dom'
+import ResumeApi from '../../api/resume'
+import ResumeEditBasics from '../../components/forms/resume-edit-basics'
 
 class ResumeEdit extends React.Component {
   constructor(props){
@@ -10,13 +12,31 @@ class ResumeEdit extends React.Component {
       resume:props.location.state.resume
     }
   }
+
+  updateResume(resume){
+    ResumeApi.updateSingleResume(resume)
+    .then((updatedResume) => {
+      console.log(updatedResume.data.data)
+      this.props.history.push('/resume/' + this.state.id)
+    })
+  }
+
+  handleResumeUpdate(resume){
+    let resumeUpdateBody = {
+      id:this.state.id,
+      json_resume:resume
+    }
+    this.updateResume(resumeUpdateBody)
+  }
   render() {
     return (
       <div>
-        edit {this.state.id} {this.state.section} {JSON.stringify(this.state.resume)}
+        {this.state.section === 'basics' &&
+          <ResumeEditBasics resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)} />
+        }
       </div>
     );
   }
 }
 
-export default ResumeEdit
+export default withRouter(ResumeEdit)
