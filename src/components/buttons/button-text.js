@@ -8,17 +8,20 @@ class ButtonText extends React.Component {
     if (this.props.type === 'success'){
       colors = {
         backgroundColor:'#7DDF64',
+        border:'2px solid #7DDF64',
         color:'#333'
       };
     } else if(this.props.type === 'danger'){
       colors = {
         backgroundColor:'#AC3931',
+        border:'2px solid #AC3931',
         color:'#eee'
       }
     } else {
       colors = {
-        backgroundColor:'#aaa',
-        color:'#fff'
+        backgroundColor:'none',
+        border:'2px solid #aaa',
+        color:'#aaa'
       }
     }
 

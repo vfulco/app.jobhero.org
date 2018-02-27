@@ -34,7 +34,7 @@ class Resume extends React.Component {
         <div className="jh-resume-menu jh-noprint">
           <div className="jh-resume-menu-flex">
             <div>
-              <Link to={"/resume-shared/" + this.state.resume.share_id}>
+              <Link target="_blank" to={"/resume-shared/" + this.state.resume.share_id}>
                 <ButtonText text="OPEN PUBLIC LINK"/>
               </Link>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
-import { NavLink, withRouter,Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import ResumeApi from '../../api/resume'
 
 class ResumeCreate extends React.Component {

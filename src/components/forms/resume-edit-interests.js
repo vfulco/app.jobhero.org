@@ -59,11 +59,11 @@ class ResumeEditInterests extends React.Component {
     return (
       <div className="jh-edit-form-container">
         <h1 className="jh-edit-form-heading">
-          {this.state.section}
+          ITEMS OF INTEREST
         </h1>
         <form className="jh-edit-form"  onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where we will list out the most relevent knowledge you have for the position you are applying for.
+            This is where you should list out anything that shows you are interesting and worth interviewing. Add education, awards, hobbies, etc. Only 5 items so use the most interesting for the position you are applying for. 
           </p>
           {listOfInterestItems}
           <div className="jh-form-button-container">

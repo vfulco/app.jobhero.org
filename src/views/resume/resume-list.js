@@ -18,6 +18,11 @@ class ResumeList extends React.Component {
     .then((allResumes) => {
       this.setState({resumes:allResumes.data.data})
     })
+    .catch((error)=>{
+      console.log(error)
+      window.localStorage.clear()
+      this.props.history.push('/login')
+    })
   }
 
   componentDidMount(){

@@ -57,6 +57,7 @@ class ResumeEditKnowledge extends React.Component {
           </label>
         )
       }
+      return ''
     })
 
     return (

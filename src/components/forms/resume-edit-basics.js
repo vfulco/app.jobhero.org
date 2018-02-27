@@ -48,39 +48,39 @@ class ResumeEditBasics extends React.Component {
           </p>
           <label>
             <h2>Full Name</h2>
+              <p className="jh-input-helper-text">
+                Enter your name.
+              </p>
             <div className="jh-input-container">
               <input required type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
             </div>
-            <p className="jh-input-helper-text">
-              Enter your name.
-            </p>
           </label>
           <label>
             <h2>Job Title</h2>
-            <div className="jh-input-container">
-              <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
-            </div>
             <p className="jh-input-helper-text">
               Enter position you are applying for.
             </p>
+            <div className="jh-input-container">
+              <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
+            </div>
           </label>
           <label>
             <h2>Email</h2>
+              <p className="jh-input-helper-text">
+                Enter your email. Use a simple and professional email.
+              </p>
             <div className="jh-input-container">
               <input required type="email" placeholder="jdoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
             </div>
-            <p className="jh-input-helper-text">
-              Enter your email. Use a simple and professional email.
-            </p>
           </label>
           <label>
             <h2>Phone</h2>
+              <p className="jh-input-helper-text">
+                Enter your phone number only if you want the prospective employer to call you.
+              </p>
             <div className="jh-input-container">
               <input type="text" placeholder="123-123-1234" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
             </div>
-            <p className="jh-input-helper-text">
-              Enter your phone number only if you want the prospective employer to call you.
-            </p>
           </label>
           <div className="jh-form-button-container">
             <button type="submit">

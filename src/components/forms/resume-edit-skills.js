@@ -57,6 +57,7 @@ class ResumeEditSkills extends React.Component {
           </label>
         )
       }
+      return ''
     })
 
     return (

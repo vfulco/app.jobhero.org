@@ -55,6 +55,7 @@ class ResumeEditExperience extends React.Component {
           </label>
         )
       }
+      return ''
     })
 
     return (

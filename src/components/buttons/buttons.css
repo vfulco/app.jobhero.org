@@ -4,6 +4,7 @@
   cursor: pointer;
   transition: all linear 0.2s;
   font-size:18px;
+  white-space: nowrap;
   user-select: none;
   text-transform: uppercase;
 }
