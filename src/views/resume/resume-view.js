@@ -17,15 +17,10 @@ class ResumeView extends React.Component {
   getResumeFromApi(){
     ResumeApi.getResume(this.state.resume_id)
     .then((ownedResume)=> {
-      let resumeData = ownedResume.data.data
-      if(!resumeData.json_resume){
-        console.log('no json resume!')
-        this.props.history.push('/resume/' + resumeData.id + '/edit/basics')
-      }
       this.setState({
         loading:false,
         resume_name: ownedResume.data.data.name,
-        resume: ownedResume.data.data.json_resume
+        resume: ownedResume.data.data
       })
     })
     .catch((error)=>{

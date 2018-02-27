@@ -17,7 +17,7 @@ class ResumeShared extends React.Component {
     .then((sharedResume)=> {
       this.setState({
         loading:false,
-        resume: sharedResume.data.data.json_resume
+        resume: sharedResume.data.data
       })
     })
     .catch((error)=>{

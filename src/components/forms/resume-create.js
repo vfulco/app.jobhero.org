@@ -47,9 +47,8 @@ class ResumeCreate extends React.Component {
 
     return (
       <div>
-        <form className="jh-edit-form" onSubmit={this.handleSubmit.bind(this)}>
+        <form className="jh-create-resume-form" onSubmit={this.handleSubmit.bind(this)}>
           <label>
-            <h1>NEW RESUME</h1>
             <div className="jh-input-container">
               <input required type="text" name="resume_name" placeholder="Name for new resume" onChange={this.handleInputChange.bind(this)}/>
             </div>
@@ -57,7 +56,7 @@ class ResumeCreate extends React.Component {
           <div className="jh-form-button-container">
             <div>
               <button type="submit">
-                <ButtonText loading={this.state.loading} type="success" text="CREATE NEW RESUME"/>
+                <ButtonText loading={this.state.loading} type="success" text="CREATE RESUME"/>
               </button>
             </div>
           </div>

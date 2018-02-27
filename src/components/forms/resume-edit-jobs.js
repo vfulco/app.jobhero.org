@@ -127,7 +127,7 @@ class ResumeEditJobs extends React.Component {
           {listOfJobItems}
           <div className="jh-form-button-container">
             <button type="submit">
-              <ButtonText text={"SAVE " + this.state.section} />
+              <ButtonText type="success" text={"SAVE " + this.state.section} />
             </button>
           </div>
         </form>

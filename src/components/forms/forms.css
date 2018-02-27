@@ -87,6 +87,12 @@ label{
 .jh-form-button-container>div{
   padding:10px;
 }
+.jh-create-resume-form{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 
 @media screen and (max-width:768px){
   .jh-edit-form{

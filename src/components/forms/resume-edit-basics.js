@@ -84,7 +84,7 @@ class ResumeEditBasics extends React.Component {
           </label>
           <div className="jh-form-button-container">
             <button type="submit">
-              <ButtonText text="SAVE BASIC INFO" />
+              <ButtonText type="success" text="SAVE BASIC INFO" />
             </button>
           </div>
         </form>
