@@ -44,7 +44,7 @@ class ResumeEditSkills extends React.Component {
       console.log(skill)
       if (skill.level === this.state.section){
         return (
-          <label key={index}>
+          <label className="jh-form-label" key={index}>
             <h2>
               {this.state.section}
             </h2>
@@ -69,7 +69,9 @@ class ResumeEditSkills extends React.Component {
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent skills you have. This is where you should brag about things are you really good at. Think about tasks you've done in past jobs that you've done well. These skills should be relevent to the role you are applying for.
           </p>
-          {listOfKnowledgeItems}
+          <div className="jh-form-group">
+            {listOfKnowledgeItems}
+          </div>
           <div className="jh-form-button-container">
             <button type="submit">
               <ButtonText type="success" text={"SAVE " + this.state.section} />

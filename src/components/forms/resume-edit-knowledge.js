@@ -46,7 +46,7 @@ class ResumeEditKnowledge extends React.Component {
       console.log(skill)
       if (skill.level === this.state.section){
         return (
-          <label key={index}>
+          <label className="jh-form-label" key={index}>
             <h2>
               {this.state.section}
             </h2>
@@ -71,7 +71,9 @@ class ResumeEditKnowledge extends React.Component {
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent knowledge you have for the position you are applying for. List relevent things you know, not what you can do.
           </p>
-          {listOfKnowledgeItems}
+          <div className="jh-form-group">
+            {listOfKnowledgeItems}
+          </div>
           <div className="jh-form-button-container">
             <button type="submit">
               <ButtonText type="success" text={"SAVE " + this.state.section} />

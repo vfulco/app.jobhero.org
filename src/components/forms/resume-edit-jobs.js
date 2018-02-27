@@ -52,7 +52,7 @@ class ResumeEditJobs extends React.Component {
       if(job.highlights){
         jobHighlights = job.highlights.map((highlight,highlightIndex) => {
           return (
-            <label key={highlightIndex}>
+            <label className="jh-form-label" key={highlightIndex}>
               <h2>highlight at {job.company}</h2>
               <p className="jh-input-helper-text">
                 Enter an impressive highlight or accomplishment from your job. such as "Created new sales process" or "Earned top employee 3 months in a row"
@@ -74,7 +74,7 @@ class ResumeEditJobs extends React.Component {
             <div className="jh-sticky-form-subsection">
               {job.company}
             </div>
-            <label>
+            <label className="jh-form-label">
               <h2>company</h2>
               <p className="jh-input-helper-text">
                 Enter the name of the company you worked for.
@@ -83,7 +83,7 @@ class ResumeEditJobs extends React.Component {
                 <input required type="text" placeholder="Crabby Patties" name="company" value={job.company} onChange={this.handleInputChange.bind(this,index)}/>
               </div>
             </label>
-            <label>
+            <label className="jh-form-label">
               <h2>position</h2>
               <p className="jh-input-helper-text">
                 Enter the role you filled at {job.company}. Which is sometimes different from the position you held.
@@ -92,7 +92,7 @@ class ResumeEditJobs extends React.Component {
                 <input required type="text" placeholder="General Manager" name="position" value={job.position} onChange={this.handleInputChange.bind(this,index)}/>
               </div>
             </label>
-            <label>
+            <label className="jh-form-label">
               <h2>start date</h2>
               <p className="jh-input-helper-text">
                 Enter date you started working at {job.company}.
@@ -101,7 +101,7 @@ class ResumeEditJobs extends React.Component {
                 <input required type="date" name="startDate" value={job.startDate} onChange={this.handleInputChange.bind(this,index)} pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="date format (YYYY-MM-DD)"/>
               </div>
             </label>
-            <label>
+            <label className="jh-form-label">
               <h2>end date</h2>
               <p className="jh-input-helper-text">
                 Enter date you stopped working at {job.company}. If you still work at this company then don't fill in the date.

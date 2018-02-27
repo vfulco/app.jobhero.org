@@ -44,7 +44,7 @@ class ResumeEditInterests extends React.Component {
     listOfInterestItems = this.state.interests.map((item,index) => {
       console.log(item)
         return (
-          <label key={index}>
+          <label className="jh-form-label" key={index}>
             <h2>
               {this.state.section}
             </h2>
@@ -67,7 +67,9 @@ class ResumeEditInterests extends React.Component {
           <p className="jh-edit-form-details">
             This is where you should list out anything that shows you are interesting and worth interviewing. Add education, awards, hobbies, etc. Only 5 items so use the most interesting for the position you are applying for.
           </p>
-          {listOfInterestItems}
+          <div className="jh-form-group">
+            {listOfInterestItems}
+          </div>
           <div className="jh-form-button-container">
             <button type="submit">
               <ButtonText type="success" text={"SAVE " + this.state.section} />

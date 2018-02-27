@@ -44,7 +44,7 @@ class ResumeEditExperience extends React.Component {
       console.log(skill)
       if (skill.level === this.state.section){
         return (
-          <label key={index}>
+          <label className="jh-form-label" key={index}>
             <h2>
               {this.state.section}
             </h2>
@@ -69,7 +69,9 @@ class ResumeEditExperience extends React.Component {
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent experience you have for the position you are applying for. Top 5 experience items.
           </p>
-          {listOfKnowledgeItems}
+          <div className="jh-form-group">
+            {listOfKnowledgeItems}
+          </div>
           <div className="jh-form-button-container">
             <button type="submit">
               <ButtonText type="success" text={"SAVE " + this.state.section} />

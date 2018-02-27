@@ -46,42 +46,45 @@ class ResumeEditBasics extends React.Component {
           <p className="jh-edit-form-details">
             This will be at the top of your resume.
           </p>
-          <label>
-            <h2>Full Name</h2>
-            <p className="jh-input-helper-text">
-              Enter your name.
-            </p>
-            <div className="jh-input-container">
-              <input required type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
-            </div>
-          </label>
-          <label>
-            <h2>Job Title</h2>
-            <p className="jh-input-helper-text">
-              Enter the position you are applying for.
-            </p>
-            <div className="jh-input-container">
-              <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
-            </div>
-          </label>
-          <label>
-            <h2>Email</h2>
+          <div className="jh-form-group">
+            <label className="jh-form-label">
+              <h2>Full Name</h2>
               <p className="jh-input-helper-text">
-                Enter your email. Use a simple and professional email. Best if its just your name at gmail or something similar.
+                Enter your name.
               </p>
-            <div className="jh-input-container">
-              <input required type="email" placeholder="johndoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
-            </div>
-          </label>
-          <label>
-            <h2>Phone</h2>
-            <p className="jh-input-helper-text">
-              Enter your phone number only if you want the prospective employer to call you.
-            </p>
-            <div className="jh-input-container">
-              <input type="text" placeholder="123-123-1234" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
-            </div>
-          </label>
+              <div className="jh-input-container">
+                <input required type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
+              </div>
+            </label>
+            <label className="jh-form-label">
+              <h2>Job Title</h2>
+              <p className="jh-input-helper-text">
+                Enter the position you are applying for.
+              </p>
+              <div className="jh-input-container">
+                <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
+              </div>
+            </label>
+            <label className="jh-form-label">
+              <h2>Email</h2>
+                <p className="jh-input-helper-text">
+                  Enter your email. Use a simple and professional email. Best if its just your name at gmail or something similar.
+                </p>
+              <div className="jh-input-container">
+                <input required type="email" placeholder="johndoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
+              </div>
+            </label>
+            <label className="jh-form-label">
+              <h2>Phone</h2>
+              <p className="jh-input-helper-text">
+                Enter your phone number only if you want the prospective employer to call you.
+              </p>
+              <div className="jh-input-container">
+                <input type="text" placeholder="123-123-1234" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
+              </div>
+            </label>
+          </div>
+
           <div className="jh-form-button-container">
             <button type="submit">
               <ButtonText type="success" text="SAVE BASIC INFO" />
