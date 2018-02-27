@@ -22,6 +22,13 @@ label{
   margin:20px;
   width:100%;
 }
+.jh-sticky-form-subsection{
+  position: sticky;
+  top:100px;
+  padding:20px;
+  color:#fff;
+  background:#222;
+}
 .jh-edit-form-container{
   min-height:100vh;
   width:100%;
@@ -32,7 +39,7 @@ label{
 }
 .jh-edit-form{
   display:flex;
-  width:70%;
+  width:40%;
   margin:auto;
   flex-direction: column;
   align-items: center;
@@ -50,6 +57,10 @@ label{
 }
 .jh-edit-form-details{
   color:#999;
+  padding-bottom:40px;
+}
+.jh-form-group{
+  width:100%;
 }
 .jh-input-container{
   margin: 10px;
@@ -60,6 +71,7 @@ label{
 .jh-input-helper-text{
   font-size:12px;
   color:#999;
+  padding-top:8px;
 }
 .jh-form-button-container{
   padding:10px;

@@ -29,15 +29,14 @@ class ResumeEditExperience extends React.Component {
     })
   }
 
-  handleSaveResumeChange(){
+  handleSaveResumeChange(event){
+    event.preventDefault()
     let skills = this.state.skills
     let resume = this.state.resume
     resume.skills = skills
     console.log('save resume!')
     this.props.onResumeUpdated(resume)
   }
-
-
 
   render() {
     let listOfKnowledgeItems;
@@ -48,7 +47,7 @@ class ResumeEditExperience extends React.Component {
           <label key={index}>
             <h2>{this.state.section}</h2>
             <div className="jh-input-container">
-              <input type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter something you have a lot of knowledge with.
@@ -56,8 +55,6 @@ class ResumeEditExperience extends React.Component {
           </label>
         )
       }
-
-
     })
 
     return (
@@ -65,17 +62,17 @@ class ResumeEditExperience extends React.Component {
         <h1 className="jh-edit-form-heading">
           {this.state.section}
         </h1>
-        <div className="jh-edit-form">
+        <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent knowledge you have for the position you are applying for.
           </p>
           {listOfKnowledgeItems}
           <div className="jh-form-button-container">
-            <div onClick={this.handleSaveResumeChange.bind(this)}>
+            <button type="submit">
               <ButtonText text={"SAVE " + this.state.section} />
-            </div>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

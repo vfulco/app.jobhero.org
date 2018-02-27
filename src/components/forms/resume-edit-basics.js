@@ -25,11 +25,12 @@ class ResumeEditBasics extends React.Component {
     })
   }
 
-  handleSaveResumeChange(){
+  handleSaveResumeChange(event){
+    event.preventDefault()
     let basics = this.state.basics
     let resume = this.state.resume
     resume.basics = basics
-    console.log('save resume!')
+    console.log('save resume!',resume)
     this.props.onResumeUpdated(resume)
   }
 
@@ -41,14 +42,14 @@ class ResumeEditBasics extends React.Component {
         <h1 className="jh-edit-form-heading">
           BASIC INFO
         </h1>
-        <div className="jh-edit-form">
+        <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
             This will be at the top of your resume.
           </p>
           <label>
             <h2>Full Name</h2>
             <div className="jh-input-container">
-              <input type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
+              <input required type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter your name.
@@ -57,7 +58,7 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Job Title</h2>
             <div className="jh-input-container">
-              <input type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
+              <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter position you are applying for.
@@ -66,7 +67,7 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Email</h2>
             <div className="jh-input-container">
-              <input type="email" placeholder="jdoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
+              <input required type="email" placeholder="jdoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter your email. Use a simple and professional email.
@@ -82,11 +83,11 @@ class ResumeEditBasics extends React.Component {
             </p>
           </label>
           <div className="jh-form-button-container">
-            <div onClick={this.handleSaveResumeChange.bind(this)}>
+            <button type="submit">
               <ButtonText text="SAVE BASIC INFO" />
-            </div>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

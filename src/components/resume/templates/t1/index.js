@@ -79,12 +79,7 @@ class ResumeTemplate1 extends React.Component {
             </div>
             <div className="jh-t1-skills-flex">
               <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'interests')}>
-                <T1Block title="interests" type="interests" list={this.state.resume.interests}/>
-              </div>
-            </div>
-            <div className="jh-t1-skills-flex">
-              <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'education')}>
-                <T1Block title="education" type="education" list={this.state.resume.education}/>
+                <T1Block title="Items of Interests" type="interests" list={this.state.resume.interests}/>
               </div>
             </div>
           </section>

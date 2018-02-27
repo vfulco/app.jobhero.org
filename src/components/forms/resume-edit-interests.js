@@ -8,7 +8,7 @@ class ResumeEditInterests extends React.Component {
     this.state = {
       section:props.section,
       resume:props.resume,
-      skills:props.resume.interests || [],
+      interests:props.resume.interests || [],
     }
   }
 
@@ -28,7 +28,8 @@ class ResumeEditInterests extends React.Component {
     })
   }
 
-  handleSaveResumeChange(){
+  handleSaveResumeChange(event){
+    event.preventDefault()
     let interests = this.state.interests
     let resume = this.state.resume
     resume.interests = interests
@@ -40,13 +41,13 @@ class ResumeEditInterests extends React.Component {
 
   render() {
     let listOfInterestItems;
-    listOfInterestItems = this.state.skills.map((item,index) => {
+    listOfInterestItems = this.state.interests.map((item,index) => {
       console.log(item)
         return (
           <label key={index}>
             <h2>{this.state.section}</h2>
             <div className="jh-input-container">
-              <input type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input required type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
             <p className="jh-input-helper-text">
               Enter something you have a lot of knowledge with.
@@ -60,17 +61,17 @@ class ResumeEditInterests extends React.Component {
         <h1 className="jh-edit-form-heading">
           {this.state.section}
         </h1>
-        <div className="jh-edit-form">
+        <form className="jh-edit-form"  onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
             This is where we will list out the most relevent knowledge you have for the position you are applying for.
           </p>
           {listOfInterestItems}
           <div className="jh-form-button-container">
-            <div onClick={this.handleSaveResumeChange.bind(this)}>
+            <button type="submit">
               <ButtonText text={"SAVE " + this.state.section} />
-            </div>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

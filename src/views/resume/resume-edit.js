@@ -6,6 +6,7 @@ import ResumeEditKnowledge from '../../components/forms/resume-edit-knowledge'
 import ResumeEditExperience from '../../components/forms/resume-edit-experience'
 import ResumeEditSkills from '../../components/forms/resume-edit-skills'
 import ResumeEditInterests from '../../components/forms/resume-edit-interests'
+import ResumeEditJobs from '../../components/forms/resume-edit-jobs'
 
 class ResumeEdit extends React.Component {
   constructor(props){
@@ -62,6 +63,9 @@ class ResumeEdit extends React.Component {
         }
         {this.state.section === 'interests' &&
           <ResumeEditInterests resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+        }
+        {this.state.section === 'jobs' &&
+          <ResumeEditJobs resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
       </div>
     );
