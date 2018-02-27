@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Resume from '../../components/resume'
 import Header from '../../components/header'
 import ResumeApi from '../../api/resume'
@@ -9,7 +9,8 @@ class ResumeView extends React.Component {
     super(props)
     this.state = {
       resume:{},
-      resume_id:props.match.params.id
+      resume_id:props.match.params.id,
+      resume_name:''
     }
   }
 
@@ -23,6 +24,7 @@ class ResumeView extends React.Component {
       }
       this.setState({
         loading:false,
+        resume_name: ownedResume.data.data.name,
         resume: ownedResume.data.data.json_resume
       })
     })
@@ -41,7 +43,7 @@ class ResumeView extends React.Component {
     return (
       <div>
         <Header printButton={true} backButton={true} />
-        <Resume id={this.state.resume_id} resume={this.state.resume}  shared=""/>
+        <Resume id={this.state.resume_id} name={this.state.resume_name} resume={this.state.resume}  shared=""/>
       </div>
     );
   }

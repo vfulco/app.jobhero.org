@@ -3,7 +3,7 @@
   line-height: normal;
   overflow: scroll;
   background-color: #ddd;
-  padding-top: 1.5in;
+  padding-top: 2.5in;
   padding-bottom: 1in;
 }
 .jh-resume-page{
@@ -16,6 +16,23 @@
   print-color-adjust: exact;
   color-adjust: exact;
   overflow: hidden;
+}
+.jh-resume-menu{
+  width:100%;
+  position: fixed;
+  top:70px;
+  background-color:#333;
+  color:#fff;
+  padding:10px;
+  z-index: 1000;
+
+}
+.jh-resume-menu-flex{
+  display:flex;
+  flex-direction: row;
+}
+.jh-resume-menu-flex>div{
+  padding:10px;
 }
 
 @media print {

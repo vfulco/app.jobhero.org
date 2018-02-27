@@ -1,4 +1,4 @@
-button, input[type="submit"], input[type="reset"] {
+button, input[type=submit], input[type=reset] {
   background: none;
   color: inherit;
   border: none;
@@ -7,11 +7,11 @@ button, input[type="submit"], input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
-input[type=text],input[type=number],input[type=email],input[type=password]{
+input[type=text],input[type=number],input[type=email],input[type=password],input[type=date]{
   background:none;
   font-size:20px;
   width:100%;
-  padding-left:6px;
+  padding-left:0px;
   padding-right:0px;
   padding-top:6px;
   padding-bottom:6px;
@@ -24,7 +24,7 @@ label{
 }
 .jh-sticky-form-subsection{
   position: sticky;
-  top:100px;
+  top:120px;
   padding:20px;
   color:#fff;
   background:#222;
@@ -39,7 +39,7 @@ label{
 }
 .jh-edit-form{
   display:flex;
-  width:40%;
+  width:50%;
   margin:auto;
   flex-direction: column;
   align-items: center;
@@ -54,6 +54,7 @@ label{
   top: 0px;
   background-color: #fff;
   text-transform: uppercase;
+  z-index: 900;
 }
 .jh-edit-form-details{
   color:#999;
@@ -66,7 +67,7 @@ label{
   margin: 10px;
   border-bottom: 1px solid #444;
   overflow: hidden;
-  width:100%;
+  /* width:100%; */
 }
 .jh-input-helper-text{
   font-size:12px;
@@ -93,5 +94,8 @@ label{
   }
   .jh-edit-form-heading{
     font-size: 40px;
+  }
+  .jh-sticky-form-subsection{
+    top:100px;
   }
 }

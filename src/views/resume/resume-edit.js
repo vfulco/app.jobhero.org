@@ -39,6 +39,10 @@ class ResumeEdit extends React.Component {
     })
   }
 
+  goBack(){
+    this.props.history.push('/resume/' + this.state.id)
+  }
+
   handleResumeUpdate(resume){
     let resumeUpdateBody = {
       id:this.state.id,
@@ -49,6 +53,7 @@ class ResumeEdit extends React.Component {
   render() {
     return (
       <div>
+        <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>X</div>
         {this.state.section === 'basics' &&
           <ResumeEditBasics resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} />
         }

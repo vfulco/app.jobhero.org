@@ -3,7 +3,7 @@
 }
 .jh-t1-heading{
   text-align: center;
-  padding:0.15in;
+  padding:0.50in;
 }
 .jh-t1-heading>h1{
   font-weight: 300;
@@ -71,7 +71,8 @@
   .jh-t1-edit-section:hover::before {
     content: "CLICK TO EDIT SECTION";
     position: relative;
-    left: 10px;
+    left: 6px;
+    top:6px;
     float: left;
     color: #fff;
     z-index: 10;
@@ -101,7 +102,7 @@
 .jh-t1-block>h1{
   background-color:#333;
   font-size:0.2in;
-  width:3.5in;
+  /* width:3.5in; */
   text-transform: uppercase;
   font-weight: 700;
   padding:0.14in;
