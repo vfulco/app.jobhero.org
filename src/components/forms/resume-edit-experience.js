@@ -49,10 +49,10 @@ class ResumeEditExperience extends React.Component {
               {this.state.section}
             </h2>
             <p className="jh-input-helper-text">
-              Enter something you have a lot of knowledge with.
+              Enter something you have a lot of experience with. Such as "10+ Years project management."
             </p>
             <div className="jh-input-container">
-              <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input required type="text" placeholder="5+ years customer service" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
           </label>
         )
@@ -67,7 +67,7 @@ class ResumeEditExperience extends React.Component {
         </h1>
         <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where we will list out the most relevent knowledge you have for the position you are applying for.
+            This is where we will list out the most relevent experience you have for the position you are applying for. Top 5 experience items.
           </p>
           {listOfKnowledgeItems}
           <div className="jh-form-button-container">

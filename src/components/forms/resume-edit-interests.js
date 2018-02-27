@@ -49,10 +49,10 @@ class ResumeEditInterests extends React.Component {
               {this.state.section}
             </h2>
             <p className="jh-input-helper-text">
-              Enter something you have a lot of knowledge with.
+              Enter something interesting about you.
             </p>
             <div className="jh-input-container">
-              <input required type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input required type="text" placeholder="Climbing mountians in every continent" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
           </label>
         )

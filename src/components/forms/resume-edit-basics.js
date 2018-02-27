@@ -48,9 +48,9 @@ class ResumeEditBasics extends React.Component {
           </p>
           <label>
             <h2>Full Name</h2>
-              <p className="jh-input-helper-text">
-                Enter your name.
-              </p>
+            <p className="jh-input-helper-text">
+              Enter your name.
+            </p>
             <div className="jh-input-container">
               <input required type="text" placeholder="John Doe" name="name" value={this.state.basics.name} onChange={this.handleInputChange.bind(this)}/>
             </div>
@@ -58,7 +58,7 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Job Title</h2>
             <p className="jh-input-helper-text">
-              Enter position you are applying for.
+              Enter the position you are applying for.
             </p>
             <div className="jh-input-container">
               <input required type="text" placeholder="Body Double" name="label" value={this.state.basics.label} onChange={this.handleInputChange.bind(this)}/>
@@ -67,10 +67,10 @@ class ResumeEditBasics extends React.Component {
           <label>
             <h2>Email</h2>
               <p className="jh-input-helper-text">
-                Enter your email. Use a simple and professional email.
+                Enter your email. Use a simple and professional email. Best if its just your name at gmail or something similar.
               </p>
             <div className="jh-input-container">
-              <input required type="email" placeholder="jdoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
+              <input required type="email" placeholder="johndoe@example.com" name="email" value={this.state.basics.email} onChange={this.handleInputChange.bind(this)}/>
             </div>
           </label>
           <label>

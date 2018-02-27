@@ -22,6 +22,10 @@ label{
   margin:20px;
   width:100%;
 }
+label>h2{
+  text-transform: uppercase;
+  /* font-weight: bold; */
+}
 .jh-sticky-form-subsection{
   position: sticky;
   top:120px;

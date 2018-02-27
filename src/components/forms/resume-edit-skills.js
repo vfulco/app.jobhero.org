@@ -38,8 +38,6 @@ class ResumeEditSkills extends React.Component {
     this.props.onResumeUpdated(resume)
   }
 
-
-
   render() {
     let listOfKnowledgeItems;
     listOfKnowledgeItems = this.state.skills.map((skill,index) => {
@@ -51,10 +49,10 @@ class ResumeEditSkills extends React.Component {
               {this.state.section}
             </h2>
             <p className="jh-input-helper-text">
-              Enter something you have a lot of knowledge with.
+              Enter something you are really good at that is relevent to the role you are applying for.
             </p>
             <div className="jh-input-container">
-              <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
+              <input required type="text" placeholder="Managing customer expectations" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
           </label>
         )
@@ -69,7 +67,7 @@ class ResumeEditSkills extends React.Component {
         </h1>
         <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where we will list out the most relevent knowledge you have for the position you are applying for.
+            This is where we will list out the most relevent skills you have. This is where you should brag about things are you really good at. Think about tasks you've done in past jobs that you've done well. These skills should be relevent to the role you are applying for.
           </p>
           {listOfKnowledgeItems}
           <div className="jh-form-button-container">

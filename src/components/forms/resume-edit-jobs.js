@@ -53,7 +53,7 @@ class ResumeEditJobs extends React.Component {
         jobHighlights = job.highlights.map((highlight,highlightIndex) => {
           return (
             <label key={highlightIndex}>
-              <h2>highlight</h2>
+              <h2>highlight at {job.company}</h2>
               <p className="jh-input-helper-text">
                 Enter an impressive highlight or accomplishment from your job. such as "Created new sales process" or "Earned top employee 3 months in a row"
               </p>
@@ -86,7 +86,7 @@ class ResumeEditJobs extends React.Component {
             <label>
               <h2>position</h2>
               <p className="jh-input-helper-text">
-                Enter the position you held or the role you filled.
+                Enter the role you filled at {job.company}. Which is sometimes different from the position you held.
               </p>
               <div className="jh-input-container">
                 <input required type="text" placeholder="General Manager" name="position" value={job.position} onChange={this.handleInputChange.bind(this,index)}/>
@@ -95,7 +95,7 @@ class ResumeEditJobs extends React.Component {
             <label>
               <h2>start date</h2>
               <p className="jh-input-helper-text">
-                Enter date you started working at this company.
+                Enter date you started working at {job.company}.
               </p>
               <div className="jh-input-container">
                 <input required type="date" name="startDate" value={job.startDate} onChange={this.handleInputChange.bind(this,index)} pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="date format (YYYY-MM-DD)"/>
@@ -104,7 +104,7 @@ class ResumeEditJobs extends React.Component {
             <label>
               <h2>end date</h2>
               <p className="jh-input-helper-text">
-                Enter date you stopped working at this company. If you still work at this company then don't fill in the date.
+                Enter date you stopped working at {job.company}. If you still work at this company then don't fill in the date.
               </p>
               <div className="jh-input-container">
                 <input type="date" name="endDate" value={job.endDate} onChange={this.handleInputChange.bind(this,index)} pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="date format (YYYY-MM-DD)"/>
@@ -122,12 +122,12 @@ class ResumeEditJobs extends React.Component {
         </h1>
         <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where we will list out the top 3 jobs most relevent to the position you are applying for. If you do not have work experience then use volunteer experience or freelance experience.
+            This is where we will list out the top 3 jobs most relevent to the position you are applying for. If you do not have work experience then use volunteer or freelance experience. This is not meant to be a complete list of all the jobs you've ever had.
           </p>
           {listOfJobItems}
           <div className="jh-form-button-container">
             <button type="submit">
-              <ButtonText type="success" text={"SAVE " + this.state.section} />
+              <ButtonText type="success" text="SAVE SELECT HISTORY"/>
             </button>
           </div>
         </form>

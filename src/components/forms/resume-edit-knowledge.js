@@ -51,7 +51,7 @@ class ResumeEditKnowledge extends React.Component {
               {this.state.section}
             </h2>
             <p className="jh-input-helper-text">
-              Enter something you have a lot of knowledge with.
+              Enter something you know well that is relevent to the role you are applying to
             </p>
             <div className="jh-input-container">
               <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
@@ -69,7 +69,7 @@ class ResumeEditKnowledge extends React.Component {
         </h1>
         <form className="jh-edit-form" onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where we will list out the most relevent knowledge you have for the position you are applying for.
+            This is where we will list out the most relevent knowledge you have for the position you are applying for. List relevent things you know, not what you can do.
           </p>
           {listOfKnowledgeItems}
           <div className="jh-form-button-container">
