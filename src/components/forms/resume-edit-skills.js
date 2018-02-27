@@ -47,13 +47,15 @@ class ResumeEditSkills extends React.Component {
       if (skill.level === this.state.section){
         return (
           <label key={index}>
-            <h2>{this.state.section}</h2>
-            <div className="jh-input-container">
-              <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
-            </div>
+            <h2>
+              {this.state.section}
+            </h2>
             <p className="jh-input-helper-text">
               Enter something you have a lot of knowledge with.
             </p>
+            <div className="jh-input-container">
+              <input required type="text" placeholder="Microsoft Excel" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
+            </div>
           </label>
         )
       }

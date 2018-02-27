@@ -75,9 +75,9 @@ class ResumeEditBasics extends React.Component {
           </label>
           <label>
             <h2>Phone</h2>
-              <p className="jh-input-helper-text">
-                Enter your phone number only if you want the prospective employer to call you.
-              </p>
+            <p className="jh-input-helper-text">
+              Enter your phone number only if you want the prospective employer to call you.
+            </p>
             <div className="jh-input-container">
               <input type="text" placeholder="123-123-1234" name="phone" value={this.state.basics.phone} onChange={this.handleInputChange.bind(this)}/>
             </div>

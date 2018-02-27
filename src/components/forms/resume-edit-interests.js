@@ -45,13 +45,15 @@ class ResumeEditInterests extends React.Component {
       console.log(item)
         return (
           <label key={index}>
-            <h2>{this.state.section}</h2>
-            <div className="jh-input-container">
-              <input required type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
-            </div>
+            <h2>
+              {this.state.section}
+            </h2>
             <p className="jh-input-helper-text">
               Enter something you have a lot of knowledge with.
             </p>
+            <div className="jh-input-container">
+              <input required type="text" placeholder="Collecting stamps" name="name" value={item.name} onChange={this.handleInputChange.bind(this,index)}/>
+            </div>
           </label>
         )
     })
@@ -63,7 +65,7 @@ class ResumeEditInterests extends React.Component {
         </h1>
         <form className="jh-edit-form"  onSubmit={this.handleSaveResumeChange.bind(this)}>
           <p className="jh-edit-form-details">
-            This is where you should list out anything that shows you are interesting and worth interviewing. Add education, awards, hobbies, etc. Only 5 items so use the most interesting for the position you are applying for. 
+            This is where you should list out anything that shows you are interesting and worth interviewing. Add education, awards, hobbies, etc. Only 5 items so use the most interesting for the position you are applying for.
           </p>
           {listOfInterestItems}
           <div className="jh-form-button-container">
