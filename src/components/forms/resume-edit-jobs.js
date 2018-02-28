@@ -12,7 +12,9 @@ class ResumeEditJobs extends React.Component {
       firstRun:props.firstRun
     }
   }
-
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
   handleInputChange(index,event){
     let target = event.target;
     let value = target.type === 'checkbox' ? target.checked : target.value;

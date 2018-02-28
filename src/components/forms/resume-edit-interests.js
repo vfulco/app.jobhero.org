@@ -12,7 +12,9 @@ class ResumeEditInterests extends React.Component {
       firstRun:props.firstRun
     }
   }
-
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
   handleInputChange(index,event){
     let target = event.target;
     let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -47,7 +49,7 @@ class ResumeEditInterests extends React.Component {
         return (
           <label className="jh-form-label" key={index}>
             <h2>
-              {this.state.section}
+              INTERESTING FACT
             </h2>
             <p className="jh-input-helper-text">
               Enter something interesting about you.

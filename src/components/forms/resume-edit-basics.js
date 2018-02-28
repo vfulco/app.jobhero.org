@@ -11,7 +11,9 @@ class ResumeEditBasics extends React.Component {
       firstRun:props.firstRun
     }
   }
-
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
   handleInputChange(event){
     let target = event.target;
     let value = target.type === 'checkbox' ? target.checked : target.value;

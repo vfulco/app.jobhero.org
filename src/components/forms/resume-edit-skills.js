@@ -12,7 +12,9 @@ class ResumeEditSkills extends React.Component {
       firstRun:props.firstRun
     }
   }
-
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
   handleInputChange(index,event){
     let target = event.target;
     let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -47,7 +49,7 @@ class ResumeEditSkills extends React.Component {
         return (
           <label className="jh-form-label" key={index}>
             <h2>
-              {this.state.section}
+              SKILL
             </h2>
             <p className="jh-input-helper-text">
               Enter something you are really good at that is relevent to the role you are applying for.
