@@ -9,6 +9,7 @@ class ResumeEditKnowledge extends React.Component {
       section:props.section,
       resume:props.resume,
       skills:props.resume.skills || [],
+      firstRun:props.firstRun
     }
   }
 
@@ -75,9 +76,16 @@ class ResumeEditKnowledge extends React.Component {
             {listOfKnowledgeItems}
           </div>
           <div className="jh-form-button-container">
-            <button type="submit">
-              <ButtonText type="success" text={"SAVE " + this.state.section} />
-            </button>
+            {this.state.firstRun === true &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE AND CONTINUE" />
+              </button>
+            }
+            {this.state.firstRun === false &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE KNOWLEDGE" />
+              </button>
+            }
           </div>
         </form>
       </div>

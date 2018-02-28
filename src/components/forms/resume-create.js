@@ -18,7 +18,7 @@ class ResumeCreate extends React.Component {
      ResumeApi.createResume(newResumeBody)
      .then((createdResume) => {
        console.log(createdResume.data.data)
-       this.props.history.push('/resume/' + createdResume.data.data.resume[0].id)
+       this.props.history.push({pathname:`/resume/${createdResume.data.data.resume[0].id}/edit/basics`,state:{resume:createdResume.data.data.resume[0].json_resume,firstRun:true}})
      })
    }
 

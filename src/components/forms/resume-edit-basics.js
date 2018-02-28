@@ -7,7 +7,8 @@ class ResumeEditBasics extends React.Component {
     super(props)
     this.state = {
       resume:props.resume,
-      basics:props.resume.basics
+      basics:props.resume.basics,
+      firstRun:props.firstRun
     }
   }
 
@@ -86,9 +87,16 @@ class ResumeEditBasics extends React.Component {
           </div>
 
           <div className="jh-form-button-container">
-            <button type="submit">
-              <ButtonText type="success" text="SAVE BASIC INFO" />
-            </button>
+            {this.state.firstRun === true &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE AND CONTINUE" />
+              </button>
+            }
+            {this.state.firstRun === false &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE BASIC INFO" />
+              </button>
+            }
           </div>
         </form>
       </div>

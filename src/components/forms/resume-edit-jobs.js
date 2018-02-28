@@ -9,6 +9,7 @@ class ResumeEditJobs extends React.Component {
       section:props.section,
       resume:props.resume,
       work:props.resume.work || [],
+      firstRun:props.firstRun
     }
   }
 
@@ -53,7 +54,7 @@ class ResumeEditJobs extends React.Component {
         jobHighlights = job.highlights.map((highlight,highlightIndex) => {
           return (
             <label className="jh-form-label" key={highlightIndex}>
-              <h2>highlight at {job.company}</h2>
+              <h2>accomplishment at {job.company}</h2>
               <p className="jh-input-helper-text">
                 Enter an impressive highlight or accomplishment from your job. such as "Created new sales process" or "Earned top employee 3 months in a row"
               </p>
@@ -126,9 +127,16 @@ class ResumeEditJobs extends React.Component {
           </p>
           {listOfJobItems}
           <div className="jh-form-button-container">
-            <button type="submit">
-              <ButtonText type="success" text="SAVE SELECT HISTORY"/>
-            </button>
+            {this.state.firstRun === true &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE AND CONTINUE" />
+              </button>
+            }
+            {this.state.firstRun === false &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE SELECT HISTORY" />
+              </button>
+            }
           </div>
         </form>
       </div>

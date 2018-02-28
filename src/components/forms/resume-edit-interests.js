@@ -9,6 +9,7 @@ class ResumeEditInterests extends React.Component {
       section:props.section,
       resume:props.resume,
       interests:props.resume.interests || [],
+      firstRun:props.firstRun
     }
   }
 
@@ -71,9 +72,16 @@ class ResumeEditInterests extends React.Component {
             {listOfInterestItems}
           </div>
           <div className="jh-form-button-container">
-            <button type="submit">
-              <ButtonText type="success" text={"SAVE " + this.state.section} />
-            </button>
+            {this.state.firstRun === true &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE AND CONTINUE" />
+              </button>
+            }
+            {this.state.firstRun === false &&
+              <button type="submit">
+                <ButtonText type="success" text="SAVE ITEMS OF INTEREST INFO" />
+              </button>
+            }
           </div>
         </form>
       </div>

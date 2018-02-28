@@ -29,6 +29,7 @@ class ResumeList extends React.Component {
     this.getResumes()
     window.scrollTo(0, 0)
   }
+  
   render() {
     let allUserResumes;
     if (this.state.resumes[0]){

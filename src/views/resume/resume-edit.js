@@ -23,19 +23,34 @@ class ResumeEdit extends React.Component {
     this.state = {
       section:props.match.params.section,
       id:props.match.params.id,
-      resume:stateResume|| {}
+      resume:stateResume|| {},
+      firstRun:props.location.state.firstRun || false
     }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-
+  goNext(updatedResume){
+    if(this.state.firstRun === true && this.state.section === 'basics'){
+      this.setState({section:'knowledge'})
+    } else if(this.state.firstRun === true && this.state.section === 'knowledge'){
+      this.setState({section:'experience'})
+    } else if(this.state.firstRun === true && this.state.section === 'experience'){
+      this.setState({section:'skills'})
+    } else if(this.state.firstRun === true && this.state.section === 'skills'){
+      this.setState({section:'interests'})
+    } else if(this.state.firstRun === true && this.state.section === 'interests'){
+      this.setState({section:'jobs'})
+    } else {
+      this.props.history.push('/resume/' + this.state.id)
+    }
+  }
   updateResume(resume){
     ResumeApi.updateSingleResume(resume)
     .then((updatedResume) => {
+      this.goNext(updatedResume.data.data)
       console.log(updatedResume.data.data)
-      this.props.history.push('/resume/' + this.state.id)
     })
   }
 
@@ -53,24 +68,26 @@ class ResumeEdit extends React.Component {
   render() {
     return (
       <div>
-        <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>X</div>
+        {this.state.firstRun === false &&
+          <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>X</div>
+        }
         {this.state.section === 'basics' &&
-          <ResumeEditBasics resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} />
+          <ResumeEditBasics resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} />
         }
         {this.state.section === 'knowledge' &&
-          <ResumeEditKnowledge resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditKnowledge resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'experience' &&
-          <ResumeEditExperience resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditExperience resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'skills' &&
-          <ResumeEditSkills resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditSkills resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'interests' &&
-          <ResumeEditInterests resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditInterests resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
         {this.state.section === 'jobs' &&
-          <ResumeEditJobs resume={this.state.resume} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditJobs resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
         }
       </div>
     );
