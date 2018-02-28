@@ -156,4 +156,7 @@ label>h2{
   .jh-sticky-form-subsection{
     top:100px;
   }
+  .jh-enter-form{
+    width:80%;
+  }
 }
