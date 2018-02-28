@@ -1,6 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import LoginUser from '../../components/forms/login-user'
+import Header from '../../components/header'
 
 class Login extends React.Component {
   state = {
@@ -19,6 +20,7 @@ class Login extends React.Component {
 
     return (
       <div>
+        <Header hideButtons={true}/>
         <LoginUser from={from} redirectToReferrer={redirectToReferrer}/>
       </div>
     );

@@ -18,7 +18,8 @@ class Header extends React.Component {
     this.state = {
       authenticated:getAuth(),
       printButton: this.props.printButton,
-      backButton: this.props.backButton
+      backButton: this.props.backButton,
+      hideButtons: this.props.hideButtons
     }
   }
 
@@ -70,7 +71,7 @@ class Header extends React.Component {
                 </a>
               </div>
             }
-            {!this.state.authenticated &&
+            {!this.state.authenticated && this.state.hideButtons !== true &&
               <div>
                 <a onClick={this.handleRegister.bind(this)}>
                   <ButtonText text="CREATE ACCOUNT"/>

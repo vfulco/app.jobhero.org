@@ -43,32 +43,33 @@ class RegisterUser extends React.Component {
       return <Redirect to={this.state.from} />;
     }
     return (
-      <div className="jh-edit-form-container">
-        <h1 className="jh-edit-form-heading">
-          REGISTER
-        </h1>
-        <form className="jh-edit-form" onSubmit={this.handleSignIn.bind(this)}>
-          <label>
-            <h1>EMAIL</h1>
-            <div className="jh-input-container">
-              <input required type="email" ref="email" placeholder="Enter email address" />
-            </div>
-          </label>
-          <label>
-            <h1>PASSWORD</h1>
-            <div className="jh-input-container">
-              <input required type="password" ref="password" placeholder="Enter password" />
-            </div>
-          </label>
+      <div className="jh-enter-form-container">
+        <form className="jh-enter-form" onSubmit={this.handleSignIn.bind(this)}>
+          <h1 className="jh-enter-form-heading">
+            REGISTER
+          </h1>
+          <p className="jh-edit-form-details">
+            Create a new Job Hero account
+          </p>
+          <div className="jh-form-group">
+            <label>
+              <h1>EMAIL</h1>
+              <div className="jh-input-container">
+                <input required type="email" ref="email" placeholder="Enter email address" />
+              </div>
+            </label>
+            <label>
+              <h1>PASSWORD</h1>
+              <div className="jh-input-container">
+                <input required type="password" ref="password" placeholder="Enter password" />
+              </div>
+            </label>
+          </div>
+
           <div className="jh-form-button-container">
             <div>
               <NavLink to='/login' activeClassName="">
                 <ButtonText type="default" text="LOGIN"/>
-              </NavLink>
-            </div>
-            <div>
-              <NavLink to='/forgot' activeClassName="">
-                <ButtonText type="default" text="FORGOT"/>
               </NavLink>
             </div>
             <div>
