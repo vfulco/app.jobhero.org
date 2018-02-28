@@ -33,7 +33,7 @@
   padding:10px;
 }
 .jh-resume-menu-flex>div{
-  padding:10px;
+  /* padding:10px; */
 }
 
 @media print {
@@ -101,5 +101,11 @@ body{
   }
   .jh-noprint{
     display:none;
+  }
+}
+
+@media screen and (max-width:768px){
+  .jh-resume-menu{
+    top:58px;
   }
 }
