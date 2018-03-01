@@ -3,6 +3,7 @@ import './forms.css'
 import Authentication from '../../api/authentication.js'
 import ButtonText from '../buttons/button-text'
 import { NavLink, withRouter,Redirect } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
 
 class LoginUser extends React.Component {
 
@@ -30,6 +31,9 @@ class LoginUser extends React.Component {
     })
     .catch((error)=>{
       console.log(error)
+      toast.error(error.response.data.statusMessage, {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
       this.setState({
         loading:false,
         errorResponse:error.response
@@ -84,6 +88,7 @@ class LoginUser extends React.Component {
             </div>
           </div>
         </form>
+        <ToastContainer />
       </div>
     );
   };
