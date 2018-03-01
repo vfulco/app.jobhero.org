@@ -19,16 +19,11 @@
 
 }
 .jh-header-logo{
-  height:50px;
-  width:60px;
+  height:60px;
+  width:200px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-.jh-header-title{
-  color: #2E5266;
-  font-family: 'Rubik Mono One',sans-serif;
-  font-size: 26px;
 }
 .jh-header-buttons-container{
   display:flex;

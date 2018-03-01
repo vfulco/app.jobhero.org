@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import './header.css'
-import Logo from '../../images/job-hero-logov1.svg'
+import Logo from '../../images/job-hero-logov2.svg'
 import ButtonText from '../buttons/button-text'
 
 function getAuth() {
@@ -47,7 +47,7 @@ class Header extends React.Component {
         <div className="jh-header-flex">
           <div className="jh-header-logo-container">
             <div className="jh-header-logo" style={{backgroundImage:'url(' + Logo + ')'}}></div>
-            <h1 className="jh-header-title">JOBHERO</h1><p>&nbsp; beta</p>
+            <p>&nbsp; beta</p>
           </div>
           <div className="jh-header-buttons-container">
             {this.state.backButton === true &&
