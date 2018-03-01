@@ -9,11 +9,15 @@ class ResumeEditSkills extends React.Component {
       section:props.section,
       resume:props.resume,
       skills:props.resume.skills || [],
-      firstRun:props.firstRun
+      firstRun:props.firstRun,
+      loading:false
     }
   }
   componentDidMount(){
     window.scrollTo(0, 0)
+  }
+  componentWillReceiveProps(props){
+    this.setState({loading:props.loading})
   }
   handleInputChange(index,event){
     let target = event.target;
@@ -78,12 +82,12 @@ class ResumeEditSkills extends React.Component {
           <div className="jh-form-button-container">
             {this.state.firstRun === true &&
               <button type="submit">
-                <ButtonText type="success" text="SAVE AND CONTINUE" />
+                <ButtonText loading={this.state.loading} type="success" text="SAVE AND CONTINUE" />
               </button>
             }
             {this.state.firstRun === false &&
               <button type="submit">
-                <ButtonText type="success" text="SAVE SKILLS" />
+                <ButtonText loading={this.state.loading} type="success" text="SAVE SKILLS" />
               </button>
             }
           </div>

@@ -24,7 +24,8 @@ class ResumeEdit extends React.Component {
       section:props.match.params.section,
       id:props.match.params.id,
       resume:stateResume|| {},
-      firstRun:props.location.state.firstRun || false
+      firstRun:props.location.state.firstRun || false,
+      loading:false,
     }
   }
 
@@ -47,8 +48,10 @@ class ResumeEdit extends React.Component {
     }
   }
   updateResume(resume){
+    this.setState({loading:true})
     ResumeApi.updateSingleResume(resume)
     .then((updatedResume) => {
+      this.setState({loading:false})
       this.goNext(updatedResume.data.data)
       console.log(updatedResume.data.data)
     })
@@ -72,22 +75,22 @@ class ResumeEdit extends React.Component {
           <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>X</div>
         }
         {this.state.section === 'basics' &&
-          <ResumeEditBasics resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} />
+          <ResumeEditBasics resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} loading={this.state.loading}/>
         }
         {this.state.section === 'knowledge' &&
-          <ResumeEditKnowledge resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditKnowledge resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section} loading={this.state.loading}/>
         }
         {this.state.section === 'experience' &&
-          <ResumeEditExperience resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditExperience resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section} loading={this.state.loading}/>
         }
         {this.state.section === 'skills' &&
-          <ResumeEditSkills resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditSkills resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section} loading={this.state.loading}/>
         }
         {this.state.section === 'interests' &&
-          <ResumeEditInterests resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditInterests resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section} loading={this.state.loading}/>
         }
         {this.state.section === 'jobs' &&
-          <ResumeEditJobs resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section}/>
+          <ResumeEditJobs resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)}  section={this.state.section} loading={this.state.loading}/>
         }
       </div>
     );

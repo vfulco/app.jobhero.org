@@ -1,5 +1,6 @@
 import React from 'react'
 import './buttons.css'
+import LoadingAnimation from '../loading-animation'
 
 class ButtonText extends React.Component {
 
@@ -27,7 +28,12 @@ class ButtonText extends React.Component {
 
     return (
       <div className="jh-button-container" style={colors}>
-        <h1>{this.props.text}</h1>
+        {this.props.loading === true &&
+          <LoadingAnimation/>
+        }
+        {!this.props.loading === true &&
+          <h1>{this.props.text}</h1>
+        }
       </div>
     );
   }

@@ -8,11 +8,15 @@ class ResumeEditBasics extends React.Component {
     this.state = {
       resume:props.resume,
       basics:props.resume.basics,
-      firstRun:props.firstRun
+      firstRun:props.firstRun,
+      loading:false
     }
   }
   componentDidMount(){
     window.scrollTo(0, 0)
+  }
+  componentWillReceiveProps(props){
+    this.setState({loading:props.loading})
   }
   handleInputChange(event){
     let target = event.target;
@@ -91,12 +95,12 @@ class ResumeEditBasics extends React.Component {
           <div className="jh-form-button-container">
             {this.state.firstRun === true &&
               <button type="submit">
-                <ButtonText type="success" text="SAVE AND CONTINUE" />
+                <ButtonText type="success" loading={this.state.loading} text="SAVE AND CONTINUE" />
               </button>
             }
             {this.state.firstRun === false &&
               <button type="submit">
-                <ButtonText type="success" text="SAVE BASIC INFO" />
+                <ButtonText type="success" loading={this.state.loading} text="SAVE BASIC INFO" />
               </button>
             }
           </div>
