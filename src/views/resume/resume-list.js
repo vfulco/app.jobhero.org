@@ -5,23 +5,28 @@ import Header from '../../components/header'
 import './resume.css'
 import moment from 'moment'
 import ResumeCreate from '../../components/forms/resume-create'
+import LoadingAnimation from '../../components/loading-animation'
 
 class ResumeList extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      resumes:[]
+      resumes:[],
+      loading:true
     }
   }
   getResumes(){
     ResumeApi.getAllResumes()
     .then((allResumes) => {
-      this.setState({resumes:allResumes.data.data})
+      this.setState({
+        resumes:allResumes.data.data,
+        loading:false
+      })
     })
     .catch((error)=>{
       console.log(error)
-      window.localStorage.clear()
-      this.props.history.push('/login')
+      // window.localStorage.clear()
+      // this.props.history.push('/login')
     })
   }
 
@@ -29,7 +34,7 @@ class ResumeList extends React.Component {
     this.getResumes()
     window.scrollTo(0, 0)
   }
-  
+
   render() {
     let allUserResumes;
     if (this.state.resumes[0]){
@@ -54,6 +59,9 @@ class ResumeList extends React.Component {
             MY RESUMES
           </h1>
           {allUserResumes}
+          {this.state.loading &&
+            <LoadingAnimation/>
+          }
           <div className="jh-create-resume-form-container">
             <ResumeCreate/>
           </div>

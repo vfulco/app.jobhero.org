@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import Resume from '../../components/resume'
 import Header from '../../components/header'
 import ResumeApi from '../../api/resume'
+import LoadingAnimation from '../../components/loading-animation'
 
 class ResumeView extends React.Component {
   constructor(props){
@@ -10,7 +11,8 @@ class ResumeView extends React.Component {
     this.state = {
       resume:{},
       resume_id:props.match.params.id,
-      resume_name:''
+      resume_name:'',
+      loading:true
     }
   }
 
