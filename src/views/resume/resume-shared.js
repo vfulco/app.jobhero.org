@@ -8,7 +8,8 @@ class ResumeShared extends React.Component {
     super(props)
     this.state = {
       resume:{},
-      resume_share_id:props.match.params.share_id
+      resume_share_id:props.match.params.share_id,
+      loading:true
     }
   }
 
@@ -35,7 +36,7 @@ class ResumeShared extends React.Component {
     return (
       <div>
         <Header printButton={true}/>
-        <Resume resume={this.state.resume} shared={true}/>
+        <Resume loading={this.state.loading} resume={this.state.resume} shared={true}/>
       </div>
     );
   }

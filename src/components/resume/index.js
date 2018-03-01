@@ -11,7 +11,8 @@ class Resume extends React.Component {
       resume:props.resume || {},
       shared:props.shared,
       name:props.name,
-      id:props.id
+      id:props.id,
+      loading:props.loading
     }
   }
 
@@ -20,7 +21,8 @@ class Resume extends React.Component {
       resume:props.resume,
       shared:props.shared,
       name:props.name,
-      id:props.id
+      id:props.id,
+      loading:props.loading
     })
   }
 
@@ -41,7 +43,7 @@ class Resume extends React.Component {
           </div>
         </div>
         }
-        <ResumeTemplate1 id={this.state.id} resume={this.state.resume} shared={this.state.shared}/>
+        <ResumeTemplate1 loading={this.state.loading} id={this.state.id} resume={this.state.resume} shared={this.state.shared}/>
       </div>
     );
   }

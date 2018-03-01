@@ -40,7 +40,7 @@ class ResumeView extends React.Component {
     return (
       <div>
         <Header printButton={true} backButton={true} />
-        <Resume id={this.state.resume_id} name={this.state.resume_name} resume={this.state.resume}  shared=""/>
+        <Resume loading={this.state.loading} id={this.state.resume_id} name={this.state.resume_name} resume={this.state.resume}  shared=""/>
       </div>
     );
   }

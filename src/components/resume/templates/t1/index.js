@@ -3,6 +3,7 @@ import './t1.css'
 import T1Block from './block.js'
 import T1Heading from './heading.js'
 import { withRouter } from 'react-router-dom'
+import LoadingAnimation from '../../../loading-animation'
 
 class ResumeTemplate1 extends React.Component {
   constructor(props){
@@ -11,7 +12,8 @@ class ResumeTemplate1 extends React.Component {
       resume:props.resume || {},
       json_resume:{},
       id:props.id,
-      shared:props.shared
+      shared:props.shared,
+      loading:props.loading
     }
   }
 
@@ -23,7 +25,8 @@ class ResumeTemplate1 extends React.Component {
       resume:props.resume,
       json_resume:props.resume.json_resume,
       shared:props.shared,
-      id:props.id
+      id:props.id,
+      loading:props.loading
     })
   }
 
@@ -47,6 +50,9 @@ class ResumeTemplate1 extends React.Component {
         <div className="jh-resume-page">
           <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'basics')} title="Click to edit basic info">
             <section className="jh-t1-basics-section">
+              {this.state.loading &&
+                <LoadingAnimation/>
+              }
               {this.state.json_resume && this.state.json_resume.basics &&
                 <h1>
                   {this.state.json_resume.basics.name}
@@ -69,19 +75,31 @@ class ResumeTemplate1 extends React.Component {
             <div className="jh-t1-skills-flex">
               <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'knowledge')}>
                 <T1Block title="knowledge" type="skills" list={this.state.json_resume.skills}/>
+                  {this.state.loading &&
+                    <LoadingAnimation/>
+                  }
               </div>
               <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'experience')}>
                 <T1Block title="experience"  list={this.state.json_resume.skills}/>
+                  {this.state.loading &&
+                    <LoadingAnimation/>
+                  }
               </div>
             </div>
             <div className="jh-t1-skills-flex">
               <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'skills')}>
                 <T1Block title="skills" list={this.state.json_resume.skills}/>
+                  {this.state.loading &&
+                    <LoadingAnimation/>
+                  }
               </div>
             </div>
             <div className="jh-t1-skills-flex">
               <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'interests')}>
                 <T1Block title="Items of Interest" type="interests" list={this.state.json_resume.interests}/>
+                  {this.state.loading &&
+                    <LoadingAnimation/>
+                  }
               </div>
             </div>
           </section>
@@ -99,6 +117,9 @@ class ResumeTemplate1 extends React.Component {
           <section className="jh-t1-skills-section">
             <div className={"jh-t1-edit-section" + this.state.shared} onClick={this.handleEditSection.bind(this,'jobs')}>
               {jobsList}
+              {this.state.loading &&
+                <LoadingAnimation/>
+              }
             </div>
           </section>
         </div>
