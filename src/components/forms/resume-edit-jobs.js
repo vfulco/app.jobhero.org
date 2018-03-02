@@ -54,7 +54,10 @@ class ResumeEditJobs extends React.Component {
         job.highlights[highlight] = event.target.value
         let work = this.state.work
         work[index] = job
-        this.setState({work})
+        this.setState({
+          work,
+          buttonDisabled:false
+        })
       }
       console.log(job)
       let jobHighlights;
