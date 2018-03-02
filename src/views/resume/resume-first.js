@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import ResumeApi from '../../api/resume'
 import './resume.css'
 import ResumeCreate from '../../components/forms/resume-create'
-import LoadingAnimation from '../../components/loading-animation'
 
 class ResumeFirst extends React.Component {
   constructor(props){

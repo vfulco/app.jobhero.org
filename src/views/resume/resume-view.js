@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import Resume from '../../components/resume'
 import Header from '../../components/header'
 import ResumeApi from '../../api/resume'
-import LoadingAnimation from '../../components/loading-animation'
 
 class ResumeView extends React.Component {
   constructor(props){
