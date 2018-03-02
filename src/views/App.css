@@ -7,3 +7,6 @@ html,body{
   background-color:#fff;
   user-select: none;
 }
+div[role=button],a,button {
+    outline: none;
+}

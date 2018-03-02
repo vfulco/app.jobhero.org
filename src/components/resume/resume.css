@@ -29,11 +29,12 @@
   display:flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   padding:10px;
   padding-right: 20px;
 }
 .jh-resume-menu-flex>div{
-  /* padding:10px; */
+  padding-left:10px;
 }
 @media screen and (max-width:768px){
   .jh-resume-menu-flex{
