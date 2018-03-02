@@ -9,7 +9,8 @@ class ResumeCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      resume_name: ''
+      resume_name: '',
+      buttonDisabled:true
     };
   };
 
@@ -28,6 +29,7 @@ class ResumeCreate extends React.Component {
      let name = target.name;
      this.setState({
          [name]: value,
+         buttonDisabled:false
        }, () => {
        console.log(this.state)
      });
@@ -55,7 +57,7 @@ class ResumeCreate extends React.Component {
           </label>
           <div className="jh-form-button-container">
             <div>
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText loading={this.state.loading} type="success" text="CREATE RESUME"/>
               </button>
             </div>

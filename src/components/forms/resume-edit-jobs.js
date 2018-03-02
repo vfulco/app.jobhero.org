@@ -10,7 +10,8 @@ class ResumeEditJobs extends React.Component {
       resume:props.resume,
       work:props.resume.work || [],
       firstRun:props.firstRun,
-      loading:false
+      loading:false,
+      buttonDisabled:true
     }
   }
   componentDidMount(){
@@ -26,7 +27,8 @@ class ResumeEditJobs extends React.Component {
     let work = this.state.work;
     work[index][name] = value
     this.setState(prevState => ({
-        work
+        work,
+        buttonDisabled:false
     }), () => {
       console.log(this.state.work)
     })
@@ -134,12 +136,12 @@ class ResumeEditJobs extends React.Component {
           {listOfJobItems}
           <div className="jh-form-button-container">
             {this.state.firstRun === true &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText loading={this.state.loading} type="success" text="SAVE AND CONTINUE" />
               </button>
             }
             {this.state.firstRun === false &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText loading={this.state.loading} type="success" text="SAVE SELECT HISTORY" />
               </button>
             }

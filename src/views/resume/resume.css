@@ -56,9 +56,37 @@
 .jh-edit-form-close:hover{
   color:#666;
   transition: all linear 0.2s;
-
 }
 
 .jh-create-resume-form-container{
   /* width:100%; */
+}
+.jh-resume-first-container{
+  height:100vh;
+  width:100%;
+}
+.jh-resume-first-flex{
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.jh-resume-first-heading{
+  font-size: 60px;
+  padding: 30px 0;
+  width: 100%;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  font-weight: lighter;
+  top: 0;
+  background-color: #fff;
+  text-transform: uppercase;
+  z-index: 900;
+  max-width:800px;
+}
+.jh-resume-first-subtitle{
+  color: #999;
+  padding-bottom: 40px;
 }

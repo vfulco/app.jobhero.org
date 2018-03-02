@@ -21,6 +21,10 @@ class ResumeList extends React.Component {
       this.setState({
         resumes:allResumes.data.data,
         loading:false
+      },() => {
+        if (this.state.resumes.length === 0){
+          this.props.history.push('resume-first')
+        }
       })
     })
     .catch((error)=>{

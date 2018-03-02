@@ -6,6 +6,7 @@ import ResumeView from './resume/resume-view'
 import ResumeList from './resume/resume-list'
 import ResumeEdit from './resume/resume-edit'
 import ResumeShared from './resume/resume-shared'
+import ResumeFirst from './resume/resume-first'
 
 let NoMatch = ({ location }) => (
   <div>
@@ -60,6 +61,7 @@ class Main extends React.Component {
             <RedirectRoute exact path='/register' component={Register}/>
             <PrivateRoute exact path='/resume' component={ResumeList}/>
             <PrivateRoute exact path='/resume/:id' component={ResumeView}/>
+            <PrivateRoute exact path='/resume-first' component={ResumeFirst}/>
               <PrivateRoute exact path='/resume/:id/edit/:section' component={ResumeEdit}/>
             <Route exact path='/resume-shared/:share_id' component={ResumeShared}/>
             <Route component={NoMatch} />

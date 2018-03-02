@@ -5,8 +5,16 @@ button, input[type=submit], input[type=reset] {
   padding: 0;
   font: inherit;
   cursor: pointer;
+  opacity:1;
   outline: inherit;
+  transition: all linear 0.2s;
 }
+
+button:disabled {
+  opacity: 0.6;
+  transition: all linear 0.2s;
+}
+
 input[type=text],input[type=number],input[type=email],input[type=password],input[type=date]{
   background:none;
   font-size:20px;

@@ -10,7 +10,8 @@ class ResumeEditInterests extends React.Component {
       resume:props.resume,
       interests:props.resume.interests || [],
       firstRun:props.firstRun,
-      loading:false
+      loading:false,
+      buttonDisabled:true
     }
   }
   componentDidMount(){
@@ -29,7 +30,8 @@ class ResumeEditInterests extends React.Component {
     };
 
     this.setState(prevState => ({
-        interests
+        interests,
+        buttonDisabled:false
     }), () => {
       console.log(this.state.interests)
     })
@@ -79,12 +81,12 @@ class ResumeEditInterests extends React.Component {
           </div>
           <div className="jh-form-button-container">
             {this.state.firstRun === true &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText loading={this.state.loading} type="success" text="SAVE AND CONTINUE" />
               </button>
             }
             {this.state.firstRun === false &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText loading={this.state.loading} type="success" text="SAVE ITEMS OF INTEREST INFO" />
               </button>
             }

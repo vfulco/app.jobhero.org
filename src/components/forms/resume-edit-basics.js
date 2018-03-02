@@ -9,7 +9,8 @@ class ResumeEditBasics extends React.Component {
       resume:props.resume,
       basics:props.resume.basics,
       firstRun:props.firstRun,
-      loading:false
+      loading:false,
+      buttonDisabled:true
     }
   }
   componentDidMount(){
@@ -26,9 +27,11 @@ class ResumeEditBasics extends React.Component {
         basics: {
             ...prevState.basics,
             [name]: value
-        }
+        },
+        buttonDisabled:false,
     }), () => {
       console.log(this.state.basics)
+
     })
   }
 
@@ -94,12 +97,12 @@ class ResumeEditBasics extends React.Component {
 
           <div className="jh-form-button-container">
             {this.state.firstRun === true &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText type="success" loading={this.state.loading} text="SAVE AND CONTINUE" />
               </button>
             }
             {this.state.firstRun === false &&
-              <button type="submit">
+              <button disabled={this.state.buttonDisabled} type="submit">
                 <ButtonText type="success" loading={this.state.loading} text="SAVE BASIC INFO" />
               </button>
             }
