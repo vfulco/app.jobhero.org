@@ -52,30 +52,30 @@ class Header extends React.Component {
           <div className="jh-header-buttons-container">
             {this.state.backButton === true &&
               <div>
-                <a onClick={this.handleBack.bind(this)}>
+                <button onClick={this.handleBack.bind(this)}>
                   <ButtonText text="MY RESUMES"/>
-                </a>
+                </button>
               </div>
             }
             {this.state.printButton === true &&
               <div>
-                <a onClick={this.handlePrint.bind(this)}>
+                <button onClick={this.handlePrint.bind(this)}>
                   <ButtonText text="PRINT"/>
-                </a>
+                </button>
               </div>
             }
             {this.state.authenticated &&
               <div>
-                <a onClick={this.handleLogout.bind(this)}>
+                <button onClick={this.handleLogout.bind(this)}>
                   <ButtonText text="LOGOUT"/>
-                </a>
+                </button>
               </div>
             }
             {!this.state.authenticated && this.state.hideButtons !== true &&
               <div>
-                <a onClick={this.handleRegister.bind(this)}>
+                <button onClick={this.handleRegister.bind(this)}>
                   <ButtonText text="CREATE ACCOUNT"/>
-                </a>
+                </button>
               </div>
             }
           </div>

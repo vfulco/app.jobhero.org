@@ -43,7 +43,7 @@ class Resume extends React.Component {
             <div>
               <FacebookShareButton
                  url={"https://app.jobhero.org/resume-shared/" + this.state.resume.share_id}
-                 quote={"Check Out My Resume! Made With jobhero.org"}
+                 quote={"Check out my resume! Created with jobhero.org"}
                  hashtag={"#jobheroresume"}>
                  <FacebookIcon
                    size={32}
