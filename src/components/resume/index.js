@@ -42,10 +42,9 @@ class Resume extends React.Component {
           <div className="jh-resume-menu-flex">
             <div>
               <FacebookShareButton
-                 url={"https://jobhero.org/resume-shared/" + this.state.resume.share_id}
+                 url={"https://app.jobhero.org/resume-shared/" + this.state.resume.share_id}
                  quote={"Check Out My Resume! Made With jobhero.org"}
-                 hashtag={"#resume"}
-                 className="Demo__some-network__share-button">
+                 hashtag={"#jobheroresume"}>
                  <FacebookIcon
                    size={32}
                    round />
