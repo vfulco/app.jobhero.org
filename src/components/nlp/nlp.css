@@ -1,0 +1,16 @@
+.jh-nlp-container{
+  background:#7DDF64;
+  border-radius: 10px;
+}
+.jh-nlp-container>div{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size:14px;
+  color:#222;
+  line-height: normal;
+  padding:10px;
+}
+.jh-nlp-container>div>p{
+  font-style: italic;
+  font-weight: 900;
+}

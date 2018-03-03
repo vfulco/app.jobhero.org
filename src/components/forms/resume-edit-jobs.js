@@ -1,6 +1,7 @@
 import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
+import NaturalPast from '../nlp/past'
 
 class ResumeEditJobs extends React.Component {
   constructor(props){
@@ -72,6 +73,7 @@ class ResumeEditJobs extends React.Component {
               <div className="jh-input-container">
                 <input type="text" name="highlights" value={highlight} onChange={updateHighlights.bind(this,highlightIndex)}/>
               </div>
+              <NaturalPast text={highlight}/>
             </label>
           )
         })

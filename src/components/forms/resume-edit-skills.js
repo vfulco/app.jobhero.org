@@ -1,6 +1,7 @@
 import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
+import NaturalPresent from '../nlp/present'
 
 class ResumeEditSkills extends React.Component {
   constructor(props){
@@ -63,6 +64,7 @@ class ResumeEditSkills extends React.Component {
             <div className="jh-input-container">
               <input required type="text" placeholder="Managing customer expectations" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
+            <NaturalPresent />
           </label>
         )
       }
