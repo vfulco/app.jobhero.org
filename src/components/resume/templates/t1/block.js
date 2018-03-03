@@ -1,5 +1,6 @@
 import React from 'react'
 import './t1.css'
+import moment from 'moment'
 
 class T1Block extends React.Component {
   constructor(props){
@@ -10,7 +11,7 @@ class T1Block extends React.Component {
       type:props.type || '',
       company:props.company || '',
       startDate:props.startDate || '',
-      endDate:props.endDate || 'Present'
+      endDate:props.endDate
     }
   }
 
@@ -42,12 +43,22 @@ class T1Block extends React.Component {
         }
       })
     }
+    let startDate;
+    if (this.state.startDate) {
+      startDate = moment(this.state.startDate).format('MM-YYYY')
+    }
+    let endDate;
+    if (this.state.endDate) {
+      endDate = moment(this.state.endDate).format('MM-YYYY')
+    } else {
+      endDate = 'Present'
+    }
     return (
       <div className={"jh-t1-block"}>
         <h1>{this.state.title}</h1>
         {this.state.company &&
           <div className="jh-t1-job-details">
-            <h3>{this.state.company} &bull; {this.state.startDate} - {this.state.endDate}</h3>
+            <h3>{this.state.company} &bull; {startDate} - {endDate}</h3>
             <h4>Accomplishments</h4>
           </div>
         }
