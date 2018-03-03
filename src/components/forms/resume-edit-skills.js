@@ -1,7 +1,7 @@
 import React from 'react'
 import './forms.css'
 import ButtonText from '../buttons/button-text'
-import NaturalPresent from '../nlp/present'
+import NaturalGerund from '../nlp/gerund'
 
 class ResumeEditSkills extends React.Component {
   constructor(props){
@@ -35,7 +35,6 @@ class ResumeEditSkills extends React.Component {
         skills,
         buttonDisabled:false
     }), () => {
-      console.log(this.state.skills)
     })
   }
 
@@ -51,7 +50,6 @@ class ResumeEditSkills extends React.Component {
   render() {
     let listOfKnowledgeItems;
     listOfKnowledgeItems = this.state.skills.map((skill,index) => {
-      console.log(skill)
       if (skill.level === this.state.section){
         return (
           <label className="jh-form-label" key={index}>
@@ -64,7 +62,7 @@ class ResumeEditSkills extends React.Component {
             <div className="jh-input-container">
               <input required type="text" placeholder="Managing customer expectations" name="name" value={skill.name} onChange={this.handleInputChange.bind(this,index)}/>
             </div>
-            <NaturalPresent />
+            <NaturalGerund text={skill.name}/>
           </label>
         )
       }
