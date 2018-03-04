@@ -51,7 +51,7 @@ class RegisterUser extends React.Component {
             REGISTER
           </h1>
           <p className="jh-edit-form-details">
-            Create a new Job Hero account
+            Create a new Job Hero account. This allows you to save unlimited resumes and improve on them over time.
           </p>
           <div className="jh-form-group">
             <label>
