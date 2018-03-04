@@ -4,7 +4,6 @@
   width:100%;
   background-color:#fff;
   z-index: 1000;
-
 }
 .jh-header-flex{
   display:flex;
@@ -16,7 +15,10 @@
   display:flex;
   flex-direction: row;
   align-items: center;
-
+}
+.jh-header-beta{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 .jh-header-logo{
   height:60px;

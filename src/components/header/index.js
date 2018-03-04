@@ -47,7 +47,7 @@ class Header extends React.Component {
         <div className="jh-header-flex">
           <div className="jh-header-logo-container">
             <div className="jh-header-logo" style={{backgroundImage:'url(' + Logo + ')'}}></div>
-            <p>&nbsp; BETA</p>
+            <p className="jh-header-beta">&nbsp; BETA</p>
           </div>
           <div className="jh-header-buttons-container">
             {this.state.backButton === true &&
