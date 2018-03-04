@@ -21,7 +21,9 @@ class RegisterUser extends React.Component {
     this.setState({loading:true});
     Authentication.registerUser(email,password)
     .then((user)=> {
-      this.props.history.push('/login')
+      console.log('user',user)
+      window.localStorage.user = JSON.stringify(user.data.data);
+      this.props.history.push('/resume')
     })
     .catch((error)=>{
       console.log(error)
@@ -43,9 +45,6 @@ class RegisterUser extends React.Component {
   };
 
   render(){
-    if (this.state.redirectToReferrer) {
-      return <Redirect to={this.state.from} />;
-    }
     return (
       <div className="jh-enter-form-container">
         <form className="jh-enter-form" onSubmit={this.handleSignIn.bind(this)}>
