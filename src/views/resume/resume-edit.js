@@ -71,7 +71,7 @@ class ResumeEdit extends React.Component {
   render() {
     return (
       <div>
-          <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>X</div>
+          <div className="jh-edit-form-close" onClick={this.goBack.bind(this)}>&times;</div>
         {this.state.section === 'basics' &&
           <ResumeEditBasics resume={this.state.resume} firstRun={this.state.firstRun} onResumeUpdated={this.handleResumeUpdate.bind(this)} section={this.state.section} loading={this.state.loading}/>
         }
