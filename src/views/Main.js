@@ -56,7 +56,9 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <GoogleTagManager gtmId='GTM-M5272PR' />
+        {!window.location.hostname.includes('local') &&
+          <GoogleTagManager gtmId='GTM-M5272PR' />
+        }
         <BrowserRouter>
           <Switch>
             <RedirectRoute exact path='/login' component={Login}/>
