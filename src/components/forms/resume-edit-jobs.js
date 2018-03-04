@@ -31,7 +31,6 @@ class ResumeEditJobs extends React.Component {
         work,
         buttonDisabled:false
     }), () => {
-      console.log(this.state.work)
     })
   }
 
@@ -51,7 +50,6 @@ class ResumeEditJobs extends React.Component {
     let listOfJobItems;
     listOfJobItems = this.state.work.map((job,index) => {
       function updateHighlights(highlight,event){
-        console.log(highlight)
         job.highlights[highlight] = event.target.value
         let work = this.state.work
         work[index] = job
@@ -60,7 +58,6 @@ class ResumeEditJobs extends React.Component {
           buttonDisabled:false
         })
       }
-      console.log(job)
       let jobHighlights;
       if(job.highlights){
         jobHighlights = job.highlights.map((highlight,highlightIndex) => {

@@ -33,7 +33,6 @@ class ResumeEditInterests extends React.Component {
         interests,
         buttonDisabled:false
     }), () => {
-      console.log(this.state.interests)
     })
   }
 
@@ -51,7 +50,6 @@ class ResumeEditInterests extends React.Component {
   render() {
     let listOfInterestItems;
     listOfInterestItems = this.state.interests.map((item,index) => {
-      console.log(item)
         return (
           <label className="jh-form-label" key={index}>
             <h2>

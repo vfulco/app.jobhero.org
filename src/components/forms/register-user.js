@@ -21,7 +21,6 @@ class RegisterUser extends React.Component {
     this.setState({loading:true});
     Authentication.registerUser(email,password)
     .then((user)=> {
-      console.log('user',user)
       window.localStorage.user = JSON.stringify(user.data.data);
       this.props.history.push('/resume')
     })

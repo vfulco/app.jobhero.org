@@ -18,7 +18,6 @@ class ResumeCreate extends React.Component {
      this.setState({loading:true})
      ResumeApi.createResume(newResumeBody)
      .then((createdResume) => {
-       console.log(createdResume.data.data)
        this.props.history.push({pathname:`/resume/${createdResume.data.data.resume[0].id}/edit/basics`,state:{resume:createdResume.data.data.resume[0].json_resume,firstRun:true}})
      })
    }
@@ -31,7 +30,6 @@ class ResumeCreate extends React.Component {
          [name]: value,
          buttonDisabled:false
        }, () => {
-       console.log(this.state)
      });
    }
 
@@ -41,7 +39,6 @@ class ResumeCreate extends React.Component {
      let resume = {
        name:this.state.resume_name
      }
-     console.log(resume)
      this.createResumeToApi(resume)
    }
 

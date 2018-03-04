@@ -34,7 +34,6 @@ class ResumeEditExperience extends React.Component {
         skills,
         buttonDisabled:false
     }), () => {
-      console.log(this.state.skills)
     })
   }
 
@@ -50,7 +49,6 @@ class ResumeEditExperience extends React.Component {
   render() {
     let listOfKnowledgeItems;
     listOfKnowledgeItems = this.state.skills.map((skill,index) => {
-      console.log(skill)
       if (skill.level === this.state.section){
         return (
           <label className="jh-form-label" key={index}>
