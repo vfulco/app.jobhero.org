@@ -64,6 +64,11 @@ class Header extends React.Component {
                 </button>
               </div>
             }
+            <div>
+              <a href="mailto:info@jobhero.org">
+                <ButtonText text="CONTACT"/>
+              </a>
+            </div>
             {this.state.authenticated &&
               <div>
                 <button onClick={this.handleLogout.bind(this)}>
