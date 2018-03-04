@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom'
+import GoogleTagManager from '../components/gtm'
 import Login from './enter/login'
 import Register from './enter/register'
 import ResumeView from './resume/resume-view'
@@ -55,6 +56,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <GoogleTagManager gtmId='GTM-M5272PR' />
         <BrowserRouter>
           <Switch>
             <RedirectRoute exact path='/login' component={Login}/>

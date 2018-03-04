@@ -2,7 +2,7 @@ import React from 'react'
 import './forms.css'
 import Authentication from '../../api/authentication.js'
 import ButtonText from '../buttons/button-text'
-import { NavLink, withRouter,Redirect } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 
 class RegisterUser extends React.Component {
