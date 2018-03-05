@@ -24,7 +24,6 @@ class LoginUser extends React.Component {
     this.setState({loading:true});
     Authentication.loginUser(email,password)
     .then((user)=> {
-      console.log('user',user)
       window.localStorage.user = JSON.stringify(user.data.data);
       this.setState({ redirectToReferrer: true });
       // this.props.history.push('/resume')
