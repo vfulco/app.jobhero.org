@@ -29,8 +29,8 @@ class ResumeList extends React.Component {
     })
     .catch((error)=>{
       console.log(error)
-      // window.localStorage.clear()
-      // this.props.history.push('/login')
+      window.localStorage.clear()
+      this.props.history.push('/login')
     })
   }
 
